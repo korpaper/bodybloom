@@ -1,0 +1,141 @@
+footer{
+    width: 100%;
+    height: 237px;
+    padding: 0 100px;
+    background-color: #000;
+}
+.footerInner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+}
+.fInfo > p{
+    color: var(--green-500);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 100%; /* 16px */
+    letter-spacing: -0.8px;
+}
+.fLogo{
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+} 
+.fLogo a{
+    display: block;
+    width: 100%;
+    max-width: 215px;
+}
+.fLogo a img{
+    width: 100%;
+}
+.logos{
+	max-width: 350.5px;
+}
+.logos img{
+    width: 100%;
+}
+.sns{
+    display: flex;
+    column-gap: 34px;
+    padding: 24px 0;
+}
+.tel{
+    display: flex;
+    align-items: flex-end;
+    column-gap: 40px;
+}
+.tel span{
+    padding-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%; /* 16px */
+    letter-spacing: -0.8px;
+}
+.tel p{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 100%; /* 40px */
+    letter-spacing: -2px;
+}
+.tel a{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 100%; /* 40px */
+    letter-spacing: -2px;
+}
+
+@media all and (max-width : 1024px){
+    footer{
+        height: fit-content;
+        padding: 24px 0;
+        background-color: #000;
+    }
+    .footerInner{
+        flex-direction: column;
+        justify-content: unset;
+        align-items: center;
+    }
+    .fInfo > p{
+        text-align: center;
+    }
+    .fLogo{
+        margin-bottom: 61px;
+    } 
+	.fLogo{
+		align-items: center;
+		row-gap: 10px;
+		padding: 0 17px;
+	} 
+	.fLogo a{
+	    display: block;
+	    width: 100%;
+	    max-width: 215px;
+	}
+	.fLogo a img{
+	    width: 100%;
+	}
+	.logos{
+		max-width: 350.5px;
+	}
+	.logos img{
+	    width: 100%;
+	}
+    .sns{
+        display: flex;
+        justify-content: center;
+        column-gap: 20px;
+        padding: 24px 17px;
+    }
+    .sns li{
+    	max-width: 47px;
+    }
+    .sns li a{
+    	display: block;
+    	width: 100%;
+    }
+    .sns li a img{
+    	width: 100%;
+    }
+    .tel{
+        justify-content: center;
+        column-gap: 12px;
+    }
+    .tel span{
+        padding-bottom: 1px;
+        font-size: 16px;
+        letter-spacing: -0.8px;
+    }
+    .tel p{
+        font-size: 20px;
+        letter-spacing: -1px;
+    }
+    .tel a{
+        font-size: 20px;
+        letter-spacing: -1px;
+    }
+}

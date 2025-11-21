@@ -1,0 +1,95 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100px;
+    background-color: #000;
+}
+.headerInner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 100px;
+}
+.headerInner h1{
+    width: 124px;
+}
+.headerInner h1 a{
+    display: block;
+}
+.headerInner h1 a img{
+    width: 100%;
+}
+.nav{
+    display: flex;
+    align-items: center;
+}
+.nav li{
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+.nav li:not(:last-of-type){
+	margin-right: 58px;
+}
+.nav li a{
+    transition: all .3s;
+}
+.nav li.lang{
+	font-size: 16px;
+}
+.nav li.lang a{
+	padding: 3px 5px;
+	border: 1px solid #fff;
+	border-radius: 15px;
+}
+.nav li a:hover{
+    color: var(--green-500);
+}
+.nav li.active a{
+    color: var(--green-500);
+}
+
+@media all and (max-width : 1024px){
+    header{
+        height: fit-content;
+        overflow: hidden;
+    }
+    .headerInner{
+        justify-content: center;
+        height: fit-content;
+        padding: 20px 0 20px 16px;
+    }
+    .headerInner h1{
+        display: none;
+    }
+    .nav{
+        width: 100%;
+        overflow-x: auto;
+        padding-right: 16px;
+    }
+    .nav li{
+        font-size: 14px;
+        letter-spacing: -0.7px;
+    }
+	.nav li:not(:last-of-type){
+		margin-right: 8px;
+	}
+    .nav li a{
+        display: block;
+        padding: 8px 20px;
+        border-radius: 999px;
+        border: 1px solid #FFF;
+        white-space: nowrap;
+    }
+    .nav li.active a{
+        color: #000;
+        background-color: var(--green-500);
+    }
+}
