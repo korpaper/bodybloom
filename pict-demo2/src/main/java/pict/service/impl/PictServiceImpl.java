@@ -31,12 +31,6 @@ public class PictServiceImpl implements PictService {
 	@Autowired
     PictMapper pictMapper;
 
-    @Override
-	public List<?> test_service(PictVO pictVO) throws Exception {
-		System.out.println("임플까지 타나?");
-		return pictMapper.test_service(pictVO);
-	}
-
 	@Override
 	public List<?> board_list(PictVO pictVO) throws Exception {
 		// TODO Auto-generated method stub
@@ -67,66 +61,11 @@ public class PictServiceImpl implements PictService {
 		pictMapper.board_delete(pictVO);
 	}
 
-	@Override
-	public List<PictVO> news_list(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		return pictMapper.news_list(pictVO);
-	}
-
-	@Override
-	public PictVO news_list_one(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		return pictMapper.news_list_one(pictVO);
-	}
-
-	@Override
-	public void news_update(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		pictMapper.news_update(pictVO);
-	}
-
-	@Override
-	public void news_insert(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		pictMapper.news_insert(pictVO);
-	}
-
-	@Override
-	public void news_delete(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		pictMapper.news_delete(pictVO);
-	}
-
-	@Override
-	public List<PictVO> video_list(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		return pictMapper.video_list(pictVO);
-	}
-
-	@Override
-	public PictVO video_list_one(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		return pictMapper.video_list_one(pictVO);
-	}
-
-	@Override
-	public void video_update(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		pictMapper.video_update(pictVO);
-	}
-
-	@Override
-	public void video_insert(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		pictMapper.video_insert(pictVO);
-	}
-
-	@Override
-	public void video_delete(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		pictMapper.video_delete(pictVO);
-	}
-
+    @Override
+    public void user_insert(PictVO pictVO) throws Exception {
+        // TODO Auto-generated method stub
+        pictMapper.user_insert(pictVO);
+    }
 	
 	
 }

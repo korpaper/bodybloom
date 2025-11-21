@@ -24,8 +24,6 @@ import pict.service.PictVO;
 
 @Mapper
 public interface PictMapper {
-	
-	List<?> test_service(PictVO pictVO) throws Exception;
 
 	List<?> board_list(PictVO pictVO) throws Exception;
 
@@ -37,25 +35,6 @@ public interface PictMapper {
 
 	void board_delete(PictVO pictVO) throws Exception;
 
-	List<PictVO> news_list(PictVO pictVO) throws Exception;
-
-	PictVO news_list_one(PictVO pictVO)throws Exception;
-
-	void news_update(PictVO pictVO) throws Exception;
-
-	void news_insert(PictVO pictVO) throws Exception;
-
-	void news_delete(PictVO pictVO)throws Exception;
-
-	List<PictVO> video_list(PictVO pictVO) throws Exception;
-
-	PictVO video_list_one(PictVO pictVO) throws Exception;
-
-	void video_update(PictVO pictVO) throws Exception;
-
-	void video_insert(PictVO pictVO) throws Exception;
-
-	void video_delete(PictVO pictVO) throws Exception;
-	
+    void user_insert(PictVO pictVO) throws Exception;
 
 }

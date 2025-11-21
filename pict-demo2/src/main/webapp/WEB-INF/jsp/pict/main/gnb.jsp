@@ -14,8 +14,8 @@
 
 
 
-<c:set var="board_list" value="${fn:indexOf(url, 'board_list')}"/>
-<c:set var="board_register" value="${fn:indexOf(url, 'board_register')}"/>
+<c:set var="schedule_list" value="${fn:indexOf(url, 'schedule_list')}"/>
+<c:set var="schedule_register" value="${fn:indexOf(url, 'schedule_register')}"/>
 
 <c:set var="news_list" value="${fn:indexOf(url, 'news_list')}"/>
 <c:set var="news_register" value="${fn:indexOf(url, 'news_register')}"/>
@@ -27,44 +27,44 @@
     <div class="sb-sidenav-menu">
         <div class="nav">
             <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="true" aria-controls="collapseLayouts1">
-				게시판관리
+				스케쥴 관리
             </a>
-            <div class="collapse <c:if test="${board_register ne -1}">show</c:if>" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+            <div class="collapse <c:if test="${schedule_register ne -1}">show</c:if>" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link <c:if test="${board_register ne -1}">active</c:if>" href="/board/board_register">게시물 등록</a>
+                    <a class="nav-link <c:if test="${schedule_register ne -1}">active</c:if>" href="/schedule/schedule_register">스케쥴 등록</a>
                 </nav>
             </div>
-            <div class="collapse <c:if test="${board_list ne -1}">show</c:if>" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+            <div class="collapse <c:if test="${schedule_list ne -1}">show</c:if>" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link <c:if test="${board_list ne -1}">active</c:if>" href="/board/board_list">게시물 리스트</a>
+                    <a class="nav-link <c:if test="${schedule_list ne -1}">active</c:if>" href="/schedule/schedule_list">스케쥴 리스트</a>
                 </nav>
             </div>
             
             <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="true" aria-controls="collapseLayouts2">
-				보도자료관리
+				오늘의 운동법 관리
             </a>
             <div class="collapse <c:if test="${news_register ne -1}">show</c:if>" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link <c:if test="${news_register ne -1}">active</c:if>" href="/news/news_register">보도자료 등록</a>
+                    <a class="nav-link <c:if test="${news_register ne -1}">active</c:if>" href="/news/news_register">오늘의 운동법 등록</a>
                 </nav>
             </div>
             <div class="collapse <c:if test="${news_list ne -1}">show</c:if>" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link <c:if test="${news_list ne -1}">active</c:if>" href="/news/news_list">보도자료 리스트</a>
+                    <a class="nav-link <c:if test="${news_list ne -1}">active</c:if>" href="/news/news_list">오늘의 운동법 리스트</a>
                 </nav>
             </div>
 
             <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts3" aria-expanded="true" aria-controls="collapseLayouts3">
-				참가영상관리
+				후기 관리
             </a>
             <div class="collapse <c:if test="${video_register ne -1}">show</c:if>" id="collapseLayouts3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link <c:if test="${video_register ne -1}">active</c:if>" href="/video/video_register">참가영상 등록</a>
+                    <a class="nav-link <c:if test="${video_register ne -1}">active</c:if>" href="/video/video_register">후기 등록</a>
                 </nav>
             </div>
             <div class="collapse <c:if test="${video_list ne -1}">show</c:if>" id="collapseLayouts3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link <c:if test="${video_list ne -1}">active</c:if>" href="/video/video_list">참가영상 리스트</a>
+                    <a class="nav-link <c:if test="${video_list ne -1}">active</c:if>" href="/video/video_list">후기 리스트</a>
                 </nav>
             </div>
            

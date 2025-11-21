@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <c:import url="../main/header.jsp">
-	<c:param name="pageTitle" value="게시물 등록" />
+	<c:param name="pageTitle" value="스케쥴 등록" />
 </c:import>
 <body class="sb-nav-fixed">
 	<form action="" id="register" name="register" method="post" enctype="multipart/form-data">
@@ -21,7 +21,7 @@
 			</div>
 			<div id="layoutSidenav_content">
 				<main class="contents">
-					<h2 class="contents-title">게시물 등록</h2>
+					<h2 class="contents-title">스케쥴 등록</h2>
 					<div class="contents-box">
 						<div class="card">
 							<div class="card-body">
