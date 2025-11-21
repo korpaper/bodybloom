@@ -134,47 +134,57 @@ public class PictController {
     /**
      * 사용자 페이지
      * */
-	@RequestMapping("/")
-	public String main(@ModelAttribute("pictVO") AdminVO adminVO, HttpServletRequest request, ModelMap model,
-			HttpSession session, RedirectAttributes rttr) throws Exception {
-		return "redirect:/ko/main";
-	}
-	// 메인
-	@RequestMapping("/front/ko/main")
-	public String kommain(@ModelAttribute("pictVO") AdminVO adminVO, HttpServletRequest request, ModelMap model,
-			HttpSession session, RedirectAttributes rttr) throws Exception {
-		return "redirect:/ko/main";
-	}
-	@RequestMapping(value = "/ko/main")
-	public String main(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request)
-			throws Exception {
+	@RequestMapping(value = "/")
+	public String main(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
 		model.addAttribute("pictVO", pictVO);
 		
-		return "pict/ko/main";
+		return "pict/front/main";
 	}
 
-	// 공지사항   
-	@RequestMapping(value = "/ko/board_view")
-	public String board_view(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request)
-			throws Exception {
-
-		pictVO = pictService.board_list_one(pictVO);
-		
-		model.addAttribute("pictVO", pictVO);
-		return "pict/ko/board_view";
+	// 강사소개 - 강사소개
+	@RequestMapping(value = "/trainer")
+	public String trainer(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+		return "pict/front/board_view";
 	}
 
-	
+    // 강사소개 - 스케쥴표
+    @RequestMapping(value = "/schedule")
+    public String schedule(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        return "pict/front/schedule";
+    }
+
+    // 부대시설 - 부대시설
+    @RequestMapping(value = "/facilities")
+    public String facilities(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        return "pict/front/schedule";
+    }
+
+    // 부대시설 - 오시는길
+    @RequestMapping(value = "/location")
+    public String location(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        return "pict/front/schedule";
+    }
+
+    // 커뮤니티 - 오늘의운동
+    @RequestMapping(value = "/today")
+    public String today(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        return "pict/front/today";
+    }
+
+    // 커뮤니티 - 후기
+    @RequestMapping(value = "/review")
+    public String review(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        return "pict/front/review";
+    }
+
+
 
 	/**
      * 관리자 기능
-     * 스케쥴 관리
      * */
 	@RequestMapping(value = "/schedule/schedule_list")
-	public String schedule_list(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request)
-			throws Exception {
+	public String schedule_list(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
 		String session = (String) request.getSession().getAttribute("id");
-
 		pictVO.setUser_id(session);
 
 		List<?> reference_list = pictService.board_list(pictVO);
@@ -186,8 +196,7 @@ public class PictController {
 	}
 
 	@RequestMapping(value = "/schedule/schedule_register")
-	public String schedule_register(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model,
-			HttpServletRequest request) throws Exception {
+	public String schedule_register(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
 		String session = (String) request.getSession().getAttribute("id");
 
 		pictVO.setUser_id(session);
@@ -206,25 +215,14 @@ public class PictController {
 	}
 
 	@RequestMapping(value = "/schedule/schedule_save", method = RequestMethod.POST)
-	public String schedule_save(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model,
-			MultipartHttpServletRequest request,
-			@RequestParam("file1root") MultipartFile file1root,
-			@RequestParam("file2root") MultipartFile file2root) throws Exception {
+	public String schedule_save(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, MultipartHttpServletRequest request, @RequestParam("file1root") MultipartFile file1root) throws Exception {
 		String sessions = (String) request.getSession().getAttribute("id");
-		System.out.println("아니");
-		
 
 		if(file1root.getSize() != 0) {	//애드벌룬
 			String uploadPath = fileUpload(request, file1root, (String)request.getSession().getAttribute("id"));
 			String filepath = "/user1/upload_file/bodybloom/";
 			String filename = uploadPath.split("#####")[1];
 			pictVO.setFile1(filepath+filename);
-		}
-		if(file2root.getSize() != 0) {	//애드벌룬
-			String uploadPath = fileUpload(request, file2root, (String)request.getSession().getAttribute("id"));
-			String filepath = "/user1/upload_file/bodybloom/";
-			String filename = uploadPath.split("#####")[1];
-			pictVO.setFile2(filepath+filename);
 		}
 
 		if (pictVO.getSaveType() != null && pictVO.getSaveType().equals("update")) {
@@ -244,10 +242,7 @@ public class PictController {
 	}
 
 	@RequestMapping(value = "/schedule/schedule_delete")
-	public String schedule_delete(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request)
-			throws Exception {
-		String session = (String) request.getSession().getAttribute("id");
-
+	public String schedule_delete(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
 		pictService.board_delete(pictVO);
 
 		model.addAttribute("message", "정상적으로 삭제되었습니다.");
@@ -259,6 +254,10 @@ public class PictController {
 
 
 
+
+    /**
+     * 강사등록 최초에만 사용 할 예정
+     * */
     @RequestMapping(value = "/user/user_register")
     public String user_register(@ModelAttribute("searchVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
         pictVO.setSaveType("insert");
@@ -278,7 +277,9 @@ public class PictController {
     }
 
 
-    // 공통메소드
+    /**
+     * 공통함수
+     * */
 	public String fileUpload(MultipartHttpServletRequest request, MultipartFile uploadFile, String target) {
 		String path = "";
 		String fileName = "";
