@@ -4064,14 +4064,6 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: space-between;
 }
-.navbar-brand {
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  margin-right: 1rem;
-  font-size: 1.25rem;
-  text-decoration: none;
-  white-space: nowrap;
-}
 .navbar-nav {
   display: flex;
   flex-direction: column;
@@ -11394,6 +11386,13 @@ body {
 .sb-nav-fixed #layoutSidenav #layoutSidenav_content {
   padding-left: 225px;
   top: 56px;
+}
+
+@media all and (max-width: 768px) {
+    .sb-nav-fixed #layoutSidenav #layoutSidenav_content {
+        padding-left: 0;
+        top: 56px;
+    }
 }
 
 #layoutError {
