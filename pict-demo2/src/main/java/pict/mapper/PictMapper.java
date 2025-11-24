@@ -27,6 +27,8 @@ public interface PictMapper {
 
 	List<?> schedule_list(PictVO pictVO) throws Exception;
 
+    List<?> schedule_list_day(PictVO pictVO) throws Exception;
+
 	PictVO schedule_list_one(PictVO pictVO) throws Exception;
 
 	void schedule_update(PictVO pictVO) throws Exception;

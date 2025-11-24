@@ -91,19 +91,9 @@ public class PictController {
 			if (enpassword.equals(adminVO.getPassword())) {
 				request.getSession().setAttribute("id", adminVO.getId());
 				request.getSession().setAttribute("name", adminVO.getName());
-				request.getSession().setAttribute("depart", adminVO.getDepart());
-
-				String ip = request.getRemoteAddr();
-				DateFormat format2 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-				String now = format2.format(Calendar.getInstance().getTime());
-
-				adminVO.setLast_login_ip(ip);
-				adminVO.setLast_login_date(now);
-				adminService.insert_login_info(adminVO);
 
 				adminVO.setAdminId(user_id);
 				adminVO = adminService.get_user_info(adminVO);
-
 				return "redirect:/main";
 
 			} else {
@@ -197,8 +187,14 @@ public class PictController {
 	@RequestMapping(value = "/schedule/schedule_list")
 	public String schedule_list(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
 		String session = (String) request.getSession().getAttribute("id");
-		pictVO.setUser_id(session);
-
+		pictVO.setUserid(session);
+        if(pictVO != null && pictVO.getTargetdate() == null){
+            pictVO.setTargetdate("2025-11-24");
+        }
+        // 일별
+        List<?> day_list = pictService.schedule_list_day(pictVO);
+        model.addAttribute("day_list", day_list);
+        // 주별
 		List<?> reference_list = pictService.schedule_list(pictVO);
 		model.addAttribute("resultList", reference_list);
 		model.addAttribute("size", reference_list.size());
@@ -227,15 +223,8 @@ public class PictController {
 	}
 
 	@RequestMapping(value = "/schedule/schedule_save", method = RequestMethod.POST)
-	public String schedule_save(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, MultipartHttpServletRequest request, @RequestParam("file1root") MultipartFile file1root) throws Exception {
+	public String schedule_save(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, MultipartHttpServletRequest request) throws Exception {
 		String sessions = (String) request.getSession().getAttribute("id");
-
-		if(file1root.getSize() != 0) {	//애드벌룬
-			String uploadPath = fileUpload(request, file1root, (String)request.getSession().getAttribute("id"));
-			String filepath = "/user1/upload_file/bodybloom/";
-			String filename = uploadPath.split("#####")[1];
-			pictVO.setFile1(filepath+filename);
-		}
 
 		if (pictVO.getSaveType() != null && pictVO.getSaveType().equals("update")) {
 			pictService.schedule_update(pictVO);

@@ -36,6 +36,11 @@ public class PictServiceImpl implements PictService {
 		return pictMapper.schedule_list(pictVO);
 	}
 
+    @Override
+    public List<?> schedule_list_day(PictVO pictVO) throws Exception {
+        return pictMapper.schedule_list_day(pictVO);
+    }
+
 	@Override
 	public PictVO schedule_list_one(PictVO pictVO) throws Exception {
 		return pictMapper.schedule_list_one(pictVO);

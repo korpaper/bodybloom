@@ -5,14 +5,58 @@
 	
 	<!-- 스케쥴관리 -->
 	<select id="schedule_list" resultType="pictVO">
-		select *
-		from schedule_table
-		<if test="search_text != null and search_text != '' ">
-			where (
-				title LIKE CONCAT('%', #{search_text}, '%')
-			) 
-		</if>
+        WITH RECURSIVE times AS (
+            SELECT 1 AS t
+            UNION ALL
+            <![CDATA[ SELECT t + 1 FROM times WHERE t < 17]]>
+        ),
+        dates AS (
+            SELECT DATE(#{targetdate}) + INTERVAL n DAY AS d
+            FROM (
+                SELECT 0 n UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6
+            ) x
+        )
+        SELECT
+            t.t AS targettime,
+            MAX(CASE WHEN s.targetdate = (SELECT d FROM dates LIMIT 1 OFFSET 0) THEN CONCAT('O', IF(s.title IS NOT NULL AND s.title != '', CONCAT(' (', s.title, ')'), '')) ELSE '' END) AS day1,
+            MAX(CASE WHEN s.targetdate = (SELECT d FROM dates LIMIT 1 OFFSET 1) THEN CONCAT('O', IF(s.title IS NOT NULL AND s.title != '', CONCAT(' (', s.title, ')'), '')) ELSE '' END) AS day2,
+            MAX(CASE WHEN s.targetdate = (SELECT d FROM dates LIMIT 1 OFFSET 2) THEN CONCAT('O', IF(s.title IS NOT NULL AND s.title != '', CONCAT(' (', s.title, ')'), '')) ELSE '' END) AS day3,
+            MAX(CASE WHEN s.targetdate = (SELECT d FROM dates LIMIT 1 OFFSET 3) THEN CONCAT('O', IF(s.title IS NOT NULL AND s.title != '', CONCAT(' (', s.title, ')'), '')) ELSE '' END) AS day4,
+            MAX(CASE WHEN s.targetdate = (SELECT d FROM dates LIMIT 1 OFFSET 4) THEN CONCAT('O', IF(s.title IS NOT NULL AND s.title != '', CONCAT(' (', s.title, ')'), '')) ELSE '' END) AS day5,
+            MAX(CASE WHEN s.targetdate = (SELECT d FROM dates LIMIT 1 OFFSET 5) THEN CONCAT('O', IF(s.title IS NOT NULL AND s.title != '', CONCAT(' (', s.title, ')'), '')) ELSE '' END) AS day6,
+            MAX(CASE WHEN s.targetdate = (SELECT d FROM dates LIMIT 1 OFFSET 6) THEN CONCAT('O', IF(s.title IS NOT NULL AND s.title != '', CONCAT(' (', s.title, ')'), '')) ELSE '' END) AS day7
+        FROM times t
+        LEFT JOIN schedule_table s ON s.targettime = t.t
+        <if test="userid != null and userid != '' ">
+             AND s.userid = #{userid}
+        </if>
+        <if test="targetdate != null and targetdate != '' ">
+            AND s.targetdate BETWEEN #{targetdate} AND DATE(#{targetdate}) + INTERVAL 6 DAY
+        </if>
+        GROUP BY t.t
+        ORDER BY t.t
 	</select>
+
+    <select id="schedule_list_day" resultType="pictVO">
+        WITH RECURSIVE times AS (
+            SELECT 1 AS t
+            UNION ALL
+             <![CDATA[ SELECT t + 1 FROM times WHERE t < 17]]>
+        )
+
+        SELECT t.t AS targettime,
+        MAX(CASE WHEN s.targetdate = #{targetdate} THEN CONCAT('O ', IFNULL(s.title, '')) ELSE '' END) AS day1
+        FROM times t
+        LEFT JOIN schedule_table s ON s.targettime = t.t
+        <if test="userid != null and userid != '' ">
+            AND s.userid = #{userid}
+        </if>
+        <if test="targetdate != null and targetdate != '' ">
+            AND s.targetdate = #{targetdate}
+        </if>
+        GROUP BY t.t
+        ORDER BY t.t;
+    </select>
 	
 	<select id="schedule_list_one" resultType="pictVO">
 		select *
@@ -167,10 +211,10 @@
     <insert id="user_insert" parameterType="adminVO">
         INSERT INTO user_info
         (
-            id, password, name, depart, mobile, reg_date, use_at
+            id, password, name, mobile, reg_date, use_at
         )
         VALUES (
-           #{id}, #{password}, #{name}, #{depart}, #{mobile}, now(), 'Y'
+           #{id}, #{password}, #{name}, #{mobile}, now(), 'Y'
        )
     </insert>
 

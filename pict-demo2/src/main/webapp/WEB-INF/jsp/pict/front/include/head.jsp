@@ -40,4 +40,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="/js/script.js" defer></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/front_img/favicon.ico">
 </head>

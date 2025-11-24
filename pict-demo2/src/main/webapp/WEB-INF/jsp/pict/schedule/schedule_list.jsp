@@ -4,7 +4,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+<%
+    String id = (String) session.getAttribute("id");
+    String name = (String) session.getAttribute("name");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 	<c:import url="../main/header.jsp">
@@ -22,13 +25,7 @@
 					<div class="contents-box">
 						<div class="card">
 						    <div class="card-body">
-						    	<!-- 강사 선택 탭 -->
-						    	<div class="trainer-tabs-admin" style="margin-bottom: 20px;">
-						    		<button type="button" class="trainer-tab-btn active" data-trainer="1">윤수환 강사</button>
-						    		<button type="button" class="trainer-tab-btn" data-trainer="2">최재희 강사</button>
-						    		<button type="button" class="trainer-tab-btn" data-trainer="3">윤동욱 강사</button>
-						    	</div>
-						    	
+                                <p>Name: <%= name %> 강사 스케쥴</p>
 						    	<!-- 일간/주간 탭 -->
 						    	<div class="schedule-tabs-admin" style="margin-bottom: 20px;">
 						    		<button type="button" class="view-tab-btn" data-view="daily">일간</button>
@@ -37,11 +34,11 @@
 						    	
 								<!-- 날짜 선택 -->
 								<div class="schedule-controls-admin" style="margin-bottom: 20px;">
-									<label for="scheduleDate">수업 일자 선택:</label>
-									<input type="date" id="scheduleDate" style="cursor: pointer; padding: 5px; border: 1px solid #ddd; border-radius: 4px;" />
-									<button type="button" class="btn-basic btn-fill btn-sm" onclick="searchSchedule()">조회</button>
-									<button type="button" class="btn-basic btn-sm" onclick="setToday()">오늘</button>
-									<span id="selectedWeek" style="margin-left: 20px; font-weight: bold;"></span>
+                                    <label for="scheduleDate">수업 일자 선택:</label>
+                                    <input type="date" id="scheduleDate" style="cursor: pointer; padding: 5px; border: 1px solid #ddd; border-radius: 4px;" value="${pictVO.targetdate}"/>
+                                    <button type="button" class="btn-basic btn-fill btn-sm" onclick="searchSchedule()">조회</button>
+                                    <button type="button" class="btn-basic btn-sm" onclick="setToday()">오늘</button>
+                                    <span id="selectedWeek" style="margin-left: 20px; font-weight: bold;"></span>
 								</div>
 						    	
 						    	<!-- 주간 스케줄 테이블 -->
@@ -50,7 +47,7 @@
 							            <thead>
 							                <tr>
 							                    <th style="width: 80px;">시간</th>
-							                    <th id="day-mon">월요일</th>
+							                    <th id="day-mon">월요일11</th>
 							                    <th id="day-tue">화요일</th>
 							                    <th id="day-wed">수요일</th>
 							                    <th id="day-thu">목요일</th>
@@ -60,176 +57,37 @@
 							                </tr>
 							            </thead>
 							            <tbody>
-							                <tr>
-							                    <td class="time">06:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">07:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">08:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">09:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">10:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">11:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">12:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">13:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">14:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">15:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">16:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">17:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">18:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">19:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">20:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">21:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">22:00</td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                    <td class="editable-cell"></td>
-							                </tr>
+                                            <c:forEach var="resultList" items="${resultList}" varStatus="status">
+                                                <tr>
+                                                    <td class="time">
+                                                        <c:if test="${resultList.targettime eq '1'}">06:00 ~ 07:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '2'}">07:00 ~ 08:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '3'}">08:00 ~ 09:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '4'}">09:00 ~ 10:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '5'}">10:00 ~ 11:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '6'}">11:00 ~ 12:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '7'}">12:00 ~ 13:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '8'}">13:00 ~ 14:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '9'}">14:00 ~ 15:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '10'}">15:00 ~ 16:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '11'}">16:00 ~ 17:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '12'}">17:00 ~ 18:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '13'}">18:00 ~ 19:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '14'}">19:00 ~ 20:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '15'}">20:00 ~ 21:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '16'}">21:00 ~ 22:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '17'}">22:00 ~ 23:00</c:if>
+                                                    </td>
+                                                    <td class="editable-cell">${resultList.day1}</td>
+                                                    <td class="editable-cell">${resultList.day2}</td>
+                                                    <td class="editable-cell">${resultList.day3}</td>
+                                                    <td class="editable-cell">${resultList.day4}</td>
+                                                    <td class="editable-cell">${resultList.day5}</td>
+                                                    <td class="editable-cell">${resultList.day6}</td>
+                                                    <td class="editable-cell">${resultList.day7}</td>
+                                                </tr>
+                                            </c:forEach>
+
 							            </tbody>
 						            </table>
 				            	</div>
@@ -244,74 +102,30 @@
 							                </tr>
 							            </thead>
 							            <tbody>
-							                <tr>
-							                    <td class="time">06:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">07:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">08:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">09:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">10:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">11:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">12:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">13:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">14:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">15:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">16:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">17:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">18:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">19:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">20:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">21:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
-							                <tr>
-							                    <td class="time">22:00</td>
-							                    <td class="editable-cell"></td>
-							                </tr>
+                                            <c:forEach var="resultList" items="${day_list}" varStatus="status">
+                                                <tr>
+                                                    <td class="time">
+                                                        <c:if test="${resultList.targettime eq '1'}">06:00 ~ 07:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '2'}">07:00 ~ 08:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '3'}">08:00 ~ 09:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '4'}">09:00 ~ 10:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '5'}">10:00 ~ 11:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '6'}">11:00 ~ 12:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '7'}">12:00 ~ 13:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '8'}">13:00 ~ 14:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '9'}">14:00 ~ 15:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '10'}">15:00 ~ 16:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '11'}">16:00 ~ 17:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '12'}">17:00 ~ 18:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '13'}">18:00 ~ 19:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '14'}">19:00 ~ 20:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '15'}">20:00 ~ 21:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '16'}">21:00 ~ 22:00</c:if>
+                                                        <c:if test="${resultList.targettime eq '17'}">22:00 ~ 23:00</c:if>
+                                                    </td>
+                                                    <td class="editable-cell">${resultList.day1}</td>
+                                                </tr>
+                                            </c:forEach>
 							            </tbody>
 						            </table>
 				            	</div>
@@ -325,6 +139,9 @@
 			var currentView = 'weekly'; // 현재 보기 모드
 			var currentTrainer = '1'; // 현재 선택된 강사
 
+            function search_(idx){
+                location.href= "/popup/popup_register?idx="+ idx;
+            }
 			// 트레이너 탭 전환
 			$('.trainer-tab-btn').on('click', function() {
 				$('.trainer-tab-btn').removeClass('active');
@@ -371,7 +188,6 @@
 						day: 'numeric',
 						weekday: 'long'
 					});
-					$('#selectedWeek').text(dateStr + ' 일간 스케줄');
 				}
 			}
 
@@ -402,7 +218,6 @@
 				' - ' +
 				endDate.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' });
 
-			$('#selectedWeek').text(weekStr + ' 주간 스케줄');
 
 			// 테이블 헤더에 날짜 업데이트
 			const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
@@ -416,7 +231,7 @@
 				const day = currentDate.getDate();
 				const weekday = currentDate.getDay();
 				const dayName = ['일', '월', '화', '수', '목', '금', '토'][weekday];
-				const dateStr = month + '/' + day + '(' + dayName + ')';
+				const dateStr = month + '/' + day;
 
 				$('#day-' + days[i]).text(dateStr);
 			}
@@ -438,6 +253,7 @@
 					updateDailyDisplay();
 				}
 
+				location.href= "/schedule/schedule_list?targetdate="+ selectedDate;
 				// API 호출 시
 				// loadSchedule(currentTrainer, selectedDate, currentView);
 			}

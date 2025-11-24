@@ -23,6 +23,8 @@ import org.springframework.stereotype.Service;
 public interface PictService {
 	public List<?> schedule_list(PictVO pictVO) throws Exception;
 
+    public List<?> schedule_list_day(PictVO pictVO) throws Exception;
+
 	public PictVO schedule_list_one(PictVO pictVO) throws Exception;
 
 	public void schedule_update(PictVO pictVO) throws Exception;

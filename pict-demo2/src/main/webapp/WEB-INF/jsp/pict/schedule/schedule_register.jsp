@@ -23,7 +23,6 @@
 					<div class="contents-box">
 						<div class="card">
 							<div class="card-body">
-
 								<div class="write-box">
 									<div class="write-item">
 										<label for="title" class="title">강사</label>
@@ -33,14 +32,14 @@
 									</div>
 								</div>
 
-							<div class="write-box">
-								<div class="write-item">
-									<label for="title" class="title">수업 일자</label>
-									<div class="input-box">
+                                <div class="write-box">
+                                    <div class="write-item">
+                                        <label for="title" class="title">수업 일자</label>
+                                        <div class="input-box">
                                             <input type="date" id="targetdate" name="targetdate" style="cursor: pointer; padding: 5px; border: 1px solid #ddd; border-radius: 4px; width: 200px;" value="${pictVO.targetdate}" />
-									</div>
-								</div>
-							</div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="write-box">
 									<div class="write-item">
@@ -81,7 +80,7 @@
 									
 								<div class="btn-box">
 									<c:if test="${pictVO.saveType eq 'update'}">
-										<button type="button" onclick="javascript:board_delete()" class="btn-basic btn-fill btn-sm">삭제</button>
+										<button type="button" onclick="javascript:schedule_delete()" class="btn-basic btn-fill btn-sm">삭제</button>
 									</c:if>
 									<c:if test="${pictVO.saveType eq 'insert'}">
 										<button type="button" onclick="button1_click();" class="btn-basic btn-primary btn-sm">등록</button>
@@ -89,7 +88,7 @@
 									<c:if test="${pictVO.saveType ne 'insert'}">
 										<button type="button" onclick="button1_click();" class="btn-basic btn-primary btn-sm">수정</button>
 									</c:if>
-						        	<button type="button" onclick="javascript:board_list();" class="btn-basic btn-common btn-sm">목록보기</button>    
+						        	<button type="button" onclick="javascript:schedule_list();" class="btn-basic btn-common btn-sm">목록보기</button>
 					            </div>
 							</div>
 						</div>
@@ -106,15 +105,15 @@
 	</form>
 	
 	<script>
-		function board_delete() {
+		function schedule_delete() {
 			if (confirm("삭제 하시겠습니까?")) {
-				$("#register").attr("action", "/board/board_delete");
+				$("#register").attr("action", "/schedule/schedule_delete");
 				$("#register").submit();
 			}
 			
 		}
-		function board_list() {
-			location.href = "/board/board_list";
+		function schedule_list() {
+			location.href = "/schedule/schedule_list";
 		}
 		function button1_click() {
 			var title = $('#title').val();
@@ -124,7 +123,6 @@
 				$('#title').focus();
 				return false;
 			}
-			oEditors[0].exec("UPDATE_CONTENTS_FIELD", []);
 			
 			var text = "등록하시겠습니까?";
 			if (saveType == 'update') {
@@ -132,7 +130,7 @@
 			}
 
 			if (confirm(text)) {
-				$("#register").attr("action", "/board/board_save");
+				$("#register").attr("action", "/schedule/schedule_save");
 				$("#register").submit();
 			}
 		}
