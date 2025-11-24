@@ -176,9 +176,7 @@ $(document).ready(function() {
     AOS.init({
         duration: 1200,
         easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
-        once: true,
-        offset: 100,
-        delay: 100
+        offset: 100
     });
 
     // 커스텀 커서 효과
