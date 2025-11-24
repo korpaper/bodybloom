@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <c:import url="../main/header.jsp">
-	<c:param name="pageTitle" value="보도자료 등록" />
+	<c:param name="pageTitle" value="팝업 등록" />
 </c:import>
 <body class="sb-nav-fixed">
 	<form action="" id="register" name="register" method="post" enctype="multipart/form-data">
@@ -21,7 +21,7 @@
 			</div>
 			<div id="layoutSidenav_content">
 				<main class="contents">
-					<h2 class="contents-title">보도자료 등록</h2>
+					<h2 class="contents-title">팝업 등록</h2>
 					<div class="contents-box">
 						<div class="card">
 							<div class="card-body">
@@ -33,30 +33,28 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="write-box">
 									<div class="write-item">
-										<label for="title" class="title">언론사</label>
-										<div class="input-box">
-											<input type="text" id="newstitle" name="newstitle" value="${pictVO.newstitle}" class="input opt-max-width-500">
-										</div>
-									</div>
-								</div>
-								
-								<div class="write-box">
-									<div class="write-item">
-										<label for="title" class="title">링크</label>
+										<label for="title" class="title">이동링크</label>
 										<div class="input-box">
 											<input type="text" id="linkurl" name="linkurl" value="${pictVO.linkurl}" class="input opt-max-width-500">
 										</div>
 									</div>
 								</div>
-								
+
+
+								<div class="write-item">
+									<label for="title" class="title">첨부파일</label>
+									<div class="input-box">
+										<input style="margin-bottom:15px" type="file" id="file1root" name="file1root" value="${pictVO.imgurl}" class="input opt-max-width-600">
+									</div>
+								</div>
 
 									
 								<div class="btn-box">
 									<c:if test="${pictVO.saveType eq 'update'}">
-										<button type="button" onclick="javascript:news_delete()" class="btn-basic btn-fill btn-sm">삭제</button>
+										<button type="button" onclick="javascript:popup_delete()" class="btn-basic btn-fill btn-sm">삭제</button>
 									</c:if>
 									<c:if test="${pictVO.saveType eq 'insert'}">
 										<button type="button" onclick="button1_click();" class="btn-basic btn-primary btn-sm">등록</button>
@@ -64,7 +62,7 @@
 									<c:if test="${pictVO.saveType ne 'insert'}">
 										<button type="button" onclick="button1_click();" class="btn-basic btn-primary btn-sm">수정</button>
 									</c:if>
-						        	<button type="button" onclick="javascript:news_list();" class="btn-basic btn-common btn-sm">목록보기</button>    
+						        	<button type="button" onclick="javascript:popup_list();" class="btn-basic btn-common btn-sm">목록보기</button>
 					            </div>
 							</div>
 						</div>
@@ -81,15 +79,15 @@
 	</form>
 	
 	<script>
-		function news_delete() {
+		function popup_delete() {
 			if (confirm("삭제 하시겠습니까?")) {
-				$("#register").attr("action", "/news/news_delete");
+				$("#register").attr("action", "/popup/popup_delete");
 				$("#register").submit();
 			}
 			
 		}
-		function news_list() {
-			location.href = "/news/news_list";
+		function popup_list() {
+			location.href = "/popup/popup_list";
 		}
 		function button1_click() {
 			var title = $('#title').val();
@@ -99,14 +97,14 @@
 				$('#title').focus();
 				return false;
 			}
-
+			
 			var text = "등록하시겠습니까?";
 			if (saveType == 'update') {
 				text = "수정하시겠습니까?"
 			}
 
 			if (confirm(text)) {
-				$("#register").attr("action", "/news/news_save");
+				$("#register").attr("action", "/popup/popup_save");
 				$("#register").submit();
 			}
 		}

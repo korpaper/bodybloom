@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <c:import url="../main/header.jsp">
-	<c:param name="pageTitle" value="스케쥴 등록" />
+	<c:param name="pageTitle" value="오늘의 운동법 등록" />
 </c:import>
 <body class="sb-nav-fixed">
 	<form action="" id="register" name="register" method="post" enctype="multipart/form-data">
@@ -21,69 +21,41 @@
 			</div>
 			<div id="layoutSidenav_content">
 				<main class="contents">
-					<h2 class="contents-title">스케쥴 등록</h2>
+					<h2 class="contents-title">오늘의 운동법 등록</h2>
 					<div class="contents-box">
 						<div class="card">
 							<div class="card-body">
-
 								<div class="write-box">
 									<div class="write-item">
-										<label for="title" class="title">강사</label>
-										<div class="input-box">
-											<input type="text" id="userid" name="userid" value="${pictVO.userid}" class="input opt-max-width-500">
-										</div>
-									</div>
-								</div>
-
-								<div class="write-box">
-									<div class="write-item">
-										<label for="title" class="title">피티 날짜</label>
-										<div class="input-box">
-                                            <input type="date" id="targetdate" name="targetdate" class="date-selector" />
-										</div>
-									</div>
-								</div>
-
-                                <div class="write-box">
-									<div class="write-item">
-										<label for="title" class="title">시간대</label>
-										<div class="input-box">
-											<select name="targettime" id="targettime" title="시간대 선택">
-										        <option value="">시간선택</option>
-										        <option value="1">06:00 ~ 07:00</option>
-										        <option value="2">07:00 ~ 08:00</option>
-										        <option value="3">08:00 ~ 09:00</option>
-										        <option value="4">09:00 ~ 10:00</option>
-										        <option value="5">10:00 ~ 11:00</option>
-										        <option value="6">11:00 ~ 12:00</option>
-										        <option value="7">12:00 ~ 13:00</option>
-										        <option value="8">13:00 ~ 14:00</option>
-										        <option value="9">14:00 ~ 15:00</option>
-										        <option value="10">15:00 ~ 16:00</option>
-										        <option value="11">16:00 ~ 17:00</option>
-										        <option value="12">17:00 ~ 18:00</option>
-										        <option value="13">18:00 ~ 19:00</option>
-										        <option value="14">19:00 ~ 20:00</option>
-										        <option value="15">20:00 ~ 21:00</option>
-										        <option value="16">21:00 ~ 22:00</option>
-										        <option value="17">22:00 ~ 23:00</option>
-											</select>
-										</div>
-									</div>
-								</div>
-
-								<div class="write-box">
-									<div class="write-item">
-										<label for="title" class="title">비고(30분수업 등)</label>
+										<label for="title" class="title">제목</label>
 										<div class="input-box">
 											<input type="text" id="title" name="title" value="${pictVO.title}" class="input opt-max-width-500">
 										</div>
 									</div>
 								</div>
+
+								<div class="write-box">
+									<div class="write-item">
+										<label for="title" class="title">유튜브 영상 링크</label>
+										<div class="input-box">
+											<input type="text" id="videourl" name="videourl" value="${pictVO.videourl}" class="input opt-max-width-500">
+										</div>
+									</div>
+								</div>
+
+
+								<div class="write-item">
+									<label for="title" class="title">첨부파일</label>
+									<div class="input-box">
+										<input style="margin-bottom:15px" type="file" id="file1root" name="file1root" value="${pictVO.imgurl}" class="input opt-max-width-600">
+								
+									</div>
+								</div>
+
 									
 								<div class="btn-box">
 									<c:if test="${pictVO.saveType eq 'update'}">
-										<button type="button" onclick="javascript:board_delete()" class="btn-basic btn-fill btn-sm">삭제</button>
+										<button type="button" onclick="javascript:today_delete()" class="btn-basic btn-fill btn-sm">삭제</button>
 									</c:if>
 									<c:if test="${pictVO.saveType eq 'insert'}">
 										<button type="button" onclick="button1_click();" class="btn-basic btn-primary btn-sm">등록</button>
@@ -91,7 +63,7 @@
 									<c:if test="${pictVO.saveType ne 'insert'}">
 										<button type="button" onclick="button1_click();" class="btn-basic btn-primary btn-sm">수정</button>
 									</c:if>
-						        	<button type="button" onclick="javascript:board_list();" class="btn-basic btn-common btn-sm">목록보기</button>    
+						        	<button type="button" onclick="javascript:today_list();" class="btn-basic btn-common btn-sm">목록보기</button>
 					            </div>
 							</div>
 						</div>
@@ -108,15 +80,15 @@
 	</form>
 	
 	<script>
-		function board_delete() {
+		function today_delete() {
 			if (confirm("삭제 하시겠습니까?")) {
-				$("#register").attr("action", "/board/board_delete");
+				$("#register").attr("action", "/today/today_delete");
 				$("#register").submit();
 			}
 			
 		}
-		function board_list() {
-			location.href = "/board/board_list";
+		function today_list() {
+			location.href = "/today/today_list";
 		}
 		function button1_click() {
 			var title = $('#title').val();
@@ -126,7 +98,6 @@
 				$('#title').focus();
 				return false;
 			}
-			oEditors[0].exec("UPDATE_CONTENTS_FIELD", []);
 			
 			var text = "등록하시겠습니까?";
 			if (saveType == 'update') {
@@ -134,7 +105,7 @@
 			}
 
 			if (confirm(text)) {
-				$("#register").attr("action", "/board/board_save");
+				$("#register").attr("action", "/today/today_save");
 				$("#register").submit();
 			}
 		}

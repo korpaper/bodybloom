@@ -138,7 +138,7 @@ public class PictVO extends PictDefaultVO {
 	private String news_title;
 	private String imgurl;
 	private String videourl;
-	private String regdate;
+
 	private String linkurl;
 	private String newstitle;
 	private String file1;
@@ -146,10 +146,45 @@ public class PictVO extends PictDefaultVO {
 	
 	private MultipartFile file1root;
 	private MultipartFile file2root;
-	
-	
 
-	public MultipartFile getFile1root() {
+    private String targetdate;
+    private String targettime;
+    private String userid;
+    private String regdate;
+
+    public void setRegdate(String regdate) {
+        this.regdate = regdate;
+    }
+
+    public String getRegdate() {
+        return regdate;
+    }
+
+    public void setTargetdate(String targetdate) {
+        this.targetdate = targetdate;
+    }
+
+    public void setTargettime(String targettime) {
+        this.targettime = targettime;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public String getTargetdate() {
+        return targetdate;
+    }
+
+    public String getTargettime() {
+        return targettime;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public MultipartFile getFile1root() {
 		return file1root;
 	}
 	public void setFile1root(MultipartFile file1root) {
@@ -184,12 +219,6 @@ public class PictVO extends PictDefaultVO {
 	}
 	public void setVideourl(String videourl) {
 		this.videourl = videourl;
-	}
-	public String getRegdate() {
-		return regdate;
-	}
-	public void setRegdate(String regdate) {
-		this.regdate = regdate;
 	}
 	public String getLinkurl() {
 		return linkurl;

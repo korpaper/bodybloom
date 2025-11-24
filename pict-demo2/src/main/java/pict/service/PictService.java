@@ -21,15 +21,46 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface PictService {
-	public List<?> board_list(PictVO pictVO) throws Exception;
+	public List<?> schedule_list(PictVO pictVO) throws Exception;
 
-	public PictVO board_list_one(PictVO pictVO) throws Exception;
+	public PictVO schedule_list_one(PictVO pictVO) throws Exception;
 
-	public void board_update(PictVO pictVO) throws Exception;
+	public void schedule_update(PictVO pictVO) throws Exception;
 
-	public void board_insert(PictVO pictVO) throws Exception;
+	public void schedule_insert(PictVO pictVO) throws Exception;
 
-	public void board_delete(PictVO pictVO) throws Exception;
+	public void schedule_delete(PictVO pictVO) throws Exception;
+
+    public List<?> today_list(PictVO pictVO) throws Exception;
+
+    public PictVO today_list_one(PictVO pictVO) throws Exception;
+
+    public void today_update(PictVO pictVO) throws Exception;
+
+    public void today_insert(PictVO pictVO) throws Exception;
+
+    public void today_delete(PictVO pictVO) throws Exception;
+
+    public List<?> review_list(PictVO pictVO) throws Exception;
+
+    public PictVO review_list_one(PictVO pictVO) throws Exception;
+
+    public void review_update(PictVO pictVO) throws Exception;
+
+    public void review_insert(PictVO pictVO) throws Exception;
+
+    public void review_delete(PictVO pictVO) throws Exception;
+
+
+    public List<?> popup_list(PictVO pictVO) throws Exception;
+
+    public PictVO popup_list_one(PictVO pictVO) throws Exception;
+
+    public void popup_update(PictVO pictVO) throws Exception;
+
+    public void popup_insert(PictVO pictVO) throws Exception;
+
+    public void popup_delete(PictVO pictVO) throws Exception;
 
     void user_insert(PictVO pictVO) throws Exception;
 }

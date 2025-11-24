@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 	<c:import url="../main/header.jsp">
-		<c:param name="pageTitle" value="보도자료 리스트"/>
+		<c:param name="pageTitle" value="오늘의 운동법 리스트"/>
 	</c:import>
     <body class="sb-nav-fixed">
     <%@include file="../main/navigation.jsp" %>
@@ -20,7 +20,7 @@
 			</div>
 			<div id="layoutSidenav_content">
 				<main class="contents">
-					<h2 class="contents-title">보도자료 리스트</h2>
+					<h2 class="contents-title">오늘의 운동법 리스트</h2>
 					<div class="contents-box">
 						<div class="card">
 						    <div class="card-body">
@@ -34,14 +34,16 @@
 							        <table style="text-align : left">
 							        	<colgroup>
 							        		<col style="width:10%;">
-							        		<col style="width:50%;">
-							        		<col style="width:20%;">
-							        		<col style="width:20%;">
+							        		<col style="width:30%;">
+							        		<col style="width:30%;">
+							        		<col style="width:15%;">
+							        		<col style="width:15%;">
 							        	</colgroup>
 							            <thead>
 							                <tr class="thead">
 							                    <th>순서</th>
 							                    <th>제목</th>
+							                    <th>영상링크</th>
 							                    <th>등록일</th>
 							                    <th>삭제</th>
 							                </tr>
@@ -50,10 +52,11 @@
 								            <c:forEach var="resultList" items="${resultList}" varStatus="status">
 								                <tr>
 							                    	<td>${status.count}</td>
-							                    	<td class="opt-tl"><a href="javascript:void(0);" onclick="news_mod('${resultList.idx}');" class="link">${resultList.title}</a></td>
+							                    	<td class="opt-tl"><a href="javascript:void(0);" onclick="today_mod('${resultList.idx}');" class="link">${resultList.title}</a></td>
+							                    	<td>${resultList.videourl}</td>
 							                    	<td>${resultList.regdate}</td>
 							                    	<td>
-							                    		<button type="button" onclick="javascript:news_delete('${resultList.idx}')" class="btn-basic btn-fill btn-sm">삭제</button>
+							                    		<button type="button" onclick="javascript:today_delete('${resultList.idx}')" class="btn-basic btn-fill btn-sm">삭제</button>
 									            	</td>
 								                </tr>
 							                </c:forEach>
@@ -64,7 +67,7 @@
 			            </div>
 		            </div>
 		            <!-- <div style="float : right; margin-right: 20%">
-			            <button type="button" id="button1" onclick="news_list();">게시글 리스트</button>
+			            <button type="button" id="button1" onclick="today_list();">게시글 리스트</button>
 		            </div> -->
 				</main>
 			</div>
@@ -76,22 +79,22 @@
 		</form>
 		<script>
 
-			function news_mod(idx){
-				location.href= "/news/news_register?idx="+ idx;
+			function today_mod(idx){
+				location.href= "/today/today_register?idx="+ idx;
 			}
-			function news_list(){
-				location.href= "/news/news_list";
+			function today_list(){
+				location.href= "/today/today_list";
 			}
-			function news_delete(idx) {
+			function today_delete(idx) {
 				if (confirm("삭제 하시겠습니까?")) {
 					$('#idx').val(idx)
-					$("#register").attr("action", "/news/news_delete");
+					$("#register").attr("action", "/today/today_delete");
 					$("#register").submit();
 				}
 			}
 			
 			function search(){
-				$("#search_fm").attr("action", "/news/news_list");
+				$("#search_fm").attr("action", "/today/today_list");
 				$("#search_fm").submit();
 			}
 		</script>

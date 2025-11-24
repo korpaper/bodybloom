@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="pict.mapper.PictMapper">	
-
+<mapper namespace="pict.mapper.PictMapper">
 	
-	<select id="test_service" resultType="pictVO">
-		select * from user_info
-	</select>
-	
-	
-	<!-- 공지사항 -->
-	<select id="board_list" resultType="pictVO">
-		select idx, title, text, file1, file2, date_format(regdate, '%Y-%m-%d') as regdate
-		from board_table
+	<!-- 스케쥴관리 -->
+	<select id="schedule_list" resultType="pictVO">
+		select *
+		from schedule_table
 		<if test="search_text != null and search_text != '' ">
 			where (
 				title LIKE CONCAT('%', #{search_text}, '%')
@@ -20,38 +14,155 @@
 		</if>
 	</select>
 	
-	<select id="board_list_one" resultType="pictVO">
-		select
-		idx, title, text, file1, file2, date_format(regdate, '%Y-%m-%d') as regdate 
-		from board_table
+	<select id="schedule_list_one" resultType="pictVO">
+		select *
+		from schedule_table
 		where idx = #{idx}
 	</select>
 	
-	<insert id="board_insert" parameterType="pictVO">
-		INSERT INTO board_table
+	<insert id="schedule_insert" parameterType="pictVO">
+		INSERT INTO schedule_table
 			(
-			 title,  text, regdate, file1, file2
+                userid, targetdate, targettime, title
 			)
 		VALUES (
-			 #{title}, #{text}, now(), #{file1}, #{file2}
+			 #{userid}, #{targetdate}, #{targettime}, #{title}
 			  ) 
 	</insert>
 	
-	<update id="board_update" parameterType="pictVO">
-		update board_table
-		set title =#{title}, text = #{text}, regdate = now()
-		<if test="file1 != null and file1 != '' ">
-			, file1 = #{file1}
-		</if>
-		<if test="file2 != null and file2 != '' ">
-			, file2 = #{file2}
-		</if>
+	<update id="schedule_update" parameterType="pictVO">
+		update schedule_table
+		set userid =#{userid}, targetdate = #{targetdate}, targettime = #{targettime}, title = #{title}
 		where idx = #{idx}
 	</update>
 	
-	<delete id="board_delete" parameterType="pictVO">
+	<delete id="schedule_delete" parameterType="pictVO">
 		delete from board_table where idx = #{idx}
 	</delete>
+
+
+
+
+    <!-- 오늘의 운동법 -->
+    <select id="today_list" resultType="pictVO">
+        select *
+        from video_table
+        <if test="search_text != null and search_text != '' ">
+            where (
+            title LIKE CONCAT('%', #{search_text}, '%')
+            )
+        </if>
+    </select>
+
+    <select id="today_list_one" resultType="pictVO">
+        select *
+        from video_table
+        where idx = #{idx}
+    </select>
+
+    <insert id="today_insert" parameterType="pictVO">
+        INSERT INTO video_table
+        (
+            title, imgurl, videourl, regdate
+        )
+        VALUES (
+           #{title}, #{imgurl}, #{videourl}, now()
+        )
+    </insert>
+
+    <update id="today_update" parameterType="pictVO">
+        update video_table
+        set title =#{title}, videourl = #{videourl}
+        <if test="imgurl != null and imgurl != '' ">
+            , imgurl = #{imgurl}
+        </if>
+        where idx = #{idx}
+    </update>
+
+    <delete id="today_delete" parameterType="pictVO">
+        delete from video_table where idx = #{idx}
+    </delete>
+
+
+    <!-- 후기 관리 -->
+    <select id="review_list" resultType="pictVO">
+        select idx, name, title
+        from review_table
+        <if test="search_text != null and search_text != '' ">
+            where (
+            title LIKE CONCAT('%', #{search_text}, '%')
+            )
+        </if>
+    </select>
+
+    <select id="review_list_one" resultType="pictVO">
+        select idx, name, title
+        from review_table
+        where idx = #{idx}
+    </select>
+
+    <insert id="review_insert" parameterType="pictVO">
+        INSERT INTO review_table
+        (
+            name, title
+        )
+        VALUES (
+           #{name}, #{title}
+        )
+    </insert>
+
+    <update id="review_update" parameterType="pictVO">
+        update review_table
+        set name =#{name}, title = #{title}
+        where idx = #{idx}
+    </update>
+
+    <delete id="review_delete" parameterType="pictVO">
+        delete from review_table where idx = #{idx}
+    </delete>
+
+
+
+    <!-- 팝업 관리 -->
+    <select id="popup_list" resultType="pictVO">
+        select *
+        from popup_table
+        <if test="search_text != null and search_text != '' ">
+            where (
+            title LIKE CONCAT('%', #{search_text}, '%')
+            )
+        </if>
+    </select>
+
+    <select id="popup_list_one" resultType="pictVO">
+        select *
+        from popup_table
+        where idx = #{idx}
+    </select>
+
+    <insert id="popup_insert" parameterType="pictVO">
+        INSERT INTO popup_table
+        (
+            title, imgurl, linkurl, regdate
+        )
+        VALUES (
+                   #{title}, #{imgurl}, #{linkurl}, now()
+               )
+    </insert>
+
+    <update id="popup_update" parameterType="pictVO">
+        update popup_table
+        set title =#{title}, linkurl = #{linkurl}
+        <if test="imgurl != null and imgurl != '' ">
+            , imgurl = #{imgurl}
+        </if>
+        where idx = #{idx}
+    </update>
+
+    <delete id="popup_delete" parameterType="pictVO">
+        delete from popup_table where idx = #{idx}
+    </delete>
+
 
     <insert id="user_insert" parameterType="adminVO">
         INSERT INTO user_info

@@ -32,38 +32,110 @@ public class PictServiceImpl implements PictService {
     PictMapper pictMapper;
 
 	@Override
-	public List<?> board_list(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		return pictMapper.board_list(pictVO);
+	public List<?> schedule_list(PictVO pictVO) throws Exception {
+		return pictMapper.schedule_list(pictVO);
 	}
 
 	@Override
-	public PictVO board_list_one(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		return pictMapper.board_list_one(pictVO);
+	public PictVO schedule_list_one(PictVO pictVO) throws Exception {
+		return pictMapper.schedule_list_one(pictVO);
 	}
 
 	@Override
-	public void board_update(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		pictMapper.board_update(pictVO);
+	public void schedule_update(PictVO pictVO) throws Exception {
+		pictMapper.schedule_update(pictVO);
 	}
 
 	@Override
-	public void board_insert(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		pictMapper.board_insert(pictVO);
+	public void schedule_insert(PictVO pictVO) throws Exception {
+		pictMapper.schedule_insert(pictVO);
 	}
 
 	@Override
-	public void board_delete(PictVO pictVO) throws Exception {
-		// TODO Auto-generated method stub
-		pictMapper.board_delete(pictVO);
+	public void schedule_delete(PictVO pictVO) throws Exception {
+		pictMapper.schedule_delete(pictVO);
 	}
+
+
+    @Override
+    public List<?> today_list(PictVO pictVO) throws Exception {
+        return pictMapper.today_list(pictVO);
+    }
+
+    @Override
+    public PictVO today_list_one(PictVO pictVO) throws Exception {
+        return pictMapper.today_list_one(pictVO);
+    }
+
+    @Override
+    public void today_update(PictVO pictVO) throws Exception {
+        pictMapper.today_update(pictVO);
+    }
+
+    @Override
+    public void today_insert(PictVO pictVO) throws Exception {
+        pictMapper.today_insert(pictVO);
+    }
+
+    @Override
+    public void today_delete(PictVO pictVO) throws Exception {
+        pictMapper.today_delete(pictVO);
+    }
+
+
+    @Override
+    public List<?> review_list(PictVO pictVO) throws Exception {
+        return pictMapper.review_list(pictVO);
+    }
+
+    @Override
+    public PictVO review_list_one(PictVO pictVO) throws Exception {
+        return pictMapper.review_list_one(pictVO);
+    }
+
+    @Override
+    public void review_update(PictVO pictVO) throws Exception {
+        pictMapper.review_update(pictVO);
+    }
+
+    @Override
+    public void review_insert(PictVO pictVO) throws Exception {
+        pictMapper.review_insert(pictVO);
+    }
+
+    @Override
+    public void review_delete(PictVO pictVO) throws Exception {
+        pictMapper.review_delete(pictVO);
+    }
+
+
+    @Override
+    public List<?> popup_list(PictVO pictVO) throws Exception {
+        return pictMapper.popup_list(pictVO);
+    }
+
+    @Override
+    public PictVO popup_list_one(PictVO pictVO) throws Exception {
+        return pictMapper.popup_list_one(pictVO);
+    }
+
+    @Override
+    public void popup_update(PictVO pictVO) throws Exception {
+        pictMapper.popup_update(pictVO);
+    }
+
+    @Override
+    public void popup_insert(PictVO pictVO) throws Exception {
+        pictMapper.popup_insert(pictVO);
+    }
+
+    @Override
+    public void popup_delete(PictVO pictVO) throws Exception {
+        pictMapper.popup_delete(pictVO);
+    }
 
     @Override
     public void user_insert(PictVO pictVO) throws Exception {
-        // TODO Auto-generated method stub
         pictMapper.user_insert(pictVO);
     }
 	

@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <c:import url="../main/header.jsp">
-	<c:param name="pageTitle" value="참가영상 등록" />
+	<c:param name="pageTitle" value="후기 등록" />
 </c:import>
 <body class="sb-nav-fixed">
 	<form action="" id="register" name="register" method="post" enctype="multipart/form-data">
@@ -21,51 +21,24 @@
 			</div>
 			<div id="layoutSidenav_content">
 				<main class="contents">
-					<h2 class="contents-title">참가영상 등록</h2>
+					<h2 class="contents-title">후기 등록</h2>
 					<div class="contents-box">
 						<div class="card">
 							<div class="card-body">
 								<div class="write-box">
 									<div class="write-item">
-										<label for="title" class="title">제목</label>
+										<label for="title" class="title">작성자</label>
+										<div class="input-box">
+											<input type="text" id="name" name="name" value="${pictVO.name}" class="input opt-max-width-500">
+										</div>
+									</div>
+								</div>
+								
+								<div class="write-box">
+									<div class="write-item">
+										<label for="title" class="title">후기</label>
 										<div class="input-box">
 											<input type="text" id="title" name="title" value="${pictVO.title}" class="input opt-max-width-500">
-										</div>
-									</div>
-								</div>
-								
-								<div class="write-box">
-									<div class="write-item">
-										<label for="title" class="title">카테고리</label>
-										<div class="input-box">
-											<input type="text" id="category" name="category" value="${pictVO.category}" class="input opt-max-width-500">
-										</div>
-									</div>
-								</div>
-								
-								<div class="write-box">
-									<div class="write-item">
-										<label for="title" class="title">참가자명</label>
-										<div class="input-box">
-											<input type="text" id="team" name="team" value="${pictVO.team}" class="input opt-max-width-500">
-										</div>
-									</div>
-								</div>
-								
-								
-								<div class="write-item">
-									<label for="title" class="title">썸네일</label>
-									<div class="input-box">
-										<input style="margin-bottom:15px" type="file" id="file1root" name="file1root" value="${pictVO.imgurl}" class="input opt-max-width-600">
-								
-									</div>
-								</div>
-								
-								<div class="write-box">
-									<div class="write-item">
-										<label for="title" class="title">참가영상</label>
-										<div class="input-box">
-											<input type="text" id="videourl" name="videourl" value="${pictVO.videourl}" class="input opt-max-width-500">
 										</div>
 									</div>
 								</div>
@@ -73,7 +46,7 @@
 									
 								<div class="btn-box">
 									<c:if test="${pictVO.saveType eq 'update'}">
-										<button type="button" onclick="javascript:video_delete()" class="btn-basic btn-fill btn-sm">삭제</button>
+										<button type="button" onclick="javascript:review_delete()" class="btn-basic btn-fill btn-sm">삭제</button>
 									</c:if>
 									<c:if test="${pictVO.saveType eq 'insert'}">
 										<button type="button" onclick="button1_click();" class="btn-basic btn-primary btn-sm">등록</button>
@@ -81,7 +54,7 @@
 									<c:if test="${pictVO.saveType ne 'insert'}">
 										<button type="button" onclick="button1_click();" class="btn-basic btn-primary btn-sm">수정</button>
 									</c:if>
-						        	<button type="button" onclick="javascript:video_list();" class="btn-basic btn-common btn-sm">목록보기</button>    
+						        	<button type="button" onclick="javascript:review_list();" class="btn-basic btn-common btn-sm">목록보기</button>
 					            </div>
 							</div>
 						</div>
@@ -98,15 +71,15 @@
 	</form>
 	
 	<script>
-		function video_delete() {
+		function review_delete() {
 			if (confirm("삭제 하시겠습니까?")) {
-				$("#register").attr("action", "/video/video_delete");
+				$("#register").attr("action", "/review/review_delete");
 				$("#register").submit();
 			}
 			
 		}
-		function video_list() {
-			location.href = "/video/video_list";
+		function review_list() {
+			location.href = "/review/review_list";
 		}
 		function button1_click() {
 			var title = $('#title').val();
@@ -123,7 +96,7 @@
 			}
 
 			if (confirm(text)) {
-				$("#register").attr("action", "/video/video_save");
+				$("#register").attr("action", "/review/review_save");
 				$("#register").submit();
 			}
 		}
