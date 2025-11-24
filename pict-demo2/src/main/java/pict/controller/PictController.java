@@ -144,7 +144,7 @@ public class PictController {
 	// 강사소개 - 강사소개
 	@RequestMapping(value = "/trainer")
 	public String trainer(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
-		return "pict/front/board_view";
+		return "pict/front/trainer";
 	}
 
     // 강사소개 - 스케쥴표
@@ -156,13 +156,13 @@ public class PictController {
     // 부대시설 - 부대시설
     @RequestMapping(value = "/facilities")
     public String facilities(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
-        return "pict/front/schedule";
+        return "pict/front/facilities";
     }
 
     // 부대시설 - 오시는길
     @RequestMapping(value = "/location")
     public String location(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
-        return "pict/front/schedule";
+        return "pict/front/location";
     }
 
     // 커뮤니티 - 오늘의운동
