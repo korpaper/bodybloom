@@ -4,8 +4,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -37,14 +35,14 @@
 						    		<button type="button" class="view-tab-btn active" data-view="weekly">주간</button>
 						    	</div>
 						    	
-						    	<!-- 날짜 선택 -->
-						    	<div class="schedule-controls-admin" style="margin-bottom: 20px;">
-						    		<label for="scheduleDate">수업 일자 선택:</label>
-						    		<input type="date" id="scheduleDate" class="date-selector" />
-						    		<button type="button" class="btn-basic btn-fill btn-sm" onclick="searchSchedule()">조회</button>
-						    		<button type="button" class="btn-basic btn-sm" onclick="setToday()">오늘</button>
-						    		<span id="selectedWeek" style="margin-left: 20px; font-weight: bold;"></span>
-						    	</div>
+								<!-- 날짜 선택 -->
+								<div class="schedule-controls-admin" style="margin-bottom: 20px;">
+									<label for="scheduleDate">수업 일자 선택:</label>
+									<input type="date" id="scheduleDate" style="cursor: pointer; padding: 5px; border: 1px solid #ddd; border-radius: 4px;" />
+									<button type="button" class="btn-basic btn-fill btn-sm" onclick="searchSchedule()">조회</button>
+									<button type="button" class="btn-basic btn-sm" onclick="setToday()">오늘</button>
+									<span id="selectedWeek" style="margin-left: 20px; font-weight: bold;"></span>
+								</div>
 						    	
 						    	<!-- 주간 스케줄 테이블 -->
 						    	<div class="schedule-table-wrapper weekly-view">
@@ -390,39 +388,39 @@
 				}
 			}
 
-			// 주간 화면 업데이트
-			function updateWeekDisplay(date) {
-				const options = { year: 'numeric', month: 'long', day: 'numeric' };
-				const dateStr = date.toLocaleDateString('ko-KR', options);
+		// 주간 화면 업데이트
+		function updateWeekDisplay(date) {
+			const options = { year: 'numeric', month: 'long', day: 'numeric' };
+			const dateStr = date.toLocaleDateString('ko-KR', options);
 
-				// 주의 시작일과 종료일 계산
-				const dayOfWeek = date.getDay();
-				const monday = new Date(date);
-				monday.setDate(date.getDate() - (dayOfWeek === 0 ? 6 : dayOfWeek - 1));
-				const sunday = new Date(monday);
-				sunday.setDate(monday.getDate() + 6);
+			// 선택한 날짜를 시작일로, +6일을 종료일로 설정
+			const startDate = new Date(date);
+			const endDate = new Date(date);
+			endDate.setDate(startDate.getDate() + 6);
 
-				const weekStr = monday.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' }) +
-					' - ' +
-					sunday.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' });
+			const weekStr = startDate.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' }) +
+				' - ' +
+				endDate.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' });
 
-				$('#selectedWeek').text(weekStr + ' 주간 스케줄');
+			$('#selectedWeek').text(weekStr + ' 주간 스케줄');
 
-				// 테이블 헤더에 날짜 업데이트
-				const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-				const dayNames = ['월', '화', '수', '목', '금', '토', '일'];
+			// 테이블 헤더에 날짜 업데이트
+			const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+			const dayNames = ['월', '화', '수', '목', '금', '토', '일'];
 
-				for (let i = 0; i < 7; i++) {
-					const currentDate = new Date(monday);
-					currentDate.setDate(monday.getDate() + i);
+			for (let i = 0; i < 7; i++) {
+				const currentDate = new Date(startDate);
+				currentDate.setDate(startDate.getDate() + i);
 
-					const month = currentDate.getMonth() + 1;
-					const day = currentDate.getDate();
-					const dateStr = month + '/' + day + '(' + dayNames[i] + ')';
+				const month = currentDate.getMonth() + 1;
+				const day = currentDate.getDate();
+				const weekday = currentDate.getDay();
+				const dayName = ['일', '월', '화', '수', '목', '금', '토'][weekday];
+				const dateStr = month + '/' + day + '(' + dayName + ')';
 
-					$('#day-' + days[i]).text(dateStr);
-				}
+				$('#day-' + days[i]).text(dateStr);
 			}
+		}
 
 			// 선택한 날짜로 스케줄 조회
 			function searchSchedule() {

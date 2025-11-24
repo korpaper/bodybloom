@@ -4,8 +4,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <script type="text/javascript" src="/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -35,14 +33,14 @@
 									</div>
 								</div>
 
-								<div class="write-box">
-									<div class="write-item">
-										<label for="title" class="title">피티 날짜</label>
-										<div class="input-box">
-                                            <input type="date" id="targetdate" name="targetdate" class="date-selector" />
-										</div>
+							<div class="write-box">
+								<div class="write-item">
+									<label for="title" class="title">수업 일자</label>
+									<div class="input-box">
+                                            <input type="date" id="targetdate" name="targetdate" style="cursor: pointer; padding: 5px; border: 1px solid #ddd; border-radius: 4px; width: 200px;" value="${pictVO.targetdate}" />
 									</div>
 								</div>
+							</div>
 
                                 <div class="write-box">
 									<div class="write-item">

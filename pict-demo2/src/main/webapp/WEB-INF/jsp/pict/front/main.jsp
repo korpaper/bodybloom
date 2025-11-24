@@ -12,6 +12,43 @@
     <div class="custom-cursor"></div>
     <div class="cursor-follower"></div>
 
+    <!-- 팝업 모달 -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-container">
+            <button class="popup-close" id="popupClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            
+            <div class="swiper popup-swiper">
+                <div class="swiper-wrapper">
+                    <!-- 팝업 슬라이드 1 -->
+                    <div class="swiper-slide">
+                        <a href="/register" class="popup-link">
+                            <img src="/front_img/thumb1.png" alt="이벤트 1">
+                        </a>
+                    </div>
+
+                </div>
+                
+                <!-- 페이지네이션 -->
+                <div class="swiper-pagination popup-pagination"></div>
+
+                <!-- 네비게이션 -->
+                <div class="swiper-button-prev popup-prev"></div>
+                <div class="swiper-button-next popup-next"></div>
+            </div>
+            
+            <div class="popup-footer">
+                <label class="popup-checkbox">
+                    <input type="checkbox" id="hideToday">
+                    <span>오늘 하루 보지 않기</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero-section modern-hero">
         <div class="hero-container">
@@ -172,6 +209,88 @@
 
 <script>
 $(document).ready(function() {
+    // 팝업 스와이퍼 초기화
+    const popupSwiper = new Swiper('.popup-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.popup-pagination',
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: '.popup-next',
+            prevEl: '.popup-prev',
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        on: {
+            init: function() {
+                // 슬라이드가 1개 이하면 네비게이션과 페이지네이션 숨김
+                if (this.slides.length <= 1) {
+                    $('.popup-prev, .popup-next, .popup-pagination').hide();
+                    this.autoplay.stop();
+                    this.allowTouchMove = false;
+                }
+            }
+        }
+    });
+
+    // 팝업 표시 제어
+    function showPopup() {
+        const hideToday = localStorage.getItem('hidePopupToday');
+        const today = new Date().toDateString();
+        
+        if (hideToday !== today) {
+            setTimeout(function() {
+                $('#popupOverlay').addClass('active');
+                $('body').css('overflow', 'hidden');
+            }, 500);
+        }
+    }
+
+    // 팝업 닫기
+    $('#popupClose').on('click', function() {
+        $('#popupOverlay').removeClass('active');
+        $('body').css('overflow', '');
+    });
+
+    // 오버레이 클릭 시 닫기
+    $('#popupOverlay').on('click', function(e) {
+        if ($(e.target).is('#popupOverlay')) {
+            $('#popupOverlay').removeClass('active');
+            $('body').css('overflow', '');
+        }
+    });
+
+    // 오늘 하루 보지 않기
+    $('#hideToday').on('change', function() {
+        if ($(this).is(':checked')) {
+            const today = new Date().toDateString();
+            localStorage.setItem('hidePopupToday', today);
+        }
+        $('#popupOverlay').removeClass('active');
+        $('body').css('overflow', '');
+    });
+
+    // ESC 키로 팝업 닫기
+    $(document).on('keydown', function(e) {
+        if (e.key === 'Escape' && $('#popupOverlay').hasClass('active')) {
+            $('#popupOverlay').removeClass('active');
+            $('body').css('overflow', '');
+        }
+    });
+
+    // 팝업 표시
+    showPopup();
+
     // AOS 초기화 - 더 부드러운 애니메이션
     AOS.init({
         duration: 1200,

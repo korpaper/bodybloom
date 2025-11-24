@@ -383,30 +383,29 @@
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const dateStr = date.toLocaleDateString('ko-KR', options);
 
-        // 주의 시작일과 종료일 계산
-        const dayOfWeek = date.getDay();
-        const monday = new Date(date);
-        monday.setDate(date.getDate() - (dayOfWeek === 0 ? 6 : dayOfWeek - 1));
-        const sunday = new Date(monday);
-        sunday.setDate(monday.getDate() + 6);
+        // 선택한 날짜를 시작일로, +6일을 종료일로 설정
+        const startDate = new Date(date);
+        const endDate = new Date(date);
+        endDate.setDate(startDate.getDate() + 6);
 
-        const weekStr = monday.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' }) +
+        const weekStr = startDate.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' }) +
             ' - ' +
-            sunday.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' });
+            endDate.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' });
 
         $('#selectedWeek').text(weekStr + ' 주간 스케줄');
 
         // 테이블 헤더에 날짜 업데이트
         const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-        const dayNames = ['월', '화', '수', '목', '금', '토', '일'];
 
         for (let i = 0; i < 7; i++) {
-            const currentDate = new Date(monday);
-            currentDate.setDate(monday.getDate() + i);
+            const currentDate = new Date(startDate);
+            currentDate.setDate(startDate.getDate() + i);
 
             const month = currentDate.getMonth() + 1;
             const day = currentDate.getDate();
-            const dateStr = month + '/' + day + '(' + dayNames[i] + ')';
+            const weekday = currentDate.getDay();
+            const dayName = ['일', '월', '화', '수', '목', '금', '토'][weekday];
+            const dateStr = month + '/' + day + '(' + dayName + ')';
 
             $('#day-' + days[i]).text(dateStr);
         }

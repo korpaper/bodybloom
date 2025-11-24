@@ -1622,3 +1622,274 @@ main{
         display: none;
     }
 }
+
+/* ==========================================
+   팝업 모달 스타일
+   ========================================== */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    transform: scale(0.8) translateY(50px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup-overlay.active .popup-container {
+    transform: scale(1) translateY(0);
+}
+
+/* 닫기 버튼 */
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.popup-close:hover {
+    background: #fff;
+    transform: rotate(90deg);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.popup-close svg {
+    color: #2d3748;
+}
+
+/* 스와이퍼 컨테이너 */
+.popup-swiper {
+    width: 100%;
+    height: auto;
+}
+
+.popup-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.popup-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.popup-link:hover img {
+    transform: scale(1.05);
+}
+
+/* 페이지네이션 */
+.popup-pagination {
+    position: relative;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.popup-pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #cbd5e0;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.popup-pagination .swiper-pagination-bullet-active {
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #63C9B6 0%, #A67C52 100%);
+}
+
+/* 네비게이션 버튼 */
+.popup-prev,
+.popup-next {
+    position: absolute;
+    top: 59%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.popup-prev {
+    left: 20px;
+}
+
+.popup-next {
+    right: 20px;
+}
+
+.popup-prev:hover,
+.popup-next:hover {
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.popup-prev::after,
+.popup-next::after {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+/* 푸터 */
+.popup-footer {
+    padding: 20px 40px;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.popup-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.popup-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #63C9B6;
+}
+
+.popup-checkbox span {
+    font-size: 14px;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .popup-container {
+        width: 95%;
+        max-width: 500px;
+        border-radius: 20px;
+    }
+
+    .popup-close {
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .popup-footer {
+        padding: 16px 25px;
+    }
+
+    .popup-checkbox span {
+        font-size: 13px;
+    }
+
+    .popup-prev,
+    .popup-next {
+        width: 36px;
+        height: 36px;
+    }
+
+    .popup-prev {
+        left: 10px;
+    }
+
+    .popup-next {
+        right: 10px;
+    }
+
+    .popup-prev::after,
+    .popup-next::after {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-container {
+        width: 95%;
+        max-width: 400px;
+        border-radius: 15px;
+    }
+
+    .popup-close {
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .popup-footer {
+        padding: 14px 20px;
+    }
+
+    .popup-checkbox input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+
+    .popup-checkbox span {
+        font-size: 12px;
+    }
+
+    .popup-prev,
+    .popup-next {
+        width: 32px;
+        height: 32px;
+    }
+
+    .popup-prev {
+        left: 8px;
+    }
+
+    .popup-next {
+        right: 8px;
+    }
+}
