@@ -1784,10 +1784,13 @@
 
 /* Parking Detail Section */
 .parking-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     margin-top: 60px;
 }
 
-.parking-detail h2
+.parking-detail h2{
     font-size: 32px;
     font-weight: 700;
     color: var(--taupe-brown);
