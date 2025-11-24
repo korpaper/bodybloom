@@ -116,7 +116,7 @@
                         </div>
                     </li>
                 </ul>
-                <a href="/trainer" class="btn-primary">시설 보기</a>
+                <a href="/facilities" class="btn-primary">시설 보기</a>
             </div>
         </div>
     </section>
