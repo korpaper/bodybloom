@@ -153,6 +153,18 @@ public class PictController {
         return "pict/front/schedule";
     }
 
+    // 강사소개 - 스케쥴표
+    @RequestMapping(value = "/schedule2")
+    public String schedule2(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        return "pict/front/schedule2";
+    }
+
+    // 강사소개 - 스케쥴표
+    @RequestMapping(value = "/schedule3")
+    public String schedule3(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        return "pict/front/schedule3";
+    }
+
     // 부대시설 - 부대시설
     @RequestMapping(value = "/facilities")
     public String facilities(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {

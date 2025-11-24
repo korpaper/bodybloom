@@ -1,37 +1,42 @@
 @import url('https://webfontworld.github.io/sunn/SUIT.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap');
 
 *{
     box-sizing: border-box;
 }
 
 body{
-    font-family: 'SUIT';
-    background-color: #000;
-    color: #fff;
+    font-family: 'Open Sans', 'Noto Sans KR', 'SUIT', sans-serif;
+    background-color: #FAF8F5;
+    color: #333;
     overflow-x: hidden;
 }
 :root {
     --fn-suit: 'SUIT';
-    --purple-50: #EFE6F6;
-    --purple-100: #CDB0E4;
-    --purple-200: #B58AD7;
-    --purple-300: #9455C5;
-    --purple-400: #7F34BA;
-    --purple-500: #5F01A9;
-    --purple-600: #56019A;
-    --purple-700: #430178;
-    --purple-800: #34015D;
-    --purple-900: #280047;
-    --green-50: #E6FFF0;
-    --green-100: #B0FFD0;
-    --green-200: #8AFFB9;
-    --green-300: #54FF99;
-    --green-400: #33FF85;
-    --green-500: #00FF67;
-    --green-600: #00E85E;
-    --green-700: #00B549;
-    --green-800: #008C39;
-    --green-900: #006B2B;
+    --fn-playfair: 'Playfair Display', serif;
+    --fn-noto: 'Noto Sans KR', sans-serif;
+    --fn-opensans: 'Open Sans', sans-serif;
+
+    /* Wellness Theme Colors */
+    --mint-primary: #63C9B6;
+    --mint-light: #A8E6DB;
+    --mint-dark: #4AA89A;
+
+    --beige-brown: #D2A570;
+    --mocha-brown: #A67C52;
+    --taupe-brown: #8D6E63;
+    --dark-brown: #6D5D52;
+
+    --cream-bg: #FAF8F5;
+    --light-cream: #FFF9F0;
+    --text-dark: #333;
+    --text-light: #666;
+
+    /* Legacy color support */
+    --purple-500: var(--taupe-brown);
+    --purple-700: var(--dark-brown);
+    --green-500: var(--mint-primary);
+    --green-700: var(--mint-dark);
 }
 
 .blind {

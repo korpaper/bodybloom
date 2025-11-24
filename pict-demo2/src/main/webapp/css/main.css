@@ -673,3 +673,377 @@ main{
     width: 100%;
     height: 100%;
 }
+
+/* Wellness Theme Styles */
+.wellness-main {
+    padding-top: 100px;
+    background-color: var(--cream-bg);
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--light-cream) 0%, var(--cream-bg) 100%);
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-content {
+    padding-right: 40px;
+}
+
+.hero-title {
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 140%;
+    color: var(--taupe-brown);
+    margin-bottom: 24px;
+}
+
+.hero-title span {
+    color: var(--text-light);
+    font-style: italic;
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.hero-image .image-circle {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
+    background-color: var(--beige-brown);
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Button Styles */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 16px 40px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--mint-primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--mint-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--beige-brown);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: var(--mocha-brown);
+    transform: translateY(-2px);
+}
+
+/* Coach Section */
+.coach-section {
+    padding: 100px 0;
+    background-color: var(--taupe-brown);
+}
+
+.coach-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.coach-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.coach-content {
+    color: #fff;
+}
+
+.section-label {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--mint-primary);
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.coach-name {
+    
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #fff;
+}
+
+.coach-description {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    color: rgba(255,255,255,0.9);
+}
+
+/* Get Started Section */
+.get-started-section {
+    padding: 100px 0;
+    background-color: var(--light-cream);
+}
+
+.get-started-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    
+    font-size: 48px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--taupe-brown);
+    margin-bottom: 60px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.service-card {
+    background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
+    border-radius: 24px;
+    padding: 40px 32px;
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(223, 207, 190, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--mint-primary), var(--beige-brown));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    border-color: var(--mint-primary);
+}
+
+.service-image {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--beige-brown);
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--taupe-brown);
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.service-card p {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 24px;
+    min-height: 50px;
+}
+
+.service-card span {
+    display: block;
+    font-size: 14px;
+    color: var(--beige-brown);
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 3px solid var(--mint-primary);
+}
+
+.service-link {
+    color: var(--mint-primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.service-link:hover {
+    color: var(--mint-dark);
+    gap: 12px;
+}
+
+/* Specialize Section */
+.specialize-section {
+    padding: 100px 0;
+    background-color: var(--cream-bg);
+}
+
+.specialize-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.specialize-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.specialize-title {
+    
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--taupe-brown);
+    margin-bottom: 16px;
+}
+
+.specialize-title > span {
+    font-weight: 800;
+    font-style: italic;
+}
+
+.specialize-description {
+    font-size: 18px;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.specialize-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.specialize-list li {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.specialize-list .icon {
+    font-size: 36px;
+    flex-shrink: 0;
+}
+
+.specialize-list h4 {
+    
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--taupe-brown);
+    margin-bottom: 8px;
+}
+
+.specialize-list p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media all and (max-width: 1024px) {
+    .hero-container,
+    .coach-container,
+    .specialize-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .coach-name,
+    .section-title {
+        font-size: 36px;
+    }
+
+    .specialize-title {
+        font-size: 32px;
+    }
+
+    .hero-image .image-circle {
+        width: 100%;
+        height: 400px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .wellness-main {
+        padding-top: 60px;
+    }
+
+    .hero-section,
+    .coach-section,
+    .get-started-section,
+    .specialize-section {
+        padding: 60px 0;
+    }
+}

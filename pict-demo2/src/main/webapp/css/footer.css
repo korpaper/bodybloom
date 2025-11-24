@@ -2,7 +2,10 @@ footer{
     width: 100%;
     height: 237px;
     padding: 0 100px;
-    background-color: #000;
+    background-color: var(--taupe-brown);
+}
+footer *{
+    color: #fff;
 }
 .footerInner{
     display: flex;
@@ -14,7 +17,7 @@ footer{
     margin: 0 auto;
 }
 .fInfo > p{
-    color: var(--green-500);
+    color: var(--mint-primary);
     font-size: 16px;
     font-weight: 700;
     line-height: 100%; /* 16px */
@@ -43,6 +46,13 @@ footer{
     display: flex;
     column-gap: 34px;
     padding: 24px 0;
+}
+.sns li a{
+    display: block;
+    width: 48px;
+}
+.sns li a img {
+    width: 100%;
 }
 .tel{
     display: flex;
@@ -73,7 +83,7 @@ footer{
     footer{
         height: fit-content;
         padding: 24px 0;
-        background-color: #000;
+        background-color: var(--taupe-brown);
     }
     .footerInner{
         flex-direction: column;

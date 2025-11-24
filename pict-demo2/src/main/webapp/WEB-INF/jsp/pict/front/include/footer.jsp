@@ -7,47 +7,35 @@
 <footer>
     <div class="footerInner">
         <div class="fLogo">
-            <a href="/"><img src="/front_img/logo.png" alt=""></a>
-            <div class="logos"><img src="/front_img/logos.png" alt=""></div>
+            <a href="/"><img src="/front_img/logo.png" alt="Body Bloom 로고"></a>
         </div>
         <div class="fInfo">
-            <p>2024 한강 라이징 스타</p>
+            <p>Body Bloom - World Of Best GYM</p>
             <ul class="sns">
                 <li>
-                    <a href="https://www.facebook.com/hangang.rising.star" target="_blank" title="새창이동">
-                        <img src="/front_img/facebook.png" alt="">
+                    <a href="#" target="_blank" title="새창이동">
+                        <img src="/front_img/insta.png" alt="Instagram">
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/hangang_rising_star/" target="_blank" title="새창이동">
-                        <img src="/front_img/insta.png" alt="">
+                    <a href="#" target="_blank" title="새창이동">
+                        <img src="/front_img/youtube.png" alt="Youtube">
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.youtube.com/@hangang-rising-star" target="_blank" title="새창이동">
-                        <img src="/front_img/youtube.png" alt="">
+                    <a href="#" target="_blank" title="새창이동">
+                        <img src="/front_img/kakao.png" alt="Kakao">
                     </a>
                 </li>
                 <li>
-                    <a href="https://tv.naver.com/hangangrisingstar" target="_blank" title="새창이동">
-                        <img src="/front_img/naver-tv.png" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="http://pf.kakao.com/_LxaGNG" target="_blank" title="새창이동">
-                        <img src="/front_img/kakao.png" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.tiktok.com/@hangang_rising_star" target="_blank" title="새창이동">
-                        <img src="/front_img/tiktok.png" alt="">
+                    <a href="https://blog.naver.com" target="_blank" title="네이버 블로그 새창이동">
+                        <img src="/front_img/blog.png" alt="Naver Blog">
                     </a>
                 </li>
             </ul>
             <div class="tel">
                 <span>문의</span>
-                <p>1661-4419</p>
-                <!-- <a href="http://pf.kakao.com/_HDvWG" target="_blank" title="새창이동">카카오톡 고객센터</a> -->
+                <p>033-123-1234</p>
             </div>
         </div>
     </div>
