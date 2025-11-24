@@ -11,7 +11,7 @@
     <section class="page-header">
         <div class="page-header-container">
             <h1 class="page-title" data-aos="fade-up">오늘의 운동법</h1>
-            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">전문가의 요가 및 명상 영상을 확인하세요</p>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Body Bloom 에서 제공하는 운동 영상입니다</p>
         </div>
     </section>
 
