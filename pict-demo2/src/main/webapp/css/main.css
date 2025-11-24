@@ -1163,6 +1163,9 @@ main{
     color: var(--mint-primary);
     position: relative;
     display: inline-block;
+}
+
+.highlight-text.high {
     font-style: italic;
 }
 

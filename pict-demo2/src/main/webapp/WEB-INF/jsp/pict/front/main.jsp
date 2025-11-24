@@ -131,7 +131,7 @@
                 <span class="section-label">WHY US</span>
                 <h2 class="modern-title">
                     WHY<br>
-                    <span class="highlight-text">BODYBLOOM</span>
+                    <span class="highlight-text high">BODYBLOOM</span>
                 </h2>
                 <p class="modern-description italic-text">
                     운동으로 세상을 만드는 사람들
