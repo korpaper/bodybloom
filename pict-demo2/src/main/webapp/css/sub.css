@@ -865,7 +865,7 @@
 
 /* Page Header */
 .page-header {
-    padding: 100px 0 60px;
+    padding: 200px 0 60px;
     background: linear-gradient(135deg, var(--beige-brown) 0%, var(--mocha-brown) 100%);
     text-align: center;
 }
