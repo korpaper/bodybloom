@@ -674,20 +674,84 @@ main{
     height: 100%;
 }
 
+/* ===================================
+   트렌디 모던 디자인 스타일
+   =================================== */
+
+/* 커스텀 커서 */
+.custom-cursor {
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--beige-brown);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 1;
+}
+
+.custom-cursor.cursor-hover {
+    transform: scale(1.5);
+    border-color: var(--mint-primary);
+}
+
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(210, 165, 112, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.cursor-follower.follower-hover {
+    transform: scale(1.5);
+    border-color: rgba(99, 201, 182, 0.5);
+    background: rgba(99, 201, 182, 0.1);
+}
+
+/* 섹션 번호 */
+.section-number {
+    position: absolute;
+    left: 40px;
+    top: 120px;
+    font-size: 140px;
+    font-weight: 800;
+    color: rgba(210, 165, 112, 0.15);
+    font-family: var(--fn-opensans);
+    line-height: 1;
+    z-index: 0;
+    user-select: none;
+}
+
+/* 어두운 배경의 섹션 번호는 더 밝게 */
+.coach-section .section-number,
+.specialize-section .section-number {
+    color: rgba(255, 255, 255, 0.1);
+}
+
+/* 모던 메인 컨테이너 */
+.modern-main {
+    position: relative;
+    overflow-x: hidden;
+}
+
 /* Wellness Theme Styles */
 .wellness-main {
-    padding-top: 100px;
     background-color: var(--cream-bg);
 }
 
 /* Hero Section */
 .hero-section {
-    padding: 80px 0;
     background: linear-gradient(135deg, var(--light-cream) 0%, var(--cream-bg) 100%);
 }
 
 .hero-container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 20px;
     display: grid;
@@ -935,7 +999,28 @@ main{
 /* Specialize Section */
 .specialize-section {
     padding: 100px 0;
-    background-color: var(--cream-bg);
+    background-color: var(--taupe-brown);
+}
+
+/* Specialize Section - 텍스트 색상 오버라이드 */
+.specialize-section.modern-section .modern-content {
+    color: #fff;
+}
+
+.specialize-section.modern-section .modern-title {
+    color: #fff;
+}
+
+.specialize-section.modern-section .modern-description {
+    color: rgba(255,255,255,0.9);
+}
+
+.specialize-section.modern-section .modern-list h4 {
+    color: #fff;
+}
+
+.specialize-section.modern-section .modern-list p {
+    color: rgba(255,255,255,0.8);
 }
 
 .specialize-container {
@@ -1049,5 +1134,489 @@ main{
     .get-started-section,
     .specialize-section {
         padding: 60px 0;
+    }
+}
+
+/* ===================================
+   모던 디자인 추가 스타일
+   =================================== */
+
+/* 모던 히어로 섹션 */
+.modern-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #FFF8F0 0%, var(--cream-bg) 50%, #FFF8F0 100%);
+}
+
+.modern-hero-title {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--taupe-brown);
+    margin-bottom: 32px;
+    letter-spacing: -2px;
+}
+
+.highlight-text {
+    color: var(--mint-primary);
+    position: relative;
+    display: inline-block;
+    font-style: italic;
+}
+
+.modern-hero-subtitle {
+    font-size: 20px;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.modern-hero-subtitle span {
+    font-weight: 800;
+    font-style: italic;
+}
+.hero-meta {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--beige-brown);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* 스크롤 인디케이터 */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.scroll-indicator span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--beige-brown);
+    font-weight: 600;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--mint-primary), transparent);
+    position: relative;
+}
+
+.scroll-line.scroll-animate {
+    animation: scrollMove 2s ease-in-out infinite;
+}
+
+@keyframes scrollMove {
+    0%, 100% {
+        height: 60px;
+        opacity: 1;
+    }
+    50% {
+        height: 30px;
+        opacity: 0.5;
+    }
+}
+
+/* 모던 이미지 */
+.hero-image-modern,
+.modern-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.hero-image-modern img,
+.modern-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-float {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.image-overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.2) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.modern-image:hover .image-overlay-gradient {
+    opacity: 1;
+}
+
+/* 모던 섹션 */
+.modern-section {
+    position: relative;
+    padding: 140px 0;
+}
+
+.modern-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.modern-content {
+    color: #fff;
+}
+
+.modern-title {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 24px;
+    letter-spacing: -2px;
+}
+
+.modern-description {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: rgba(255,255,255,0.9);
+}
+
+.italic-text {
+    font-style: italic;
+    color: rgba(255,255,255,0.8);
+}
+
+/* 모던 버튼 */
+.modern-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 36px;
+    background: var(--mint-primary);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.modern-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.modern-btn:hover::before {
+    left: 100%;
+}
+
+.modern-btn:hover {
+    transform: translateX(8px);
+    background: var(--mint-dark);
+    box-shadow: 0 8px 24px rgba(99, 201, 182, 0.4);
+}
+
+.modern-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.modern-btn:hover svg {
+    transform: translateX(4px);
+}
+
+/* 모던 카드 그리드 */
+.modern-grid-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.modern-section-title {
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 0.9;
+    color: var(--taupe-brown);
+    margin-bottom: 80px;
+    letter-spacing: -3px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-line {
+    display: block;
+}
+
+.modern-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.modern-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(210, 165, 112, 0.2);
+    cursor: pointer;
+}
+
+.modern-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--mint-primary), var(--beige-brown));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modern-card:hover::before {
+    opacity: 1;
+}
+
+.card-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 72px;
+    font-weight: 800;
+    color: rgba(210, 165, 112, 0.08);
+    font-family: var(--fn-opensans);
+    line-height: 1;
+}
+
+.modern-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--taupe-brown);
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.modern-card p {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 32px;
+    min-height: 54px;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-meta .author {
+    font-size: 14px;
+    color: var(--beige-brown);
+    font-weight: 600;
+    padding-left: 12px;
+    border-left: 3px solid var(--mint-primary);
+}
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--mint-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.card-link:hover {
+    gap: 12px;
+    color: var(--mint-dark);
+}
+
+.card-link svg {
+    transition: transform 0.3s ease;
+}
+
+.card-link:hover svg {
+    transform: translateX(4px);
+}
+
+/* 모던 리스트 */
+.modern-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 48px;
+}
+
+.modern-list li {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    align-items: flex-start;
+}
+
+.list-number {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--mint-primary);
+    font-family: var(--fn-opensans);
+    min-width: 40px;
+}
+
+.modern-list h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.modern-list p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+
+/* 모바일 반응형 */
+@media all and (max-width: 1024px) {
+    .section-number {
+        font-size: 80px;
+        left: 20px;
+        top: 80px;
+    }
+
+    .modern-hero {
+        padding: 120px 0 60px;
+        min-height: auto;
+    }
+
+    .modern-hero-title {
+        font-size: 42px;
+        letter-spacing: -1px;
+    }
+
+    .modern-hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-meta {
+        font-size: 10px;
+        gap: 12px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .modern-section {
+        padding: 80px 0;
+    }
+
+    .modern-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .modern-title {
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+
+    .modern-description {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+
+    .modern-btn {
+        padding: 14px 28px;
+        font-size: 14px;
+    }
+
+    .modern-section-title {
+        font-size: 40px;
+        margin-bottom: 40px;
+        letter-spacing: -1.5px;
+    }
+
+    .modern-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .modern-card {
+        padding: 32px;
+    }
+
+    .card-number {
+        font-size: 48px;
+        top: 16px;
+        right: 16px;
+    }
+
+    .modern-card h3 {
+        font-size: 20px;
+    }
+
+    .modern-card p {
+        font-size: 14px;
+        min-height: auto;
+    }
+
+    .modern-list li {
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .list-number {
+        min-width: 32px;
+        font-size: 12px;
+    }
+
+    .modern-list h4 {
+        font-size: 18px;
+    }
+
+    .modern-list p {
+        font-size: 14px;
+    }
+
+    /* 모바일에서 커서 효과 숨김 */
+    .custom-cursor,
+    .cursor-follower {
+        display: none;
     }
 }
