@@ -982,3 +982,234 @@ body {
 		transform: none;
 	}
 }
+
+/* ==========================================
+   스케줄 페이지 스타일
+   ========================================== */
+
+/* 트레이너 탭 (관리자) */
+.trainer-tabs-admin {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid #e9ecef;
+	padding-bottom: 10px;
+}
+
+.trainer-tab-btn {
+	padding: 12px 24px;
+	background: #f8f9fa;
+	border: 2px solid #e9ecef;
+	border-radius: 10px;
+	color: #6a707e;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.trainer-tab-btn:hover {
+	background: rgba(99, 201, 182, 0.1);
+	border-color: #63C9B6;
+	color: #63C9B6;
+}
+
+.trainer-tab-btn.active {
+	background: linear-gradient(135deg, #63C9B6 0%, #A67C52 100%);
+	border-color: transparent;
+	color: #fff;
+	box-shadow: 0 4px 12px rgba(99, 201, 182, 0.3);
+}
+
+/* 일간/주간 탭 (관리자) */
+.schedule-tabs-admin {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.view-tab-btn {
+	padding: 10px 20px;
+	background: #fff;
+	border: 2px solid #e9ecef;
+	border-radius: 8px;
+	color: #6a707e;
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.view-tab-btn:hover {
+	background: rgba(99, 201, 182, 0.05);
+	border-color: #63C9B6;
+	color: #63C9B6;
+}
+
+.view-tab-btn.active {
+	background: #63C9B6;
+	border-color: #63C9B6;
+	color: #fff;
+}
+
+/* 날짜 선택 영역 (관리자) */
+.schedule-controls-admin {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 25px;
+	padding: 20px;
+	background: #f8f9fa;
+	border-radius: 10px;
+}
+
+.schedule-controls-admin label {
+	font-size: 14px;
+	font-weight: 600;
+	color: #4a5568;
+	margin: 0;
+}
+
+.schedule-controls-admin .date-selector {
+	padding: 8px 12px;
+	border: 2px solid #e9ecef;
+	border-radius: 8px;
+	font-size: 14px;
+	transition: all 0.3s ease;
+}
+
+.schedule-controls-admin .date-selector:focus {
+	outline: none;
+	border-color: #63C9B6;
+	box-shadow: 0 0 0 3px rgba(99, 201, 182, 0.1);
+}
+
+.schedule-controls-admin #selectedWeek {
+	color: #63C9B6;
+	font-weight: 700;
+}
+
+/* 스케줄 테이블 */
+.schedule-table-wrapper {
+	overflow-x: auto;
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.schedule-table {
+	width: 100%;
+	border-collapse: collapse;
+	background: #fff;
+	min-width: 800px;
+}
+
+.schedule-table thead {
+	background: linear-gradient(135deg, rgba(99, 201, 182, 0.08) 0%, rgba(210, 165, 112, 0.08) 100%);
+}
+
+.schedule-table thead th {
+	padding: 16px 12px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #4a5568;
+	border: 1px solid #e9ecef;
+	text-align: center;
+}
+
+.schedule-table tbody td {
+	padding: 16px 12px;
+	border: 1px solid #e9ecef;
+	vertical-align: top;
+	min-height: 60px;
+	transition: all 0.2s ease;
+}
+
+.schedule-table tbody td.time {
+	background: #f8f9fa;
+	font-weight: 600;
+	color: #4a5568;
+	text-align: center;
+	width: 80px;
+}
+
+.schedule-table tbody td.editable-cell {
+	background: #fff;
+	position: relative;
+	min-height: 60px;
+}
+
+/* 일간 스케줄 테이블 */
+.schedule-table.daily-table tbody td.editable-cell {
+	width: 100%;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+	.trainer-tabs-admin {
+		flex-direction: column;
+		gap: 8px;
+	}
+	
+	.trainer-tab-btn {
+		width: 100%;
+		text-align: center;
+	}
+	
+	.schedule-tabs-admin {
+		justify-content: center;
+	}
+	
+	.schedule-controls-admin {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 10px;
+	}
+	
+	.schedule-controls-admin label {
+		margin-bottom: 5px;
+	}
+	
+	.schedule-table {
+		min-width: 600px;
+	}
+	
+	.schedule-table thead th,
+	.schedule-table tbody td {
+		padding: 12px 8px;
+		font-size: 12px;
+	}
+	
+	.schedule-table tbody td.time {
+		width: 60px;
+	}
+}
+
+@media (max-width: 480px) {
+	.trainer-tab-btn {
+		padding: 10px 16px;
+		font-size: 13px;
+	}
+	
+	.view-tab-btn {
+		padding: 8px 16px;
+		font-size: 13px;
+	}
+	
+	.schedule-controls-admin {
+		padding: 15px;
+	}
+	
+	.schedule-table {
+		min-width: 500px;
+	}
+	
+	.schedule-table thead th,
+	.schedule-table tbody td {
+		padding: 10px 6px;
+		font-size: 11px;
+	}
+	
+	.schedule-table tbody td.time {
+		width: 50px;
+	}
+}

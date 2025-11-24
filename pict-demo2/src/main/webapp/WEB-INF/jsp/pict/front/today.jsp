@@ -19,15 +19,14 @@
         <div class="videos-container">
             <div class="video-grid">
                 <!-- 비디오 1 -->
-                <div class="video-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="video-iframe-container">
-                        <iframe
-                            src="https://www.youtube.com/embed/v7AYKMP6rOE"
-                            title="아침 활력 운동"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                <div class="video-card" data-aos="fade-up" data-aos-delay="100" onclick="openVideoModal('https://www.youtube.com/embed/v7AYKMP6rOE')">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/v7AYKMP6rOE/maxresdefault.jpg" alt="아침 활력 운동">
+                        <div class="play-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
                     </div>
                     <div class="video-info">
                         <h3>아침 활력 운동</h3>
@@ -51,6 +50,26 @@
     </section>
 </main>
 
+<!-- 비디오 모달 팝업 -->
+<div class="video-modal" id="videoModal" onclick="closeVideoModal(event)">
+    <div class="video-modal-content">
+        <button class="video-modal-close" onclick="closeVideoModal(event)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="video-iframe-wrapper">
+            <iframe id="videoIframe"
+                src=""
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+
 <script>
 $(document).ready(function() {
     AOS.init({
@@ -58,6 +77,48 @@ $(document).ready(function() {
         easing: 'ease-in-out',
         once: true
     });
+});
+
+// 비디오 모달 열기
+function openVideoModal(videoUrl) {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoIframe');
+
+    // iframe src 설정 (autoplay 추가)
+    iframe.src = videoUrl + '?autoplay=1';
+
+    // 모달 표시
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // 스크롤 방지
+}
+
+// 비디오 모달 닫기
+function closeVideoModal(event) {
+    // 모달 배경이나 닫기 버튼을 클릭했을 때만 닫기
+    if (event.target.id === 'videoModal' || event.target.closest('.video-modal-close')) {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('videoIframe');
+
+        // iframe 정지
+        iframe.src = '';
+
+        // 모달 숨기기
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // 스크롤 복원
+    }
+}
+
+// ESC 키로 모달 닫기
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const modal = document.getElementById('videoModal');
+        if (modal.style.display === 'flex') {
+            const iframe = document.getElementById('videoIframe');
+            iframe.src = '';
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    }
 });
 </script>
 
