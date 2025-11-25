@@ -1396,20 +1396,8 @@ main{
     cursor: pointer;
 }
 
-.modern-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--mint-primary), var(--beige-brown));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.modern-card:hover::before {
-    opacity: 1;
+.modern-card:hover {
+    border: 1px solid var(--mint-primary);
 }
 
 .card-number {
