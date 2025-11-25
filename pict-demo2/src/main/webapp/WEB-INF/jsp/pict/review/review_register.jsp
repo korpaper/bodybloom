@@ -33,12 +33,21 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="write-box">
 									<div class="write-item">
-										<label for="title" class="title">후기</label>
+										<label for="title" class="title">제목</label>
 										<div class="input-box">
 											<input type="text" id="title" name="title" value="${pictVO.title}" class="input opt-max-width-500">
+										</div>
+									</div>
+								</div>
+
+								<div class="write-box">
+									<div class="write-item">
+										<label for="text" class="title">후기</label>
+										<div class="input-box">
+											<input type="text" id="text" name="text" value="${pictVO.text}" class="input opt-max-width-500">
 										</div>
 									</div>
 								</div>

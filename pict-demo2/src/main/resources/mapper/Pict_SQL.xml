@@ -130,17 +130,18 @@
 
     <!-- 후기 관리 -->
     <select id="review_list" resultType="pictVO">
-        select idx, name, title
+        select idx, name, title, text
         from review_table
         <if test="search_text != null and search_text != '' ">
             where (
-            title LIKE CONCAT('%', #{search_text}, '%')
+            title LIKE CONCAT('%', #{search_text}, '%') or
+            text LIKE CONCAT('%', #{search_text}, '%')
             )
         </if>
     </select>
 
     <select id="review_list_one" resultType="pictVO">
-        select idx, name, title
+        select idx, name, title, text
         from review_table
         where idx = #{idx}
     </select>
@@ -148,16 +149,16 @@
     <insert id="review_insert" parameterType="pictVO">
         INSERT INTO review_table
         (
-            name, title
+            name, title, text
         )
         VALUES (
-           #{name}, #{title}
+           #{name}, #{title}, #{text}
         )
     </insert>
 
     <update id="review_update" parameterType="pictVO">
         update review_table
-        set name =#{name}, title = #{title}
+        set name =#{name}, title = #{title}, text = #{text}
         where idx = #{idx}
     </update>
 

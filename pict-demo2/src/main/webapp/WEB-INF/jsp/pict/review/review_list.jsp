@@ -35,13 +35,15 @@
 							        	<colgroup>
 							        		<col style="width:10%;">
 							        		<col style="width:20%;">
-							        		<col style="width:50%;">
+							        		<col style="width:20%;">
+							        		<col style="width:30%;">
 							        		<col style="width:20%;">
 							        	</colgroup>
 							            <thead>
 							                <tr class="thead">
 							                    <th>순서</th>
 							                    <th>작성자</th>
+							                    <th>제목</th>
 							                    <th>후기</th>
 							                    <th>삭제</th>
 							                </tr>
@@ -51,7 +53,8 @@
 								                <tr>
 							                    	<td>${status.count}</td>
 							                    	<td>${resultList.name}</td>
-							                    	<td class="opt-tl"><a href="javascript:void(0);" onclick="review_mod('${resultList.idx}');" class="link">${resultList.title}</a></td>
+							                    	<td>${resultList.title}</td>
+							                    	<td class="opt-tl"><a href="javascript:void(0);" onclick="review_mod('${resultList.idx}');" class="link">${resultList.text}</a></td>
 							                    	<td>
 							                    		<button type="button" onclick="javascript:review_delete('${resultList.idx}')" class="btn-basic btn-fill btn-sm">삭제</button>
 									            	</td>
