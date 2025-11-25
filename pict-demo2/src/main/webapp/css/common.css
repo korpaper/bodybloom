@@ -17,26 +17,31 @@ body{
     --fn-noto: 'Noto Sans KR', sans-serif;
     --fn-opensans: 'Open Sans', sans-serif;
 
-    /* Wellness Theme Colors */
-    --mint-primary: #63C9B6;
-    --mint-light: #A8E6DB;
-    --mint-dark: #4AA89A;
+    /* Wellness Theme Colors - 사용자 페이지 #46BBB3 계열로 변경 */
+    --mint-primary: #46BBB3;
+    --mint-light: #7DD1CA;
+    --mint-dark: #3A9A92;
 
-    --beige-brown: #D2A570;
-    --mocha-brown: #A67C52;
-    --taupe-brown: #8D6E63;
-    --dark-brown: #6D5D52;
+    /* 브라운 색상도 #46BBB3 계열로 오버라이드 */
+    --beige-brown: #7DD1CA;
+    --mocha-brown: #5CC4BC;
+    --taupe-brown: #46BBB3;
+    --dark-brown: #3A9A92;
 
     --cream-bg: #FAF8F5;
     --light-cream: #FFF9F0;
     --text-dark: #333;
     --text-light: #666;
 
-    /* Legacy color support */
-    --purple-500: var(--taupe-brown);
-    --purple-700: var(--dark-brown);
-    --green-500: var(--mint-primary);
-    --green-700: var(--mint-dark);
+    /* Legacy color support - 사용자 페이지용 #46BBB3 계열 */
+    --purple-100: #E0F5F3;
+    --purple-200: #B3E6E0;
+    --purple-400: #7DD1CA;
+    --purple-500: #46BBB3;
+    --purple-700: #3A9A92;
+    --purple-900: #2D7A73;
+    --green-500: #46BBB3;
+    --green-700: #3A9A92;
 }
 
 .blind {
