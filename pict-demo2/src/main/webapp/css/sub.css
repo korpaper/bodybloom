@@ -866,7 +866,7 @@
 /* Page Header */
 .page-header {
     padding: 200px 0 60px;
-    background: linear-gradient(135deg, var(--beige-brown) 0%, var(--mocha-brown) 100%);
+    background: var(--mint-medium);
     text-align: center;
 }
 
@@ -927,13 +927,13 @@
 .trainer-info h3 {
     font-size: 32px;
     font-weight: 700;
-    color: var(--taupe-brown);
+    color: #4b2e17;
     margin-bottom: 8px;
 }
 
 .trainer-specialty {
     font-size: 16px;
-    color: var(--mint-primary);
+    color: var(--purple-700);
     font-weight: 500;
     margin-bottom: 20px;
 }
@@ -943,6 +943,39 @@
     line-height: 1.8;
     color: var(--text-light);
     margin-bottom: 24px;
+}
+
+.trainer-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.trainer-section {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--mint-medium);
+}
+
+.trainer-section h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4b2e17;
+    padding-bottom: 12px;
+}
+
+.trainer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.trainer-section li {
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    line-height: 1.6;
 }
 
 .trainer-certs {
@@ -977,9 +1010,8 @@
 
 .trainer-tab-link {
     padding: 14px 50px;
-    border: 2px solid var(--beige-brown);
+    border: 2px solid var(--cream-bg);
     background-color: #fff;
-    color: var(--beige-brown);
     border-radius: 8px;
     font-size: 18px;
     font-weight: 600;
@@ -995,7 +1027,7 @@
 }
 
 .trainer-tab-link.active {
-    background-color: var(--beige-brown);
+    background-color: var(--mint-medium);
     color: #fff;
     box-shadow: 0 4px 12px rgba(210, 165, 112, 0.3);
 }
@@ -1142,7 +1174,7 @@
 }
 
 .schedule-table thead tr {
-    background-color: var(--taupe-brown);
+    background-color: #4b2e17;
     color: #fff;
 }
 
@@ -1160,7 +1192,7 @@
 
 .schedule-table .time {
     font-weight: 600;
-    color: var(--taupe-brown);
+    color: #4b2e17;
 }
 
 .class-cell {
@@ -1196,7 +1228,7 @@
 
 .schedule-legend h3 {
     font-size: 24px;
-    color: var(--taupe-brown);
+    color: #4b2e17;
     margin-bottom: 20px;
 }
 
@@ -1293,7 +1325,7 @@
 .facility-content h2 {
     font-size: 36px;
     font-weight: 600;
-    color: var(--taupe-brown);
+    color: #4b2e17;
     margin-bottom: 20px;
 }
 
@@ -1452,7 +1484,7 @@
 .location-info-card h3 {
     font-size: 20px;
     font-weight: 700;
-    color: var(--taupe-brown);
+    color: #4b2e17;
     margin-bottom: 16px;
 }
 
@@ -1541,7 +1573,7 @@
 .video-info h3 {
     font-size: 18px;
     font-weight: 700;
-    color: var(--taupe-brown);
+    color: #4b2e17;
     margin-bottom: 8px;
 }
 
@@ -1611,7 +1643,7 @@
 
 .review-author strong {
     font-size: 14px;
-    color: var(--taupe-brown);
+    color: #4b2e17;
 }
 
 .review-author span {
@@ -1634,6 +1666,22 @@
     .trainer-card.reverse .trainer-image,
     .trainer-card.reverse .trainer-info {
         order: initial;
+    }
+
+    .trainer-details {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .trainer-section h4 {
+        font-size: 16px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+    }
+
+    .trainer-section li {
+        font-size: 13px;
     }
 
     .facility-item.reverse {
@@ -1684,7 +1732,7 @@
 
 .schedule-note h3 {
     font-size: 24px;
-    color: var(--taupe-brown);
+    color: #4b2e17;
     margin-bottom: 20px;
 }
 
@@ -1703,7 +1751,7 @@
 .cafe-section {
     margin-top: 80px;
     padding: 60px 20px;
-    background: linear-gradient(135deg, var(--light-cream) 0%, #fff 100%);
+    background: var(--mint-primary);
     border-radius: 20px;
 }
 
@@ -1722,7 +1770,7 @@
 .cafe-info h2 {
     font-size: 36px;
     font-weight: 700;
-    color: var(--taupe-brown);
+    color: #4b2e17;
     margin-bottom: 20px;
 }
 
@@ -1755,7 +1803,7 @@
     font-family: var(--fn-opensans);
     font-size: 18px;
     font-weight: 600;
-    color: var(--taupe-brown);
+    color: #4b2e17;
     margin-bottom: 6px;
 }
 
@@ -1766,7 +1814,7 @@
 }
 
 .cafe-hours {
-    background-color: var(--mint-primary);
+    background-color: var(--purple-700);
     padding: 20px;
     border-radius: 12px;
     color: #fff;
@@ -1793,7 +1841,7 @@
 .parking-detail h2{
     font-size: 32px;
     font-weight: 700;
-    color: var(--taupe-brown);
+    color: #4b2e17;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -1815,7 +1863,7 @@
     font-family: var(--fn-opensans);
     font-size: 18px;
     font-weight: 600;
-    color: var(--taupe-brown);
+    color: #4b2e17;
     margin-bottom: 12px;
 }
 
@@ -1855,7 +1903,7 @@
 .video-notice h3 {
     font-size: 24px;
     font-weight: 700;
-    color: var(--taupe-brown);
+    color: #4b2e17;
     margin-bottom: 20px;
 }
 

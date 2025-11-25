@@ -82,8 +82,8 @@
             </div>
             <div class="coach-content modern-content" data-aos="fade-up" data-aos-delay="200">
                 <span class="section-label">TRAINERS</span>
-                <h2 class="modern-title">강사진</h2>
-                <p class="modern-description">
+                <h2 class="modern-title beige-brown">강사진</h2>
+                <p class="modern-description beige-brown">
                     전문성과 열정을 갖춘<br>
                     BODYBLOOM의 강사진이<br>
                     여러분의 건강한 변화를<br>
@@ -166,29 +166,29 @@
                     WHY<br>
                     <span class="highlight-text high">BODYBLOOM</span>
                 </h2>
-                <p class="modern-description italic-text">
+                <p class="modern-description italic-text beige-brown">
                     운동으로 세상을 만드는 사람들
                 </p>
                 <ul class="modern-list">
                     <li data-aos="fade-right" data-aos-delay="300">
                         <span class="list-number">01</span>
                         <div>
-                            <h4>카페도 있다</h4>
-                            <p>운동 후 편안하게 휴식할 수 있는 카페 공간</p>
+                            <h4 class="beige-brown">카페도 있다</h4>
+                            <p class="beige-brown">운동 후 편안하게 휴식할 수 있는 카페 공간</p>
                         </div>
                     </li>
                     <li data-aos="fade-right" data-aos-delay="400">
                         <span class="list-number">02</span>
                         <div>
-                            <h4>전문 강사진</h4>
-                            <p>체계적인 관리와 맞춤 프로그램 제공</p>
+                            <h4 class="beige-brown">전문 강사진</h4>
+                            <p class="beige-brown">체계적인 관리와 맞춤 프로그램 제공</p>
                         </div>
                     </li>
                     <li data-aos="fade-right" data-aos-delay="500">
                         <span class="list-number">03</span>
                         <div>
-                            <h4>변화가 뚜렷하니까</h4>
-                            <p>눈에 보이는 성과와 건강한 라이프스타일</p>
+                            <h4 class="beige-brown">변화가 뚜렷하니까</h4>
+                            <p class="beige-brown">눈에 보이는 성과와 건강한 라이프스타일</p>
                         </div>
                     </li>
                 </ul>

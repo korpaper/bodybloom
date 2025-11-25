@@ -2,7 +2,7 @@ footer{
     width: 100%;
     height: 237px;
     padding: 0 100px;
-    background-color: var(--taupe-brown);
+    background-color: var(--purple-700);
 }
 footer *{
     color: #fff;

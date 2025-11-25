@@ -258,7 +258,7 @@ main{
     width: 100%;
     height: 1080px;
     border-radius: 30px;
-    background-color: var(--purple-500);
+    background: linear-gradient(135deg, var(--mint-primary) 0%, var(--mint-dark) 50%, var(--purple-700) 100%);
     background-image: url(/front_img/dot2.png);
     background-repeat: no-repeat;
     background-position: center 100%;
@@ -362,8 +362,14 @@ main{
     height: 406px;
     padding: 46px;
     border-radius: 24px;
-    border: 2px solid var(--purple-100);
-    background: var(--purple-900);
+    border: 2px solid var(--mint-light);
+    background: linear-gradient(135deg, var(--purple-900) 0%, var(--mint-dark) 100%);
+}
+.introContent li:nth-child(2){
+    background: linear-gradient(135deg, #2D7A73 0%, #46BBB3 100%);
+}
+.introContent li:nth-child(3){
+    background: linear-gradient(135deg, var(--mint-dark) 0%, var(--mint-primary) 100%);
 }
 .introContent .topText{
     display: flex;
@@ -371,7 +377,7 @@ main{
     column-gap: 8px;
 }
 .introContent .topText p{
-    color: var(--green-500, #46BBB3);
+    color: var(--accent-peach);
     font-size: 40px;
     font-style: normal;
     font-weight: 700;
@@ -525,7 +531,7 @@ main{
     z-index: -1;
     width: 100%;
     height: 578px;
-    background-color: var(--purple-500);
+    background: linear-gradient(180deg, var(--beige-light) 0%, var(--mint-medium) 50%, var(--mint-primary) 100%);
     background-image: url(/front_img/dot2.png);
     background-repeat: no-repeat;
     background-position: center 100%;
@@ -720,7 +726,7 @@ main{
     top: 120px;
     font-size: 140px;
     font-weight: 800;
-    color: rgba(210, 165, 112, 0.15);
+    color: rgba(125, 209, 202, 0.2);
     font-family: var(--fn-opensans);
     line-height: 1;
     z-index: 0;
@@ -746,7 +752,7 @@ main{
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, var(--light-cream) 0%, var(--cream-bg) 100%);
+    background: linear-gradient(135deg, var(--mint-light) 0%, var(--beige-light) 50%, var(--light-cream) 100%);
 }
 
 .hero-container {
@@ -767,7 +773,7 @@ main{
     font-size: 38px;
     font-weight: 600;
     line-height: 140%;
-    color: var(--taupe-brown);
+    color: var(--mint-dark);
     margin-bottom: 24px;
 }
 
@@ -790,7 +796,7 @@ main{
     overflow: hidden;
     width: 500px;
     height: 500px;
-    background-color: var(--beige-brown);
+    background-color: var(--beige-warm);
 }
 
 .hero-image img {
@@ -821,19 +827,19 @@ main{
 }
 
 .btn-secondary {
-    background-color: var(--beige-brown);
+    background-color: var(--beige-warm);
     color: #fff;
 }
 
 .btn-secondary:hover {
-    background-color: var(--mocha-brown);
+    background-color: var(--beige-medium);
     transform: translateY(-2px);
 }
 
 /* Coach Section */
 .coach-section {
     padding: 100px 0;
-    background-color: var(--taupe-brown);
+    background-color: var(--mint-dark);
 }
 
 .coach-container {
@@ -858,7 +864,7 @@ main{
 .section-label {
     font-size: 14px;
     letter-spacing: 2px;
-    color: var(--mint-dark);
+    color: var(--purple-700);
     margin-bottom: 16px;
     font-weight: 500;
 }
@@ -881,7 +887,7 @@ main{
 /* Get Started Section */
 .get-started-section {
     padding: 100px 0;
-    background-color: var(--light-cream);
+    background-color: var(--cream-bg);
 }
 
 .get-started-container {
@@ -895,7 +901,7 @@ main{
     font-size: 48px;
     font-weight: 600;
     text-align: center;
-    color: var(--taupe-brown);
+    color: var(--mint-dark);
     margin-bottom: 60px;
 }
 
@@ -911,7 +917,7 @@ main{
     padding: 40px 32px;
     text-align: left;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid rgba(223, 207, 190, 0.3);
+    border: 2px solid rgba(125, 209, 202, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -923,9 +929,15 @@ main{
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--mint-primary), var(--beige-brown));
+    background: linear-gradient(90deg, var(--mint-dark), var(--mint-primary), var(--beige-light));
     opacity: 0;
     transition: opacity 0.3s ease;
+}
+.service-card:nth-child(2)::before {
+    background: linear-gradient(90deg, var(--mint-primary), var(--mint-medium), var(--beige-light));
+}
+.service-card:nth-child(3)::before {
+    background: linear-gradient(90deg, var(--beige-light), var(--mint-medium), var(--mint-dark));
 }
 
 .service-card:hover::before {
@@ -944,7 +956,7 @@ main{
     margin-bottom: 24px;
     border-radius: 50%;
     overflow: hidden;
-    background-color: var(--beige-brown);
+    background-color: var(--mint-light);
 }
 
 .service-image img {
@@ -956,7 +968,7 @@ main{
 .service-card h3 {
     font-size: 22px;
     font-weight: 700;
-    color: var(--taupe-brown);
+    color: var(--green-700);
     margin-bottom: 16px;
     line-height: 1.3;
 }
@@ -972,7 +984,7 @@ main{
 .service-card span {
     display: block;
     font-size: 14px;
-    color: var(--beige-brown);
+    color: var(--mint-primary);
     font-weight: 600;
     margin-bottom: 20px;
     padding-left: 12px;
@@ -998,7 +1010,7 @@ main{
 /* Specialize Section */
 .specialize-section {
     padding: 100px 0;
-    background-color: var(--taupe-brown);
+    background-color: var(--mint-dark);
 }
 
 /* Specialize Section - 텍스트 색상 오버라이드 */
@@ -1007,7 +1019,7 @@ main{
 }
 
 .specialize-section.modern-section .modern-title {
-    color: #fff;
+    color: #4b2e17;
 }
 
 .specialize-section.modern-section .modern-description {
@@ -1041,7 +1053,7 @@ main{
     
     font-size: 42px;
     font-weight: 600;
-    color: var(--taupe-brown);
+    color: var(--mint-dark);
     margin-bottom: 16px;
 }
 
@@ -1078,7 +1090,7 @@ main{
     
     font-size: 20px;
     font-weight: 600;
-    color: var(--taupe-brown);
+    color: var(--mint-dark);
     margin-bottom: 8px;
 }
 
@@ -1146,20 +1158,20 @@ main{
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #FFF8F0 0%, var(--cream-bg) 50%, #FFF8F0 100%);
+    background: var(--cream-bg);
 }
 
 .modern-hero-title {
     font-size: 72px;
     font-weight: 800;
     line-height: 1.1;
-    color: var(--taupe-brown);
+    color: var(--purple-700);
     margin-bottom: 32px;
     letter-spacing: -2px;
 }
 
 .highlight-text {
-    color: var(--mint-dark);
+    color: #4b2e17;
     position: relative;
     display: inline-block;
 }
@@ -1186,7 +1198,7 @@ main{
     align-items: center;
     font-size: 12px;
     letter-spacing: 2px;
-    color: var(--beige-brown);
+    color: var(--mint-primary);
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -1206,7 +1218,7 @@ main{
 .scroll-indicator span {
     font-size: 11px;
     letter-spacing: 2px;
-    color: var(--beige-brown);
+    color: var(--mint-primary);
     font-weight: 600;
 }
 
@@ -1221,16 +1233,16 @@ main{
     animation: scrollMove 2s ease-in-out infinite;
 }
 
-@keyframes scrollMove {
-    0%, 100% {
-        height: 60px;
-        opacity: 1;
-    }
-    50% {
-        height: 30px;
-        opacity: 0.5;
-    }
-}
+/*@keyframes scrollMove {*/
+/*    0%, 100% {*/
+/*        height: 60px;*/
+/*        opacity: 1;*/
+/*    }*/
+/*    50% {*/
+/*        height: 30px;*/
+/*        opacity: 0.5;*/
+/*    }*/
+/*}*/
 
 /* 모던 이미지 */
 .hero-image-modern,
@@ -1318,7 +1330,7 @@ main{
     align-items: center;
     gap: 12px;
     padding: 18px 36px;
-    background: var(--mint-dark);
+    background: var(--purple-700);
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
@@ -1346,7 +1358,7 @@ main{
 
 .modern-btn:hover {
     transform: translateX(8px);
-    background: var(--mint-dark);
+    background: var(--purple-500);
     box-shadow: 0 8px 24px rgba(70, 187, 179, 0.4);
 }
 
@@ -1369,7 +1381,7 @@ main{
     font-size: 80px;
     font-weight: 800;
     line-height: 0.9;
-    color: var(--taupe-brown);
+    color: var(--purple-700);
     margin-bottom: 80px;
     letter-spacing: -3px;
     display: flex;
@@ -1392,7 +1404,7 @@ main{
     padding: 40px;
     position: relative;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(210, 165, 112, 0.2);
+    border: 1px solid rgba(125, 209, 202, 0.2);
     cursor: pointer;
 }
 
@@ -1406,7 +1418,7 @@ main{
     right: 20px;
     font-size: 72px;
     font-weight: 800;
-    color: rgba(210, 165, 112, 0.08);
+    color: rgba(125, 209, 202, 0.15);
     font-family: var(--fn-opensans);
     line-height: 1;
 }
@@ -1414,7 +1426,7 @@ main{
 .modern-card h3 {
     font-size: 24px;
     font-weight: 700;
-    color: var(--taupe-brown);
+    color: var(--purple-700);
     margin-bottom: 16px;
     line-height: 1.3;
 }
@@ -1435,7 +1447,7 @@ main{
 
 .card-meta .author {
     font-size: 14px;
-    color: var(--beige-brown);
+    color: var(--mint-primary);
     font-weight: 600;
     padding-left: 12px;
     border-left: 3px solid var(--mint-primary);
@@ -1482,7 +1494,7 @@ main{
 .list-number {
     font-size: 14px;
     font-weight: 800;
-    color: var(--mint-dark);
+    color: var(--purple-700);
     font-family: var(--fn-opensans);
     min-width: 40px;
 }
@@ -1726,7 +1738,7 @@ main{
 .popup-pagination .swiper-pagination-bullet-active {
     width: 30px;
     border-radius: 5px;
-    background: linear-gradient(135deg, #46BBB3 0%, #A67C52 100%);
+    background: linear-gradient(135deg, var(--mint-dark) 0%, var(--mint-primary) 50%, var(--beige-light) 100%);
 }
 
 /* 네비게이션 버튼 */
@@ -1880,4 +1892,8 @@ main{
     .popup-next {
         right: 8px;
     }
+}
+
+.beige-brown {
+    color: #4b2e17 !important;
 }
