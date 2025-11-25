@@ -35,6 +35,51 @@ $(document).ready(function () {
                 slider.style.opacity = op;
             }
         }
+
+        // 커스텀 커서 효과 (데스크톱만)
+        if ($('.custom-cursor').length > 0) {
+            const cursor = $('.custom-cursor');
+            const follower = $('.cursor-follower');
+
+            let mouseX = 0, mouseY = 0;
+            let followerX = 0, followerY = 0;
+
+            $(document).on('mousemove', function(e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                cursor.css({
+                    'left': mouseX + 'px',
+                    'top': mouseY + 'px'
+                });
+            });
+
+            // 부드러운 팔로워 애니메이션
+            function animateFollower() {
+                followerX += (mouseX - followerX) * 0.1;
+                followerY += (mouseY - followerY) * 0.1;
+
+                follower.css({
+                    'left': followerX + 'px',
+                    'top': followerY + 'px'
+                });
+
+                requestAnimationFrame(animateFollower);
+            }
+            animateFollower();
+
+            // 호버 가능한 요소에 대한 커서 확대 효과
+            $('a, button, .modern-card, .modern-image img, .service-card, .video-card, .facility-image').hover(
+                function() {
+                    cursor.addClass('cursor-hover');
+                    follower.addClass('follower-hover');
+                },
+                function() {
+                    cursor.removeClass('cursor-hover');
+                    follower.removeClass('follower-hover');
+                }
+            );
+        }
     } else {
         $(window).on('scroll', function () {
             if ($(window).scrollTop() < 300) {
@@ -74,15 +119,15 @@ $(document).ready(function () {
 let scrollTop = 0;
 
 $(window).on('scroll', function(){
-	
+
 	scrollTop = $(window).scrollTop();
-	
+
 	$('.thumb1').css('transform', 'translateX(' + scrollTop * -0.15 + 'px)');
 	$('.thumb2').css('transform', 'translateX(' + scrollTop * -0.15 + 'px)');
 	$('.thumb3').css('transform', 'translateX(' + scrollTop * 0.15 + 'px)');
 	$('.thumb4').css('transform', 'translateX(' + scrollTop * 0.15 + 'px)');
 })
-	
+
 //h2 스크롤 밑줄
 //$(window).scroll(function() {
 //	var scroll = $(document).scrollTop();

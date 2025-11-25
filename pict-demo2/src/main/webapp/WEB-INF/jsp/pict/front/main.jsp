@@ -8,10 +8,6 @@
 <%@ include file="./include/header.jsp" %>
 
 <main class="wellness-main modern-main">
-    <!-- 마우스 커서 효과 -->
-    <div class="custom-cursor"></div>
-    <div class="cursor-follower"></div>
-
     <!-- 팝업 모달 -->
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup-container">
@@ -297,49 +293,6 @@ $(document).ready(function() {
         easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
         offset: 100
     });
-
-    // 커스텀 커서 효과
-    const cursor = $('.custom-cursor');
-    const follower = $('.cursor-follower');
-
-    let mouseX = 0, mouseY = 0;
-    let followerX = 0, followerY = 0;
-
-    $(document).on('mousemove', function(e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        cursor.css({
-            'left': mouseX + 'px',
-            'top': mouseY + 'px'
-        });
-    });
-
-    // 부드러운 팔로워 애니메이션
-    function animateFollower() {
-        followerX += (mouseX - followerX) * 0.1;
-        followerY += (mouseY - followerY) * 0.1;
-
-        follower.css({
-            'left': followerX + 'px',
-            'top': followerY + 'px'
-        });
-
-        requestAnimationFrame(animateFollower);
-    }
-    animateFollower();
-
-    // 호버 가능한 요소에 대한 커서 확대 효과
-    $('a, button, .modern-card, .modern-image img').hover(
-        function() {
-            cursor.addClass('cursor-hover');
-            follower.addClass('follower-hover');
-        },
-        function() {
-            cursor.removeClass('cursor-hover');
-            follower.removeClass('follower-hover');
-        }
-    );
 
     // 스크롤 인디케이터 애니메이션
     setInterval(function() {

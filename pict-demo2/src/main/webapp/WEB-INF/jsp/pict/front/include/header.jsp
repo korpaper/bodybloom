@@ -17,10 +17,14 @@
 <c:set var="today" value="${fn:indexOf(url, 'today')}"/>
 <c:set var="review" value="${fn:indexOf(url, 'review')}"/>
 
+<!-- 커스텀 커서 효과 -->
+<div class="custom-cursor"></div>
+<div class="cursor-follower"></div>
+
 <header>
     <div class="headerInner">
         <h1>
-            <a href="/"><img src="/front_img/logo-beige.png" alt="Body Bloom 로고"></a>
+            <a href="/"><img src="/front_img/logo-mt.png" alt="Body Bloom 로고"></a>
         </h1>
         <button class="mobile-menu-toggle" aria-label="메뉴 열기">
             <span></span>
