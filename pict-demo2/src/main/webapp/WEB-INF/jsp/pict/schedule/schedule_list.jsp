@@ -26,18 +26,12 @@
 						<div class="card">
 						    <div class="card-body">
                                 <p>Name: <%= name %> 강사 스케쥴</p>
-						    	<!-- 일간/주간 탭 -->
-						    	<div class="schedule-tabs-admin" style="margin-bottom: 20px;">
-						    		<button type="button" class="view-tab-btn" data-view="daily">일간</button>
-						    		<button type="button" class="view-tab-btn active" data-view="weekly">주간</button>
-						    	</div>
 						    	
 								<!-- 날짜 선택 -->
 								<div class="schedule-controls-admin" style="margin-bottom: 20px;">
                                     <label for="scheduleDate">수업 일자 선택:</label>
                                     <input type="date" id="scheduleDate" style="cursor: pointer; padding: 5px; border: 1px solid #ddd; border-radius: 4px;" value="${pictVO.targetdate}"/>
                                     <button type="button" class="btn-basic btn-fill btn-sm" onclick="searchSchedule()">조회</button>
-                                    <button type="button" class="btn-basic btn-sm" onclick="setToday()">오늘</button>
                                     <span id="selectedWeek" style="margin-left: 20px; font-weight: bold;"></span>
 								</div>
 						    	
@@ -91,44 +85,7 @@
 							            </tbody>
 						            </table>
 				            	</div>
-				            	
-				            	<!-- 일간 스케줄 테이블 -->
-				            	<div class="schedule-table-wrapper daily-view" style="display: none;">
-							        <table class="schedule-table daily-table" style="text-align: center; width: 100%;">
-							            <thead>
-							                <tr>
-							                    <th style="width: 150px;">시간</th>
-							                    <th>수업 정보</th>
-							                </tr>
-							            </thead>
-							            <tbody>
-                                            <c:forEach var="resultList" items="${day_list}" varStatus="status">
-                                                <tr>
-                                                    <td class="time">
-                                                        <c:if test="${resultList.targettime eq '1'}">06:00 ~ 07:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '2'}">07:00 ~ 08:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '3'}">08:00 ~ 09:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '4'}">09:00 ~ 10:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '5'}">10:00 ~ 11:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '6'}">11:00 ~ 12:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '7'}">12:00 ~ 13:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '8'}">13:00 ~ 14:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '9'}">14:00 ~ 15:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '10'}">15:00 ~ 16:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '11'}">16:00 ~ 17:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '12'}">17:00 ~ 18:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '13'}">18:00 ~ 19:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '14'}">19:00 ~ 20:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '15'}">20:00 ~ 21:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '16'}">21:00 ~ 22:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '17'}">22:00 ~ 23:00</c:if>
-                                                    </td>
-                                                    <td class="editable-cell">${resultList.day1}</td>
-                                                </tr>
-                                            </c:forEach>
-							            </tbody>
-						            </table>
-				            	</div>
+
 				            </div>
 			            </div>
 		            </div>
@@ -151,45 +108,6 @@
 				// 여기서 선택된 강사의 스케줄을 불러오는 API 호출 가능
 				// loadSchedule(currentTrainer);
 			});
-
-			// 일간/주간 탭 전환
-			$('.view-tab-btn').on('click', function() {
-				var viewType = $(this).data('view');
-				changeView(viewType);
-			});
-
-			function changeView(viewType) {
-				currentView = viewType;
-
-				// 탭 버튼 활성화 상태 변경
-				$('.view-tab-btn').removeClass('active');
-				$('.view-tab-btn[data-view="' + viewType + '"]').addClass('active');
-
-				// 테이블 표시 전환
-				if (viewType === 'daily') {
-					$('.weekly-view').hide();
-					$('.daily-view').show();
-					updateDailyDisplay();
-				} else {
-					$('.daily-view').hide();
-					$('.weekly-view').show();
-					updateWeekDisplay(new Date($('#scheduleDate').val()));
-				}
-			}
-
-			// 일간 화면 업데이트
-			function updateDailyDisplay() {
-				const selectedDate = $('#scheduleDate').val();
-				if (selectedDate) {
-					const date = new Date(selectedDate);
-					const dateStr = date.toLocaleDateString('ko-KR', {
-						year: 'numeric',
-						month: 'long',
-						day: 'numeric',
-						weekday: 'long'
-					});
-				}
-			}
 
 			// 오늘 날짜로 설정
 			function setToday() {

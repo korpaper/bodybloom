@@ -45,7 +45,7 @@
                         <a href="/trainer">강사소개</a>
                     </li>
                     <li <c:if test="${schedule ne -1}">class="active"</c:if>>
-                        <a href="/schedule">스케줄</a>
+                        <a href="/schedule_daily1">스케줄</a>
                     </li>
                 </ul>
             </li>

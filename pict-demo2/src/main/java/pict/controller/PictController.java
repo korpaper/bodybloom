@@ -5,9 +5,6 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.security.MessageDigest;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
 
 import org.apache.commons.codec.binary.Base64;
@@ -20,11 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import pict.service.AdminService;
 import pict.service.AdminVO;
 import pict.service.PictService;
@@ -138,21 +133,67 @@ public class PictController {
 	}
 
     // 강사소개 - 스케쥴표
-    @RequestMapping(value = "/schedule")
-    public String schedule(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
-        return "pict/front/schedule";
+    // 윤수환 일간
+    @RequestMapping(value = "/schedule_daily1")
+    public String schedule_daily1(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        return "pict/front/schedule_daily1";
+    }
+    // 윤수환 주간
+    @RequestMapping(value = "/schedule_weekly1")
+    public String schedule_weekly1(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        pictVO.setUserid("user01"); // 윤수환 강사
+        if(pictVO != null && pictVO.getTargetdate() == null){
+            pictVO.setTargetdate("2025-11-24");
+        }
+        // 주별
+        List<?> reference_list = pictService.schedule_list(pictVO);
+        model.addAttribute("resultList", reference_list);
+        model.addAttribute("size", reference_list.size());
+        model.addAttribute("pictVO", pictVO);
+
+        return "pict/front/schedule_weekly1";
     }
 
-    // 강사소개 - 스케쥴표
-    @RequestMapping(value = "/schedule2")
-    public String schedule2(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
-        return "pict/front/schedule2";
+    // 최재희 일간
+    @RequestMapping(value = "/schedule_daily2")
+    public String schedule_daily2(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        return "pict/front/schedule_daily2";
+    }
+    // 최재희 주간
+    @RequestMapping(value = "/schedule_weekly2")
+    public String schedule_weekly2(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        pictVO.setUserid("user02"); // 최재희 강사
+        if(pictVO != null && pictVO.getTargetdate() == null){
+            pictVO.setTargetdate("2025-11-24");
+        }
+        // 주별
+        List<?> reference_list = pictService.schedule_list(pictVO);
+        model.addAttribute("resultList", reference_list);
+        model.addAttribute("size", reference_list.size());
+        model.addAttribute("pictVO", pictVO);
+
+        return "pict/front/schedule_weekly2";
     }
 
-    // 강사소개 - 스케쥴표
-    @RequestMapping(value = "/schedule3")
-    public String schedule3(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
-        return "pict/front/schedule3";
+    // 윤동욱 일간
+    @RequestMapping(value = "/schedule_daily3")
+    public String schedule_daily3(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        return "pict/front/schedule_daily3";
+    }
+    // 윤동욱 주간
+    @RequestMapping(value = "/schedule_weekly3")
+    public String schedule_weekly3(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        pictVO.setUserid("user03"); // 윤동욱 강사
+        if(pictVO != null && pictVO.getTargetdate() == null){
+            pictVO.setTargetdate("2025-11-24");
+        }
+        // 주별
+        List<?> reference_list = pictService.schedule_list(pictVO);
+        model.addAttribute("resultList", reference_list);
+        model.addAttribute("size", reference_list.size());
+        model.addAttribute("pictVO", pictVO);
+
+        return "pict/front/schedule_weekly3";
     }
 
     // 부대시설 - 부대시설

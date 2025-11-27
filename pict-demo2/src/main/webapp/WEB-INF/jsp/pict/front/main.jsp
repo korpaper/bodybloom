@@ -50,11 +50,16 @@
         <div class="hero-container">
             <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
                 <h1 class="modern-hero-title">
-                    몸의 균형과<br>
-                    움직임을 통해<br>
-                    <span class="highlight-text">조화</span>를 연구합니다
+                    균형잡힌<br>
+                    움직임으로<br>
+                    나를 <span class="highlight-text one">꽃</span>피운다
                 </h1>
-                <p class="modern-hero-subtitle"><span>BODYBLOOM</span> 의 철학과 함께<br>조화로운 건강을 찾아보세요</p>
+                <p class="modern-hero-subtitle">
+                    몸의 균형과 움직임을 통해<br>
+                    사람의 마음과 신경계가<br>
+                    조화를 이루는 걸 연구하고 있는<br>
+                    <span>BODYBLOOM</span>
+                </p>
                 <div class="hero-meta">
                     <span>WELLNESS CENTER</span>
                     <span>•</span>

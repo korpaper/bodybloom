@@ -366,7 +366,7 @@ main{
     background: linear-gradient(135deg, var(--purple-900) 0%, var(--mint-dark) 100%);
 }
 .introContent li:nth-child(2){
-    background: linear-gradient(135deg, #2D7A73 0%, #46BBB3 100%);
+    background: linear-gradient(135deg, #817658 0%, #f4ede5 100%);
 }
 .introContent li:nth-child(3){
     background: linear-gradient(135deg, var(--mint-dark) 0%, var(--mint-primary) 100%);
@@ -704,7 +704,7 @@ main{
 .cursor-follower {
     width: 40px;
     height: 40px;
-    border: 1px solid rgba(70, 187, 179, 0.3);
+    border: 1px solid rgba(129, 118, 88, 0.3);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
@@ -715,8 +715,8 @@ main{
 
 .cursor-follower.follower-hover {
     transform: scale(1.5);
-    border-color: rgba(70, 187, 179, 0.8);
-    background: rgba(70, 187, 179, 0.2);
+    border-color: rgba(129, 118, 88, 0.8);
+    background: rgba(129, 118, 88, 0.2);
 }
 
 /* 섹션 번호 */
@@ -726,7 +726,7 @@ main{
     top: 120px;
     font-size: 140px;
     font-weight: 800;
-    color: rgba(125, 209, 202, 0.2);
+    color: rgba(129, 118, 88, 0.15);
     font-family: var(--fn-opensans);
     line-height: 1;
     z-index: 0;
@@ -756,7 +756,7 @@ main{
 }
 
 .hero-container {
-    max-width: 1280px;
+    max-width: 1420px;
     margin: 0 auto;
     padding: 0 20px;
     display: grid;
@@ -864,7 +864,7 @@ main{
 .section-label {
     font-size: 14px;
     letter-spacing: 2px;
-    color: var(--purple-700);
+    color: var(--beige-light);
     margin-bottom: 16px;
     font-weight: 500;
 }
@@ -917,7 +917,7 @@ main{
     padding: 40px 32px;
     text-align: left;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid rgba(125, 209, 202, 0.3);
+    border: 2px solid rgba(129, 118, 88, 0.25);
     position: relative;
     overflow: hidden;
 }
@@ -1019,7 +1019,7 @@ main{
 }
 
 .specialize-section.modern-section .modern-title {
-    color: #4b2e17;
+    color: #817658;
 }
 
 .specialize-section.modern-section .modern-description {
@@ -1165,19 +1165,23 @@ main{
     font-size: 72px;
     font-weight: 800;
     line-height: 1.1;
-    color: var(--purple-700);
+    color: var(--purple-500);
     margin-bottom: 32px;
     letter-spacing: -2px;
 }
 
 .highlight-text {
-    color: #4b2e17;
+    color: #817658;
     position: relative;
     display: inline-block;
 }
 
 .highlight-text.high {
     font-style: italic;
+}
+
+.highlight-text.one {
+    color: var(--purple-700);
 }
 
 .modern-hero-subtitle {
@@ -1330,7 +1334,7 @@ main{
     align-items: center;
     gap: 12px;
     padding: 18px 36px;
-    background: var(--purple-700);
+    background: var(--purple-500);
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
@@ -1359,7 +1363,6 @@ main{
 .modern-btn:hover {
     transform: translateX(8px);
     background: var(--purple-500);
-    box-shadow: 0 8px 24px rgba(70, 187, 179, 0.4);
 }
 
 .modern-btn svg {
@@ -1404,7 +1407,7 @@ main{
     padding: 40px;
     position: relative;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(125, 209, 202, 0.2);
+    border: 1px solid rgba(129, 118, 88, 0.2);
     cursor: pointer;
 }
 
@@ -1418,7 +1421,7 @@ main{
     right: 20px;
     font-size: 72px;
     font-weight: 800;
-    color: rgba(125, 209, 202, 0.15);
+    color: rgba(129, 118, 88, 0.12);
     font-family: var(--fn-opensans);
     line-height: 1;
 }
@@ -1494,7 +1497,7 @@ main{
 .list-number {
     font-size: 14px;
     font-weight: 800;
-    color: var(--purple-700);
+    color: #817658;
     font-family: var(--fn-opensans);
     min-width: 40px;
 }
@@ -1738,7 +1741,7 @@ main{
 .popup-pagination .swiper-pagination-bullet-active {
     width: 30px;
     border-radius: 5px;
-    background: linear-gradient(135deg, var(--mint-dark) 0%, var(--mint-primary) 50%, var(--beige-light) 100%);
+    background: var(--mint-primary);
 }
 
 /* 네비게이션 버튼 */
@@ -1800,7 +1803,7 @@ main{
     width: 20px;
     height: 20px;
     cursor: pointer;
-    accent-color: #46BBB3;
+    accent-color: #817658;
 }
 
 .popup-checkbox span {
@@ -1892,8 +1895,4 @@ main{
     .popup-next {
         right: 8px;
     }
-}
-
-.beige-brown {
-    color: #4b2e17 !important;
 }
