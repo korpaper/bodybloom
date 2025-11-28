@@ -24,7 +24,7 @@
 <header>
     <div class="headerInner">
         <h1>
-            <a href="/"><img src="/front_img/logo-mt.png" alt="Body Bloom 로고"></a>
+            <a href="/"><img src="/front_img/logo-brown.png" alt="Body Bloom 로고"></a>
         </h1>
         <button class="mobile-menu-toggle" aria-label="메뉴 열기">
             <span></span>
