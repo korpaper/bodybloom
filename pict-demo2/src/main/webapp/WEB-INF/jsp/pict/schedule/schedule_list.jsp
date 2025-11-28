@@ -29,8 +29,8 @@
 						    	
 								<!-- 날짜 선택 -->
 								<div class="schedule-controls-admin" style="margin-bottom: 20px;">
-                                    <label for="scheduleDate">수업 일자 선택:</label>
-                                    <input type="date" id="scheduleDate" style="cursor: pointer; padding: 5px; border: 1px solid #ddd; border-radius: 4px;" value="${pictVO.targetdate}"/>
+                                    <label for="targetdate">수업 일자 선택:</label>
+                                    <input type="date" id="targetdate" style="cursor: pointer; padding: 5px; border: 1px solid #ddd; border-radius: 4px;" value="${pictVO.targetdate}"/>
                                     <button type="button" class="btn-basic btn-fill btn-sm" onclick="searchSchedule()">조회</button>
                                     <span id="selectedWeek" style="margin-left: 20px; font-weight: bold;"></span>
 								</div>
@@ -111,82 +111,84 @@
 
 			// 오늘 날짜로 설정
 			function setToday() {
-				const today = new Date();
-				const dateString = today.toISOString().split('T')[0];
-				$('#scheduleDate').val(dateString);
-
-				if (currentView === 'weekly') {
-					updateWeekDisplay(today);
-				} else {
-					updateDailyDisplay();
-				}
+				let targetdate = '${pictVO.targetdate}';
+				let today = new Date();
+				let dateString = today.toISOString().split('T')[0];
+				if(targetdate == '' || targetdate == null){
+				    $('#targetdate').val(dateString);
+                }
+				else{
+					$('#targetdate').val(targetdate);
+					today = new Date(targetdate);
+                }
+                updateWeekDisplay(today);
 			}
 
-		// 주간 화면 업데이트
-		function updateWeekDisplay(date) {
-			const options = { year: 'numeric', month: 'long', day: 'numeric' };
-			const dateStr = date.toLocaleDateString('ko-KR', options);
+            // 주간 화면 업데이트
+            function updateWeekDisplay(date) {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                const dateStr = date.toLocaleDateString('ko-KR', options);
 
-			// 선택한 날짜를 시작일로, +6일을 종료일로 설정
-			const startDate = new Date(date);
-			const endDate = new Date(date);
-			endDate.setDate(startDate.getDate() + 6);
+                // 선택한 날짜를 시작일로, +6일을 종료일로 설정
+                const startDate = new Date(date);
+                const endDate = new Date(date);
+                endDate.setDate(startDate.getDate() + 6);
 
-			const weekStr = startDate.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' }) +
-				' - ' +
-				endDate.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' });
+                const weekStr = startDate.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' }) +
+                    ' - ' +
+                    endDate.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' });
 
 
-			// 테이블 헤더에 날짜 업데이트
-			const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-			const dayNames = ['월', '화', '수', '목', '금', '토', '일'];
+                // 테이블 헤더에 날짜 업데이트
+                const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+                const dayNames = ['월', '화', '수', '목', '금', '토', '일'];
 
-			for (let i = 0; i < 7; i++) {
-				const currentDate = new Date(startDate);
-				currentDate.setDate(startDate.getDate() + i);
+                for (let i = 0; i < 7; i++) {
+                    const currentDate = new Date(startDate);
+                    currentDate.setDate(startDate.getDate() + i);
 
-				const month = currentDate.getMonth() + 1;
-				const day = currentDate.getDate();
-				const weekday = currentDate.getDay();
-				const dayName = ['일', '월', '화', '수', '목', '금', '토'][weekday];
-				const dateStr = month + '/' + day;
+                    const month = currentDate.getMonth() + 1;
+                    const day = currentDate.getDate();
+                    const weekday = currentDate.getDay();
+                    const dayName = ['일', '월', '화', '수', '목', '금', '토'][weekday];
+                    const dateStr = month + '/' + day;
 
-				$('#day-' + days[i]).text(dateStr);
-			}
-		}
+                    $('#day-' + days[i]).text(dateStr);
+                }
+            }
 
-			// 선택한 날짜로 스케줄 조회
-			function searchSchedule() {
-				const selectedDate = $('#scheduleDate').val();
-				if (!selectedDate) {
-					alert('날짜를 선택해주세요.');
-					return;
-				}
+            // 선택한 날짜로 스케줄 조회
+            function searchSchedule() {
+                const selectedDate = $('#targetdate').val();
+                if (!selectedDate) {
+                    alert('날짜를 선택해주세요.');
+                    return;
+                }
 
-				const date = new Date(selectedDate);
+                const date = new Date(selectedDate);
 
-				if (currentView === 'weekly') {
-					updateWeekDisplay(date);
-				} else {
-					updateDailyDisplay();
-				}
+                if (currentView === 'weekly') {
+                    updateWeekDisplay(date);
+                } else {
+                    updateDailyDisplay();
+                }
 
-				location.href= "/schedule/schedule_list?targetdate="+ selectedDate;
-				// API 호출 시
-				// loadSchedule(currentTrainer, selectedDate, currentView);
-			}
+                location.href= "/schedule/schedule_list?targetdate="+ selectedDate;
+                // API 호출 시
+                // loadSchedule(currentTrainer, selectedDate, currentView);
+            }
 
-			$(document).ready(function() {
-				// 페이지 로드 시 오늘 날짜 설정
-				setToday();
+            $(document).ready(function() {
+                // 페이지 로드 시 오늘 날짜 설정
+                setToday();
 
-				// Enter 키로 검색
-				$('#scheduleDate').on('keypress', function(e) {
-					if (e.which === 13) {
-						searchSchedule();
-					}
-				});
-			});
+                // Enter 키로 검색
+                $('#targetdate').on('keypress', function(e) {
+                    if (e.which === 13) {
+                        searchSchedule();
+                    }
+                });
+            });
 		</script>
             
 		

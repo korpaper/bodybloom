@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.security.MessageDigest;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.apache.commons.codec.binary.Base64;
@@ -229,8 +231,17 @@ public class PictController {
 	public String schedule_list(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
 		String session = (String) request.getSession().getAttribute("id");
 		pictVO.setUserid(session);
+
+        LocalDate today = LocalDate.now();
+        System.out.println("오늘 날짜: " + today); // 기본 형식: 2025-11-28
+
+        // 원하는 형식으로 포맷팅
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate = today.format(formatter);
+
+
         if(pictVO != null && pictVO.getTargetdate() == null){
-            pictVO.setTargetdate("2025-11-24");
+            pictVO.setTargetdate(formattedDate);
         }
         // 일별
         List<?> day_list = pictService.schedule_list_day(pictVO);
