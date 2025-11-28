@@ -7,8 +7,8 @@
 
 body{
     font-family: 'Open Sans', 'Noto Sans KR', 'SUIT', sans-serif;
-    background-color: #FAF8F5;
-    color: #333;
+    background-color: #f4ede5;
+    color: #524832;
     overflow-x: hidden;
 }
 :root {
@@ -17,37 +17,39 @@ body{
     --fn-noto: 'Noto Sans KR', sans-serif;
     --fn-opensans: 'Open Sans', sans-serif;
 
-    /* Wellness Theme Colors - 민트/베이지 색상 팔레트 */
-    --mint-light: #E8F8F5;
-    --mint-medium: #bfdccb;
-    --mint-primary: #bfdccb;
-    /*--mint-primary: #46BBB3;*/
-    --mint-dark: #bfdccb;
-    --mint-deep: #83cfc8;
+    /* New Color Palette - 올리브/베이지 톤 */
+    --mint-light: #f4ede5;
+    --mint-medium: #817658;
+    --mint-primary: #817658;
+    --mint-dark: #524832;
+    --mint-deep: #817658;
 
     /* 베이지/크림 색상 */
-    --beige-lightest: #FAF8F5;
-    --beige-light: #F3EADA;
-    --beige-medium: #E8DCC8;
-    --beige-warm: #9f927d;
-    --beige-soft: #C8E6DC;
+    --beige-lightest: #f4ede5;
+    --beige-light: #f4ede5;
+    --beige-medium: #817658;
+    --beige-warm: #817658;
+    --beige-soft: #f4ede5;
 
-    --cream-bg: #FAF8F5;
-    --light-cream: #ECFDFB;
-    --text-dark: #333;
-    --text-light: #666;
+    --cream-bg: #f4ede5;
+    --light-cream: #f4ede5;
+    --text-dark: #524832;
+    --text-light: #524832;
 
-    /* Legacy color support - 민트 계열 색상 */
-    --purple-100: #E8F8F5;
-    --purple-200: #B3E6E0;
-    --purple-400: #7DD1CA;
-    --purple-500: #1f7a75;
-    --purple-700: #2D9B87;
-    --purple-900: #1A7A6E;
-    --green-500: #46BBB3;
-    --green-700: #2D9B87;
-    --accent-peach: #F3EADA;
-    --accent-coral: #C8E6DC;
+    /* Legacy color support */
+    --purple-100: #f4ede5;
+    --purple-200: #817658;
+    --purple-400: #817658;
+    --purple-500: #817658;
+    --purple-700: #524832;
+    --purple-900: #524832;
+    --green-500: #817658;
+    --green-700: #524832;
+    --accent-peach: #f4ede5;
+    --accent-coral: #f4ede5;
+    --beige-brown: #524832;
+    --mocha-brown: #524832;
+    --taupe-brown: #524832;
 }
 
 .blind {
