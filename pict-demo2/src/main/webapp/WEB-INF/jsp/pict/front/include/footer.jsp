@@ -13,7 +13,7 @@
             <p>Body Bloom - World Of Best GYM</p>
             <ul class="sns">
                 <li>
-                    <a href="#" target="_blank" title="새창이동">
+                    <a href="https://www.instagram.com/body_bloom_?igsh=MWJnMXQwcGhiZGM3ag==" target="_blank" title="새창이동">
                         <img src="/front_img/insta.png" alt="Instagram">
                     </a>
                 </li>
@@ -23,19 +23,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank" title="새창이동">
+                    <a href="http://pf.kakao.com/_xcnQdG" target="_blank" title="새창이동">
                         <img src="/front_img/kakao.png" alt="Kakao">
                     </a>
                 </li>
                 <li>
-                    <a href="https://blog.naver.com" target="_blank" title="네이버 블로그 새창이동">
+                    <a href="https://blog.naver.com/healer_choi_j" target="_blank" title="네이버 블로그 새창이동">
                         <img src="/front_img/blog.png" alt="Naver Blog">
                     </a>
                 </li>
             </ul>
             <div class="tel">
                 <span>문의</span>
-                <p>033-123-1234</p>
+                <p>033-243-7775</p>
             </div>
         </div>
     </div>

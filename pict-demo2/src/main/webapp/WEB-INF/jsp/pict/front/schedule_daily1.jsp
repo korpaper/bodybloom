@@ -48,74 +48,30 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="time">06:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">07:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">08:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">09:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">10:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">11:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">12:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">13:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">14:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">15:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">16:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">17:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">18:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">19:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">20:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">21:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
-                        <tr>
-                            <td class="time">22:00</td>
-                            <td class="editable-cell"></td>
-                        </tr>
+                        <c:forEach var="resultList" items="${day_list}" varStatus="status">
+                            <tr>
+                                <td class="time">
+                                    <c:if test="${resultList.targettime eq '1'}">06:00</c:if>
+                                    <c:if test="${resultList.targettime eq '2'}">07:00</c:if>
+                                    <c:if test="${resultList.targettime eq '3'}">08:00</c:if>
+                                    <c:if test="${resultList.targettime eq '4'}">09:00</c:if>
+                                    <c:if test="${resultList.targettime eq '5'}">10:00</c:if>
+                                    <c:if test="${resultList.targettime eq '6'}">11:00</c:if>
+                                    <c:if test="${resultList.targettime eq '7'}">12:00</c:if>
+                                    <c:if test="${resultList.targettime eq '8'}">13:00</c:if>
+                                    <c:if test="${resultList.targettime eq '9'}">14:00</c:if>
+                                    <c:if test="${resultList.targettime eq '10'}">15:00</c:if>
+                                    <c:if test="${resultList.targettime eq '11'}">16:00</c:if>
+                                    <c:if test="${resultList.targettime eq '12'}">17:00</c:if>
+                                    <c:if test="${resultList.targettime eq '13'}">18:00</c:if>
+                                    <c:if test="${resultList.targettime eq '14'}">19:00</c:if>
+                                    <c:if test="${resultList.targettime eq '15'}">20:00</c:if>
+                                    <c:if test="${resultList.targettime eq '16'}">21:00</c:if>
+                                    <c:if test="${resultList.targettime eq '17'}">22:00</c:if>
+                                </td>
+                                <td class="editable-cell">${resultList.day1}</td>
+                            </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>
@@ -146,20 +102,21 @@
                 weekday: 'long'
             });
             $('#selectedWeek').text(dateStr + ' 일간 스케줄');
+
         }
     }
 
     // 오늘 날짜로 설정
     function setToday() {
-        const today = new Date();
-        const dateString = today.toISOString().split('T')[0];
-        $('#scheduleDate').val(dateString);
-
-        if (currentView === 'weekly') {
-            updateWeekDisplay(today);
-        } else {
-            updateDailyDisplay();
-        }
+	    let targetdate = '${pictVO.targetdate}';
+	    let today = new Date();
+	    let dateString = today.toISOString().split('T')[0];
+	    if(targetdate == '' || targetdate == null){
+		    $('#scheduleDate').val(dateString);
+	    }
+	    else{
+		    $('#scheduleDate').val(targetdate);
+	    }
     }
     // 선택한 날짜로 스케줄 조회
     function searchSchedule() {
@@ -169,14 +126,8 @@
             return;
         }
 
-        const date = new Date(selectedDate);
-
-        if (currentView === 'weekly') {
-            updateWeekDisplay(date);
-        } else {
-            updateDailyDisplay();
-        }
-
+	    updateDailyDisplay()
+	    location.href= "/schedule_daily1?targetdate="+ selectedDate;
         // API 호출 시
     }
 

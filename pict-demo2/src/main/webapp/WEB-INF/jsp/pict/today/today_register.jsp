@@ -34,6 +34,15 @@
 									</div>
 								</div>
 
+                                <div class="write-box">
+									<div class="write-item">
+										<label for="title" class="title">설명</label>
+										<div class="input-box">
+											<input type="text" id="text" name="text" value="${pictVO.text}" class="input opt-max-width-500">
+										</div>
+									</div>
+								</div>
+
 								<div class="write-box">
 									<div class="write-item">
 										<label for="title" class="title">유튜브 영상 링크</label>

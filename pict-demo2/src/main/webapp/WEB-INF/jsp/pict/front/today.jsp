@@ -18,22 +18,25 @@
     <section class="videos-section">
         <div class="videos-container">
             <div class="video-grid">
+
                 <!-- 비디오 1 -->
-                <div class="video-card" data-aos="fade-up" data-aos-delay="100" onclick="openVideoModal('https://www.youtube.com/embed/v7AYKMP6rOE')">
-                    <div class="video-thumbnail">
-                        <img src="https://img.youtube.com/vi/v7AYKMP6rOE/maxresdefault.jpg" alt="아침 활력 운동">
-                        <div class="play-button">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
+                <c:forEach var="resultList" items="${resultList}" varStatus="status">
+                    <div class="video-card" data-aos="fade-up" data-aos-delay="100" onclick="openVideoModal('${resultList.videourl}')">
+                        <div class="video-thumbnail">
+                            <img src="${resultList.imgurl}" alt="${resultList.title}">
+                            <div class="play-button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>${resultList.title}</h3>
+                            <p>${resultList.text}</p>
+                            <span class="video-instructor">바디블룸</span>
                         </div>
                     </div>
-                    <div class="video-info">
-                        <h3>아침 활력 운동</h3>
-                        <p>하루를 시작하는 가벼운 스트레칭과 호흡법</p>
-                        <span class="video-instructor">윤수환 강사</span>
-                    </div>
-                </div>
+                </c:forEach>
 
             </div>
 

@@ -107,16 +107,16 @@
     <insert id="today_insert" parameterType="pictVO">
         INSERT INTO video_table
         (
-            title, imgurl, videourl, regdate
+            title, imgurl, videourl, regdate, text
         )
         VALUES (
-           #{title}, #{imgurl}, #{videourl}, now()
+           #{title}, #{imgurl}, #{videourl}, now(), #{text}
         )
     </insert>
 
     <update id="today_update" parameterType="pictVO">
         update video_table
-        set title =#{title}, videourl = #{videourl}
+        set title =#{title}, videourl = #{videourl}, text = #{text}
         <if test="imgurl != null and imgurl != '' ">
             , imgurl = #{imgurl}
         </if>

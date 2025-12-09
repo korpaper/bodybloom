@@ -20,12 +20,13 @@
             <div class="swiper popup-swiper">
                 <div class="swiper-wrapper">
                     <!-- 팝업 슬라이드 1 -->
-                    <div class="swiper-slide">
-                        <a href="/register" class="popup-link">
-                            <img src="/front_img/thumb1.png" alt="이벤트 1">
-                        </a>
-                    </div>
-
+                    <c:forEach var="resultList" items="${popup_list}" varStatus="status">
+                        <div class="swiper-slide">
+                            <a href="${resultList.linkurl}" class="popup-link" target="_blank">
+                                <img src="${resultList.imgurl}" alt="${resultList.title}">
+                            </a>
+                        </div>
+                    </c:forEach>
                 </div>
                 
                 <!-- 페이지네이션 -->
@@ -112,48 +113,22 @@
                 <span class="title-line">REVIEWS</span>
             </h2>
             <div class="modern-cards-grid">
-                <div class="modern-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-number">01</div>
-                    <h3>-5KG 감량 성공</h3>
-                    <p>몸도 마음도 정말 건강해진 것 같아요.</p>
-                    <div class="card-meta">
-                        <span class="author">김민지</span>
-                        <a href="/review" class="card-link">
-                            <span>더보기</span>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </a>
+                <c:forEach var="resultList" items="${review_list}" varStatus="status">
+                    <div class="modern-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-number">${status.count}</div>
+                        <h3>${resultList.title}</h3>
+                        <p>${resultList.text}</p>
+                        <div class="card-meta">
+                            <span class="author">${resultList.name}</span>
+                            <a href="/review" class="card-link">
+                                <span>더보기</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="modern-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-number">02</div>
-                    <h3>스트레스 완화</h3>
-                    <p>매주 수업이 기다려져요!</p>
-                    <div class="card-meta">
-                        <span class="author">이서연</span>
-                        <a href="/review" class="card-link">
-                            <span>더보기</span>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="modern-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-number">03</div>
-                    <h3>산모 추천</h3>
-                    <p>편안한 분위기가 좋습니다.</p>
-                    <div class="card-meta">
-                        <span class="author">박지혜</span>
-                        <a href="/review" class="card-link">
-                            <span>더보기</span>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+                </c:forEach>
             </div>
         </div>
     </section>

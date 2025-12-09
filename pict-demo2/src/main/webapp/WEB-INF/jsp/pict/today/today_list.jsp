@@ -34,8 +34,9 @@
 							        <table style="text-align : left">
 							        	<colgroup>
 							        		<col style="width:10%;">
-							        		<col style="width:30%;">
-							        		<col style="width:30%;">
+							        		<col style="width:20%;">
+							        		<col style="width:20%;">
+							        		<col style="width:20%;">
 							        		<col style="width:15%;">
 							        		<col style="width:15%;">
 							        	</colgroup>
@@ -43,6 +44,7 @@
 							                <tr class="thead">
 							                    <th>순서</th>
 							                    <th>제목</th>
+							                    <th>설명</th>
 							                    <th>영상링크</th>
 							                    <th>등록일</th>
 							                    <th>삭제</th>
@@ -53,6 +55,7 @@
 								                <tr>
 							                    	<td>${status.count}</td>
 							                    	<td class="opt-tl"><a href="javascript:void(0);" onclick="today_mod('${resultList.idx}');" class="link">${resultList.title}</a></td>
+							                    	<td>${resultList.text}</td>
 							                    	<td>${resultList.videourl}</td>
 							                    	<td>${resultList.regdate}</td>
 							                    	<td>

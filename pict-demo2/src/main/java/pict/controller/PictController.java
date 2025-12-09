@@ -124,7 +124,12 @@ public class PictController {
 	@RequestMapping(value = "/")
 	public String main(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
 		model.addAttribute("pictVO", pictVO);
-		
+        List<?> reference_list = pictService.popup_list(pictVO);
+        model.addAttribute("popup_list", reference_list);
+
+        List<?> review_list = pictService.review_list(pictVO);
+        model.addAttribute("review_list", review_list);
+
 		return "pict/front/main";
 	}
 
@@ -138,14 +143,31 @@ public class PictController {
     // 윤수환 일간
     @RequestMapping(value = "/schedule_daily1")
     public String schedule_daily1(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        pictVO.setUserid("nawhus"); // 윤수환 강사
+        LocalDate today = LocalDate.now();
+        // 원하는 형식으로 포맷팅
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate = today.format(formatter);
+
+        if(pictVO != null && pictVO.getTargetdate() == null){
+            pictVO.setTargetdate(formattedDate);
+        }
+        // 일별
+        List<?> day_list = pictService.schedule_list_day(pictVO);
+        model.addAttribute("day_list", day_list);
         return "pict/front/schedule_daily1";
     }
     // 윤수환 주간
     @RequestMapping(value = "/schedule_weekly1")
     public String schedule_weekly1(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
-        pictVO.setUserid("user01"); // 윤수환 강사
+        pictVO.setUserid("nawhus"); // 윤수환 강사
+        LocalDate today = LocalDate.now();
+        // 원하는 형식으로 포맷팅
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate = today.format(formatter);
+
         if(pictVO != null && pictVO.getTargetdate() == null){
-            pictVO.setTargetdate("2025-11-24");
+            pictVO.setTargetdate(formattedDate);
         }
         // 주별
         List<?> reference_list = pictService.schedule_list(pictVO);
@@ -159,14 +181,31 @@ public class PictController {
     // 최재희 일간
     @RequestMapping(value = "/schedule_daily2")
     public String schedule_daily2(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        pictVO.setUserid("zeze4018"); // 최재희 강사
+        LocalDate today = LocalDate.now();
+        // 원하는 형식으로 포맷팅
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate = today.format(formatter);
+
+        if(pictVO != null && pictVO.getTargetdate() == null){
+            pictVO.setTargetdate(formattedDate);
+        }
+        // 일별
+        List<?> day_list = pictService.schedule_list_day(pictVO);
+        model.addAttribute("day_list", day_list);
         return "pict/front/schedule_daily2";
     }
     // 최재희 주간
     @RequestMapping(value = "/schedule_weekly2")
     public String schedule_weekly2(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
-        pictVO.setUserid("user02"); // 최재희 강사
+        pictVO.setUserid("zeze4018"); // 최재희 강사
+        LocalDate today = LocalDate.now();
+        // 원하는 형식으로 포맷팅
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate = today.format(formatter);
+
         if(pictVO != null && pictVO.getTargetdate() == null){
-            pictVO.setTargetdate("2025-11-24");
+            pictVO.setTargetdate(formattedDate);
         }
         // 주별
         List<?> reference_list = pictService.schedule_list(pictVO);
@@ -180,14 +219,32 @@ public class PictController {
     // 윤동욱 일간
     @RequestMapping(value = "/schedule_daily3")
     public String schedule_daily3(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+        pictVO.setUserid("ydw2617"); // 윤동욱 강사
+        LocalDate today = LocalDate.now();
+        // 원하는 형식으로 포맷팅
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate = today.format(formatter);
+
+        if(pictVO != null && pictVO.getTargetdate() == null){
+            pictVO.setTargetdate(formattedDate);
+        }
+        // 일별
+        List<?> day_list = pictService.schedule_list_day(pictVO);
+        model.addAttribute("day_list", day_list);
         return "pict/front/schedule_daily3";
     }
     // 윤동욱 주간
     @RequestMapping(value = "/schedule_weekly3")
     public String schedule_weekly3(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
-        pictVO.setUserid("user03"); // 윤동욱 강사
+        pictVO.setUserid("ydw2617"); // 윤동욱 강사
+
+        LocalDate today = LocalDate.now();
+        // 원하는 형식으로 포맷팅
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate = today.format(formatter);
+
         if(pictVO != null && pictVO.getTargetdate() == null){
-            pictVO.setTargetdate("2025-11-24");
+            pictVO.setTargetdate(formattedDate);
         }
         // 주별
         List<?> reference_list = pictService.schedule_list(pictVO);
@@ -213,12 +270,20 @@ public class PictController {
     // 커뮤니티 - 오늘의운동
     @RequestMapping(value = "/today")
     public String today(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+
+        List<?> reference_list = pictService.today_list(pictVO);
+        model.addAttribute("resultList", reference_list);
+
         return "pict/front/today";
     }
 
     // 커뮤니티 - 후기
     @RequestMapping(value = "/review")
     public String review(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
+
+        List<?> review_list = pictService.review_list(pictVO);
+        model.addAttribute("review_list", review_list);
+
         return "pict/front/review";
     }
 

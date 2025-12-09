@@ -26,8 +26,7 @@
                     <h3>주소</h3>
                     <p>
                         <strong>Body Bloom Wellness Center</strong><br>
-                        서울특별시 강남구 테헤란로 123<br>
-                        바디블룸 빌딩 3층
+                        강원특별자치도 춘천시 서부대성로47번길 10 비아문하우스 3층
                     </p>
                 </div>
 
