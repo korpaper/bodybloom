@@ -25,7 +25,7 @@
                 <div class="location-info-card" data-aos="fade-up" data-aos-delay="100">
                     <h3>주소</h3>
                     <p>
-                        <strong>Body Bloom Wellness Center</strong><br>
+                        <strong>Body Bloom</strong><br>
                         강원특별자치도 춘천시 서부대성로47번길 10 비아문하우스 3층
                     </p>
                 </div>
@@ -33,12 +33,8 @@
                 <div class="location-info-card" data-aos="fade-up" data-aos-delay="200">
                     <h3>대중교통</h3>
                     <p>
-                        <strong>지하철</strong><br>
-                        2호선 강남역 3번 출구 도보 5분<br>
-                        신분당선 강남역 하차<br><br>
                         <strong>버스</strong><br>
-                        간선버스: 146, 360, 740<br>
-                        지선버스: 3414, 4319
+                        강원일보/한국은행 하차 후<br>도보 4분
                     </p>
                 </div>
 
@@ -46,24 +42,21 @@
                     <h3>주차 안내</h3>
                     <p>
                         <strong>주차 위치</strong><br>
-                        건물 지하 1층~3층<br>
-                        총 100대 주차 가능<br><br>
-                        <strong>주차 요금</strong><br>
-                        수업 회원: 3시간 무료<br>
-                        추가 시간: 10분당 1,000원<br>
-                        일반 방문: 30분당 2,000원
+                        - 비아문하우스 1층 주차장 이용 가능(단, 주차 공간이 협소)<br>
+                        - 평일 18시 이후, 공휴일, 주말에는 소담송하 앞 주차 가능<br>
+                        - 봉의C 주차장 주차 후 도보 약 3분<br><br>
                     </p>
                 </div>
 
                 <div class="location-info-card" data-aos="fade-up" data-aos-delay="400">
                     <h3>운영 시간</h3>
                     <p>
-                        <strong>평일</strong><br>
-                        06:00 - 22:00<br><br>
-                        <strong>주말 및 공휴일</strong><br>
-                        08:00 - 20:00<br><br>
-                        <strong>휴무</strong><br>
-                        매주 일요일
+                        <strong>(월~금)</strong>
+                        06:00 - 22:00<br>
+                        <strong>(토)</strong>
+                        06:00~18:00<br>
+                        <strong>휴무</strong>
+                        매주 일요일 정기휴무
                     </p>
                 </div>
             </div>

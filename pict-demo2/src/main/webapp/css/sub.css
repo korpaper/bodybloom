@@ -1497,6 +1497,7 @@
 .location-info-card strong {
     display: block;
     color: var(--text-dark);
+    font-weight: 800;
     margin-top: 12px;
     margin-bottom: 4px;
 }
