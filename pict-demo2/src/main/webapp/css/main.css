@@ -1019,7 +1019,7 @@ main{
 }
 
 .specialize-section.modern-section .modern-title {
-    color: #817658;
+    color: #fff;
 }
 
 .specialize-section.modern-section .modern-description {
@@ -1177,11 +1177,12 @@ main{
 }
 
 .highlight-text.high {
+    color: #fff;
     font-style: italic;
 }
 
 .highlight-text.one {
-    color: var(--purple-700);
+    color: #612206;
 }
 
 .modern-hero-subtitle {
@@ -1334,7 +1335,7 @@ main{
     align-items: center;
     gap: 12px;
     padding: 18px 36px;
-    background: var(--purple-500);
+    background: var(--mint-deep);
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
@@ -1497,7 +1498,7 @@ main{
 .list-number {
     font-size: 14px;
     font-weight: 800;
-    color: #817658;
+    color: #fff;
     font-family: var(--fn-opensans);
     min-width: 40px;
 }

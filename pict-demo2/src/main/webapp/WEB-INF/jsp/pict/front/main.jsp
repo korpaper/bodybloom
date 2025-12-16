@@ -90,10 +90,9 @@
                 <span class="section-label">TRAINERS</span>
                 <h2 class="modern-title beige-brown">강사진</h2>
                 <p class="modern-description beige-brown">
-                    전문성과 열정을 갖춘<br>
-                    BODYBLOOM의 강사진이<br>
-                    여러분의 건강한 변화를<br>
-                    함께 만들어갑니다
+                    움직임의 본질을 이해하는<br>
+                    BODYBLOOM 트레이너가<br>
+                    몸의 균형을 다시 설계합니다
                 </p>
                 <a href="/trainer" class="modern-btn btn-arrow">
                     <span>강사소개</span>
@@ -141,7 +140,7 @@
                 <div class="image-overlay-gradient"></div>
             </div>
             <div class="specialize-content modern-content" data-aos="fade-up" data-aos-delay="200">
-                <span class="section-label">WHY US</span>
+                <span class="section-label" style="color: #fff">WHY US</span>
                 <h2 class="modern-title">
                     WHY<br>
                     <span class="highlight-text high">BODYBLOOM</span>
@@ -153,22 +152,22 @@
                     <li data-aos="fade-right" data-aos-delay="300">
                         <span class="list-number">01</span>
                         <div>
-                            <h4 class="beige-brown">카페도 있다</h4>
-                            <p class="beige-brown">운동 후 편안하게 휴식할 수 있는 카페 공간</p>
+                            <h4 class="beige-brown">몸을 보는 다른 기준</h4>
+                            <p class="beige-brown">불필요한 힘을 덜어내는 움직임을 만듭니다</p>
                         </div>
                     </li>
                     <li data-aos="fade-right" data-aos-delay="400">
                         <span class="list-number">02</span>
                         <div>
-                            <h4 class="beige-brown">전문 강사진</h4>
-                            <p class="beige-brown">체계적인 관리와 맞춤 프로그램 제공</p>
+                            <h4 class="beige-brown">나만을 위한 운동</h4>
+                            <p class="beige-brown">생활 습관과 움직임 패턴을 분석해 지금의 몸에<br>가장 필요한 맞춤 트레이닝을 제공합니다.</p>
                         </div>
                     </li>
                     <li data-aos="fade-right" data-aos-delay="500">
                         <span class="list-number">03</span>
                         <div>
-                            <h4 class="beige-brown">변화가 뚜렷하니까</h4>
-                            <p class="beige-brown">눈에 보이는 성과와 건강한 라이프스타일</p>
+                            <h4 class="beige-brown">일상에서의 변화</h4>
+                            <p class="beige-brown">운동의 효과가 삶에서 드러난다.</p>
                         </div>
                     </li>
                 </ul>

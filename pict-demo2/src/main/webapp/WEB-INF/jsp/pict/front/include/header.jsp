@@ -51,11 +51,11 @@
             </li>
             <li class="has-dropdown <c:if test="${facilities ne -1 || location ne -1}">active</c:if>">
                 <a href="/facilities" class="dropdown-toggle <c:if test="${facilities ne -1 || location ne -1}">active</c:if>">
-                    <span>부대시설</span>
+                    <span>센터소개</span>
                 </a>
                 <ul class="dropdown">
                     <li <c:if test="${facilities ne -1}">class="active"</c:if>>
-                        <a href="/facilities">부대시설</a>
+                        <a href="/facilities">센터소개</a>
                     </li>
                     <li <c:if test="${location ne -1}">class="active"</c:if>>
                         <a href="/location">오시는길</a>

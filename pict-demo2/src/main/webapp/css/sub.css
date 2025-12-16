@@ -1750,17 +1750,13 @@
 
 /* Body Bloom Cafe Section */
 .cafe-section {
-    margin-top: 80px;
-    padding: 60px 20px;
-    background: var(--mint-primary);
-    border-radius: 20px;
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 0 20px;
 }
 
 .cafe-content {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 60px;
-    align-items: center;
+    width: 100%;
 }
 
 .cafe-image img {
@@ -2017,8 +2013,9 @@
     }
 
     .cafe-section {
-        margin-top: 40px;
-        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
 
     .cafe-info h2 {

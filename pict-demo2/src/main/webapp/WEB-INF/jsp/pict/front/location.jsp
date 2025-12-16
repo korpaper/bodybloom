@@ -51,79 +51,13 @@
                 <div class="location-info-card" data-aos="fade-up" data-aos-delay="400">
                     <h3>운영 시간</h3>
                     <p>
-                        <strong>(월~금)</strong>
+                        <strong>월~금</strong>
                         06:00 - 22:00<br>
-                        <strong>(토)</strong>
+                        <strong>토</strong>
                         06:00~18:00<br>
                         <strong>휴무</strong>
                         매주 일요일 정기휴무
                     </p>
-                </div>
-            </div>
-
-            <!-- 바디블룸 카페 섹션 -->
-            <div class="cafe-section" data-aos="fade-up">
-                <div class="cafe-content">
-                    <div class="cafe-image">
-                        <img src="/front_img/thumb3.png" alt="Body Bloom Cafe">
-                    </div>
-                    <div class="cafe-info">
-                        <h2>바디블룸 카페</h2>
-                        <p class="cafe-description">
-                            수업 전후 편안하게 휴식을 취할 수 있는 공간입니다.<br>
-                            유기농 차와 건강한 스낵, 디톡스 주스를 제공합니다.
-                        </p>
-                        <ul class="cafe-features">
-                            <li>
-                                <span class="icon">☕</span>
-                                <div>
-                                    <h4>유기농 음료</h4>
-                                    <p>엄선된 유기농 원두와 허브로 만든 건강한 음료</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="icon">🥗</span>
-                                <div>
-                                    <h4>건강 스낵</h4>
-                                    <p>저칼로리 고단백 스낵과 신선한 과일</p>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="icon">🌿</span>
-                                <div>
-                                    <h4>디톡스 주스</h4>
-                                    <p>신선한 야채와 과일로 만든 콜드프레스 주스</p>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="cafe-hours">
-                            <h4>카페 운영시간</h4>
-                            <p>평일 07:00 - 21:00 | 주말 08:00 - 19:00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 주차 안내 상세 -->
-            <div class="parking-detail" data-aos="fade-up">
-                <h2>주차 안내 상세</h2>
-                <div class="parking-grid">
-                    <div class="parking-card">
-                        <h3>주차장 진입</h3>
-                        <p>건물 왼쪽 진입로를 통해 지하주차장으로 진입하실 수 있습니다.</p>
-                    </div>
-                    <div class="parking-card">
-                        <h3>주차 위치</h3>
-                        <p>B1~B3층 전체가 주차 공간이며, Body Bloom 회원 전용 구역은 B2층에 마련되어 있습니다.</p>
-                    </div>
-                    <div class="parking-card">
-                        <h3>할인 혜택</h3>
-                        <p>정기 회원은 무제한 무료 주차가 가능하며, 1회 수업권 이용 시 3시간 무료입니다.</p>
-                    </div>
-                    <div class="parking-card">
-                        <h3>주차 등록</h3>
-                        <p>주차 할인을 받으시려면 수업 전 프론트에서 차량번호를 등록해주세요.</p>
-                    </div>
                 </div>
             </div>
         </div>
