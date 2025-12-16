@@ -18,160 +18,247 @@
     <section class="trainers-section">
         <div class="trainers-container">
             <div class="trainer-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="trainer-image">
-                    <img src="/front_img/thumb1.png" alt="윤수환 강사">
-                </div>
-                <div class="trainer-info">
-                    <h3>윤수환 강사</h3>
-                    <p class="trainer-specialty">퍼스널 트레이닝 / 체형교정</p>
-                    <p class="trainer-description">
-                        10년 경력의 퍼스널 트레이닝 전문가로, 개인별 맞춤 운동 프로그램을 통해
-                        건강한 신체 변화를 이끌어냅니다. 체형교정과 근력 강화에 특화된 트레이닝을 제공합니다.
-                    </p>
-
-                    <div class="trainer-details">
-                        <div class="trainer-section">
-                            <h4>학력</h4>
-                            <ul>
-                                <li>• 한국체육대학교 체육학과 졸업</li>
-                                <li>• 운동생리학 석사</li>
-                            </ul>
+                <div class="trainer-card-header">
+                    <div class="trainer-image">
+                        <img src="/front_img/yun3.webp" alt="윤수환 대표">
+                    </div>
+                    <div class="trainer-basic-info">
+                        <h3>윤수환 대표</h3>
+                        <div class="trainer-hashtags">
+                            <span class="hashtag">#체형교정전문가</span>
+                            <span class="hashtag">#신경계밸런스트레이닝</span>
+                            <span class="hashtag">#프리미엄재활PT</span>
+                            <span class="hashtag">#지속가능한건강관리</span>
                         </div>
+                        <p class="trainer-specialty">체형교정전문가 / 신경계밸런스트레이닝 / 프리미엄재활PT / 지속가능한건강관리</p>
+                        <div class="trainer-details">
+                            <div class="trainer-section">
+                                <h4>강점 및 특징</h4>
+                                <ul>
+                                    <li>✓ 체형교정&신경계 조화 전문가 : 단순한 운동이 아닌, 몸의 균형과 기능 개선에 집중</li>
+                                    <li>✓ 강한 열정과 헌신 : 허리 통증 극복 경험을 바탕으로 체형 교정에 대한 확신과 연구 지속</li>
+                                    <li>✓ 명확한 소통 방식 : 논리적이고 명확한 조언으로 신뢰 형성</li>
+                                    <li>✓ 창의적인 트레이닝 방식 : 기존의 정형화된 방식이 아니라, 새로운 운동법과 동작을 적용하여 재미있는 트레이닝 스타일</li>
+                                    <li>✓ PT+교정&재활까지 : 신체 불균형 개선과 기능 회복을 돕는 맞춤형 접근</li>
+                                    <li>✓ 목표 지향적인 마인드 : 회원님들이 원하는 목표까지 도달하기 위해 끊임없는 노력</li>
+                                    <li>✓ 자신만의 철학과 스타일 : 트렌드가 아닌, 경험을 바탕으로 독자적인 교정법 구축</li>
+                                    <li>✓ 지속 가능한 운동 : 단순한 다이어트가 아니라 몸을 더 건강하고 균형있게 만드는 접근법을 제공</li>
+                                </ul>
+                            </div>
 
-                        <div class="trainer-section">
-                            <h4>경력</h4>
-                            <ul>
-                                <li>• 현) 웰니스 PT센터 수석 트레이너 (2015~현재)</li>
-                                <li>• 전) 국가대표 체육관 퍼스널 트레이너 (2012~2015)</li>
-                                <li>• 전) 스포츠 재활센터 운동처방사 (2010~2012)</li>
-                            </ul>
-                        </div>
+                            <div class="trainer-section">
+                                <h4>학력</h4>
+                                <ul>
+                                    <li>• 한림대학교 컴퓨터공학, 체육학 전공</li>
+                                    <li>• FIFA 국제축구연맹 스포츠의학 학위과정</li>
+                                </ul>
+                            </div>
 
-                        <div class="trainer-section">
-                            <h4>수상이력</h4>
-                            <ul>
-                                <li>• 2023 대한민국 우수 퍼스널 트레이너 대상</li>
-                                <li>• 2021 전국 체형교정 트레이너 경진대회 금상</li>
-                                <li>• 2019 고객만족도 최우수 트레이너 선정</li>
-                            </ul>
-                        </div>
+                            <div class="trainer-section">
+                                <h4>경력</h4>
+                                <ul>
+                                    <li>• 현) 바디블룸 대표</li>
+                                    <li>• 현) 노인복지관 홈트레이닝 강사</li>
+                                    <li>• 현) 춘천남부노인복지관 운동 처방 상담 전문 상담위원</li>
+                                    <li>• 현) 나다운학교 신체 재활 및 몸의 주도성을 위한 운동프로그램 강사</li>
+                                    <li>• 전) 한림대학교 커뮤니티교육원 퍼스널트레이닝 강사</li>
+                                    <li>• 전) 평생학습 찾아가는 방문강좌 요가&스트레칭 강사</li>
+                                    <li>• 전) 숲체험 교육 프로그램 스트레칭 강사</li>
+                                    <li>• 가산초등학교 학부모 교육_아이의 교정과 성장 강의</li>
+                                    <li>• 나다운학교 학부모 교육_자세와 신경계 강의</li>
+                                </ul>
+                            </div>
 
-                        <div class="trainer-section">
-                            <h4>자격사항</h4>
-                            <ul>
-                                <li>• 생활스포츠지도사 2급 (보디빌딩)</li>
-                                <li>• NSCA-CPT 국제 퍼스널 트레이너 자격증</li>
-                                <li>• 재활운동 전문가 과정 이수</li>
-                                <li>• 체형교정 전문 트레이너 자격증</li>
-                            </ul>
+                            <div class="trainer-section">
+                                <h4>수상 및 기타 이력</h4>
+                                <ul>
+                                    <li>• 한림대학교 실감형 교육 콘텐츠 개발 자문 위원</li>
+                                    <li>• 근막이완기구 제품 개발 참여_브랜드 제품사업화 지원사업 수행기업</li>
+                                </ul>
+                            </div>
+
+                            <div class="trainer-section">
+                                <h4>자격사항</h4>
+                                <ul>
+                                    <li>• 생활스포츠지도사 2급(보디빌딩)_문화체육관광부장관</li>
+                                    <li>• The NASM International Certificate in Personal Training(CPT) (미국스포츠의학회 공인 트레이너)_NASM</li>
+                                    <li>• Corrective Exercise Specialist(CES)(교정운동사)_NASM</li>
+                                    <li>• Barefoot Training Specialist Level 1_NASM</li>
+                                    <li>• Barefoot Training Specialist Level 2_NASM</li>
+                                    <li>• Certified Measurement & Evaluation Specialist(MES)(측정평가사)_FITT</li>
+                                    <li>• PRES™ Soft Tissue mobilization Technique (프리스팀 마사지)_대한예방운동협회</li>
+                                    <li>• 스포츠 마사지 2급_(사)한국선수트레이너협회</li>
+                                    <li>• 스포츠 영양 코치_NSCA</li>
+                                    <li>• FIFA Diploma in Football Medicine_FIFA</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div class="trainer-card reverse" data-aos="fade-up" data-aos-delay="200">
-                <div class="trainer-image">
-                    <img src="/front_img/thumb2.png" alt="최대희 강사">
-                </div>
-                <div class="trainer-info">
-                    <h3>최재희 강사</h3>
-                    <p class="trainer-specialty">크로스핏 / 기능성 트레이닝</p>
-                    <p class="trainer-description">
-                        역동적인 크로스핏과 기능성 트레이닝 전문가입니다.
-                        고강도 인터벌 트레이닝(HIIT)을 통해 단기간에 최대 효과를 이끌어내며,
-                        개인의 체력 수준에 맞는 프로그램을 제공합니다.
-                    </p>
-
-                    <div class="trainer-details">
-                        <div class="trainer-section">
-                            <h4>학력</h4>
-                            <ul>
-                                <li>• 용인대학교 체육교육과 졸업</li>
-                                <li>• 미국 CrossFit HQ 트레이닝 과정 이수</li>
-                            </ul>
+                <div class="trainer-card-header">
+                    <div class="trainer-image">
+                        <img src="/front_img/choi.webp" alt="최재희 실장">
+                    </div>
+                    <div class="trainer-basic-info">
+                        <h3>최재희 실장</h3>
+                        <div class="trainer-hashtags">
+                            <span class="hashtag">#퍼포먼스트레이너</span>
+                            <span class="hashtag">#재활경험기반지도</span>
+                            <span class="hashtag">#전문적인맞춤형코칭</span>
+                            <span class="hashtag">#안정적트레이닝환경</span>
                         </div>
+                        <p class="trainer-specialty">퍼포먼스트레이너 / 재활경험기반지도 / 전문적인맞춤형코칭 / 안정적트레이닝환경</p>
+                        <div class="trainer-details">
+                            <div class="trainer-section">
+                                <h4>강점 및 특징</h4>
+                                <ul>
+                                    <li>✓ 퍼포먼스 트레이닝 전문가 : 하키 선수 출신으로 운동 수행 능력 및 퍼포먼스 향상 트레이닝 강점</li>
+                                    <li>✓ 다양한 현장 경험 : 여러 헬스장에서 쌓은 폭넓은 트레이닝 스타일</li>
+                                    <li>✓ 웨이트 트레이닝 깊은 이해 : 직접 마른체형을 극복한 경험으로 실질적인 솔루션 제공 가능</li>
+                                    <li>✓ 체형 교정&재활 공감력 : 허리 디스크, 인대 재건 수술 등 여러 수술 경험을 바탕으로 부상 관리 및 재활 지도에 강점</li>
+                                    <li>✓ 사려 깊고 배려심 있는 코칭 : 회원의 고민을 잘 들어주고 편안한 운동 환경 조성</li>
+                                    <li>✓ 회원 맞춤형 트레이닝 : 개개인의 니즈를 반영한 섬세한 지도 스타일</li>
+                                    <li>✓ 책임감과 성실함 : 꾸준하고 체계적인 지도로 신뢰 높은 트레이닝 제공</li>
+                                    <li>✓ 선수&일반인 트레이닝 균형 : 선수 출신이지만 트레이너 경험도 풍부해 맞춤형 접근 가능</li>
+                                </ul>
+                            </div>
 
-                        <div class="trainer-section">
-                            <h4>경력</h4>
-                            <ul>
-                                <li>• 현) 웰니스 PT센터 크로스핏 헤드코치 (2017~현재)</li>
-                                <li>• 전) 스포츠 센터 그룹 트레이닝 강사 (2014~2017)</li>
-                                <li>• 전) 대학 운동선수 체력 코치 (2012~2014)</li>
-                            </ul>
-                        </div>
+                            <div class="trainer-section">
+                                <h4>학력</h4>
+                                <ul>
+                                    <li>• 강원대학교 스포츠학과 전공</li>
+                                    <li>• FIFA 국제축구연맹 스포츠의학 학위과정</li>
+                                </ul>
+                            </div>
 
-                        <div class="trainer-section">
-                            <h4>수상이력</h4>
-                            <ul>
-                                <li>• 2022 전국 크로스핏 챔피언십 3위</li>
-                                <li>• 2020 기능성 트레이닝 우수 지도자상</li>
-                                <li>• 2018 고강도 트레이닝 경진대회 우수상</li>
-                            </ul>
-                        </div>
+                            <div class="trainer-section">
+                                <h4>경력</h4>
+                                <ul>
+                                    <li>• 현) 바디블룸 실장</li>
+                                    <li>• 현) 춘천남부노인복지관 홈트레이닝 강사</li>
+                                    <li>• 현) 월드비전복지관 트레이닝 강사</li>
+                                    <li>• 전) 필드하키 선수</li>
+                                    <li>• 전) 강원대학교 백령스포츠센터/트레이닝 강사 & GX강사_아침을 여는 스트레칭</li>
+                                    <li>• 전) body20 studio/트레이너</li>
+                                    <li>• 전) 파리피트니스/팀장</li>
+                                    <li>• 전) 국민건강보험공단/대리</li>
+                                    <li>• 전) 느린소리(경계지능 초등부) 놀이체육 강사</li>
+                                    <li>• 전) 평생학습 찾아가는 방문강좌 요가&스트레칭 강사</li>
+                                    <li>• 다문화가정 방문교사 대상 일일강의_스트레스 해소&스트레칭 방법</li>
+                                </ul>
+                            </div>
 
-                        <div class="trainer-section">
-                            <h4>자격사항</h4>
-                            <ul>
-                                <li>• CrossFit Level 2 Trainer 자격증</li>
-                                <li>• 생활스포츠지도사 2급 (보디빌딩)</li>
-                                <li>• 기능성 트레이닝 전문가 자격증</li>
-                                <li>• 스포츠 영양사 자격증</li>
-                            </ul>
+                            <div class="trainer-section">
+                                <h4>수상 및 기타 이력</h4>
+                                <ul>
+                                    <li>• 전국 종별 필드하키 선수권 대회 우수선수상</li>
+                                    <li>• 대통령배 전국 필드하키 선수권 대회 최우수선수상</li>
+                                    <li>• 상비군 발탁</li>
+                                    <li>• 춘천시 생활대축전 뷰티바디 2위</li>
+                                    <li>• 근막이완기구 제품 개발 참여_브랜드 제품사업화 지원사업 수행기업</li>
+                                </ul>
+                            </div>
+
+                            <div class="trainer-section">
+                                <h4>자격사항</h4>
+                                <ul>
+                                    <li>• 생활스포츠지도자 2급(보디빌딩)_문화체육관광부장관</li>
+                                    <li>• 노인스포츠지도자(보디빌딩)_문화체육관광부장관</li>
+                                    <li>• 국제퍼스널트레이너_FISAF KOREA</li>
+                                    <li>• 국제 메디컬 트레이너_FISAF KOREA</li>
+                                    <li>• 바른자세 교육사 2급_바른자세헬스케어진흥원</li>
+                                    <li>• 재활운동처방사 2급_바른자세헬스케어진흥원</li>
+                                    <li>• 국제 인증 체형평가 분석사_움직임 과학 연구소</li>
+                                    <li>• Safety Guard(CPR&AED)_YMCA시민안전본부</li>
+                                    <li>• BOSU MIND-BODY CERTIFICATION_BOSU</li>
+                                    <li>• 산후관리사 1급_한국자격검정평가진흥원</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div class="trainer-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="trainer-image">
-                    <img src="/front_img/thumb3.png" alt="윤동욱 강사">
-                </div>
-                <div class="trainer-info">
-                    <h3>윤동욱 강사</h3>
-                    <p class="trainer-specialty">웨이트 트레이닝 / 다이어트</p>
-                    <p class="trainer-description">
-                        웨이트 트레이닝과 다이어트 전문 트레이너로, 체계적인 식단 관리와
-                        효과적인 근력 운동을 통해 건강한 체중 감량과 근육 증가를 동시에 달성하도록 돕습니다.
-                    </p>
-
-                    <div class="trainer-details">
-                        <div class="trainer-section">
-                            <h4>학력</h4>
-                            <ul>
-                                <li>• 서울대학교 체육교육과 졸업</li>
-                                <li>• 스포츠영양학 전문과정 이수</li>
-                            </ul>
+                <div class="trainer-card-header">
+                    <div class="trainer-image">
+                        <img src="/front_img/dw.webp" alt="윤동욱 강사">
+                    </div>
+                    <div class="trainer-basic-info">
+                        <h3>윤동욱 강사</h3>
+                        <div class="trainer-hashtags">
+                            <span class="hashtag">#운동생리학전문트레이너</span>
+                            <span class="hashtag">#고객맞춤형지도</span>
+                            <span class="hashtag">#청소년전문트레이닝</span>
+                            <span class="hashtag">#다이어트프로그램</span>
                         </div>
+                        <p class="trainer-specialty">운동생리학전문트레이너 / 고객맞춤형지도 / 청소년전문트레이닝 / 다이어트프로그램</p>
+                        <div class="trainer-details">
+                            <div class="trainer-section">
+                                <h4>강점 및 특징</h4>
+                                <ul>
+                                    <li>✓ 고객 맞춤형 트레이닝 : 개인별 니즈를 정확히 파악하고 만족도를 높이는 지도 스타일</li>
+                                    <li>✓ 스타일과 신체 조화를 완성하는 트레이닝 : 단순한 운동이 아닌, 외적 이미지 개선까지 고려한 접근</li>
+                                    <li>✓ 아이들과의 소통 능력 : 중학교 스포츠 강사 경험을 바탕으로 유아, 청소년 트레이닝 최적화</li>
+                                    <li>✓ 높은 메타인지 능력 : 객관적 분석과 피드백 수용력이 뛰어나 효과적인 지도 제공</li>
+                                    <li>✓ 운동생리학 석사 : 학문적 지식과 실전 경험을 겸비한 체계적인 트레이닝</li>
+                                    <li>✓ 다이어트 전문 트레이너 : 체중 감량 목표 회원들에게 최적화된 프로그램 제공</li>
+                                    <li>✓ 강한 리더십과 추진력 : 목표 지향적이고 동기부여를 효과적으로 유도하는 스타일</li>
+                                </ul>
+                            </div>
 
-                        <div class="trainer-section">
-                            <h4>경력</h4>
-                            <ul>
-                                <li>• 현) 웰니스 PT센터 다이어트 전문 트레이너 (2016~현재)</li>
-                                <li>• 전) 프리미엄 피트니스 클럽 수석 트레이너 (2013~2016)</li>
-                                <li>• 전) 체중관리센터 운동처방사 (2011~2013)</li>
-                            </ul>
-                        </div>
+                            <div class="trainer-section">
+                                <h4>학력</h4>
+                                <ul>
+                                    <li>• 한림대학교 스포츠 의학 전공</li>
+                                    <li>• 강원대학교 스포츠과학 운동생리학 석사</li>
+                                    <li>• FIFA 국제축구연맹 스포츠의학 학위과정</li>
+                                </ul>
+                            </div>
 
-                        <div class="trainer-section">
-                            <h4>수상이력</h4>
-                            <ul>
-                                <li>• 2023 대한민국 다이어트 전문가 대상</li>
-                                <li>• 2021 체중관리 우수 트레이너 선정</li>
-                                <li>• 2019 고객 체형개선 최우수상</li>
-                            </ul>
-                        </div>
+                            <div class="trainer-section">
+                                <h4>경력</h4>
+                                <ul>
+                                    <li>• 현) 바디블룸 강사</li>
+                                    <li>• 현) 중학교 스포츠 강사</li>
+                                    <li>• 현) 평생교육관 체형교정&다이어트 강사</li>
+                                    <li>• 전) FIA KOREA 전임 운동생리학 강사</li>
+                                    <li>  - 필라테스 다이어트 방법론 강의</li>
+                                    <li>  - 다이어트 식단 설계 강의</li>
+                                    <li>  - 생리학적 다이어트 방법론 강의 외 다수</li>
+                                </ul>
+                            </div>
 
-                        <div class="trainer-section">
-                            <h4>자격사항</h4>
-                            <ul>
-                                <li>• 생활스포츠지도사 2급 (보디빌딩)</li>
-                                <li>• ACSM-CPT 국제 퍼스널 트레이너 자격증</li>
-                                <li>• 운동처방사 자격증</li>
-                                <li>• 스포츠 영양 전문가 과정 이수</li>
-                            </ul>
+                            <div class="trainer-section">
+                                <h4>수상 및 기타 이력</h4>
+                                <ul>
+                                    <li>• 미스터 서울(60kg) 4위</li>
+                                    <li>• PCA춘천 보디빌딩, 스포츠 모델 4위</li>
+                                    <li>• 여성 비만운동, 보충제와 다이어트 논문 저자</li>
+                                </ul>
+                            </div>
+
+                            <div class="trainer-section">
+                                <h4>자격사항</h4>
+                                <ul>
+                                    <li>• 생활체육지도자 2급(보디빌딩)_문화체육관광부장관</li>
+                                    <li>• The NASM International Certificate in Personal Training(CPT)(미국스포츠의학회 공인 트레이너)_NASM</li>
+                                    <li>• Corrective Exercise Specialist(CES)(교정운동사)_NASM</li>
+                                    <li>• Performance Enhancement Specialist(PES)(선수트레이닝전문가)_NASM</li>
+                                    <li>• 스포츠 영양전문가_NSCA(미국스트렝스컨디셔닝 학회)</li>
+                                    <li>• 노인스포츠지도자(보디빌딩)_문화체육관광부장관</li>
+                                    <li>• 국제비만운동전문가(OWMES) 한국 마스터 트레이너</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
