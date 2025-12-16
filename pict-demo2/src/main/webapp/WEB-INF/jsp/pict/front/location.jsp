@@ -64,7 +64,7 @@
     </section>
 </main>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=YOUR_KAKAO_MAP_API_KEY"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d776bb34a08483e971b1a5e18e0b065"></script>
 <script>
 $(document).ready(function() {
     AOS.init({
@@ -77,7 +77,7 @@ $(document).ready(function() {
     // API 키를 발급받아 위의 YOUR_KAKAO_MAP_API_KEY를 교체하세요
     var mapContainer = document.getElementById('map');
     var mapOption = {
-        center: new kakao.maps.LatLng(37.4979, 127.0276), // 강남역 좌표 (실제 주소로 변경 필요)
+        center: new kakao.maps.LatLng(37.8840551246513, 127.728649511497), // 강남역 좌표 (실제 주소로 변경 필요)
         level: 3 // 지도 확대 레벨
     };
 
@@ -85,14 +85,14 @@ $(document).ready(function() {
         var map = new kakao.maps.Map(mapContainer, mapOption);
 
         // 마커 생성
-        var markerPosition = new kakao.maps.LatLng(37.4979, 127.0276);
+        var markerPosition = new kakao.maps.LatLng(37.8840551246513, 127.728779555597);
         var marker = new kakao.maps.Marker({
             position: markerPosition
         });
         marker.setMap(map);
 
         // 인포윈도우 생성
-        var iwContent = '<div style="padding:5px;">Body Bloom Wellness Center</div>';
+        var iwContent = '<div style="padding:5px; width: 180px; text-align: center">바디블룸 피트니스센터</div>';
         var infowindow = new kakao.maps.InfoWindow({
             content: iwContent
         });

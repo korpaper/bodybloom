@@ -10,6 +10,9 @@
 <c:import url="../main/header.jsp">
 	<c:param name="pageTitle" value="스케쥴 등록" />
 </c:import>
+<%
+    String userId = (String) session.getAttribute("id");
+%>
 <body class="sb-nav-fixed">
 	<form action="" id="register" name="register" method="post" enctype="multipart/form-data">
 		<%@include file="../main/navigation.jsp"%>
@@ -27,7 +30,7 @@
 									<div class="write-item">
 										<label for="title" class="title">강사</label>
 										<div class="input-box">
-											<input type="text" id="userid" name="userid" value="${pictVO.userid}" class="input opt-max-width-500">
+											<input type="text" id="userid" name="userid" value="<%=userId%>" class="input opt-max-width-500" disabled>
 										</div>
 									</div>
 								</div>
