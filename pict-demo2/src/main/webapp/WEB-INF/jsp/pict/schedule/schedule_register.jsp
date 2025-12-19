@@ -119,14 +119,7 @@
 			location.href = "/schedule/schedule_list";
 		}
 		function button1_click() {
-			var title = $('#title').val();
 
-			if (title == "" || title == undefined) {
-				window.alert("제목을 입력해주세요.");
-				$('#title').focus();
-				return false;
-			}
-			
 			var text = "등록하시겠습니까?";
 			if (saveType == 'update') {
 				text = "수정하시겠습니까?"

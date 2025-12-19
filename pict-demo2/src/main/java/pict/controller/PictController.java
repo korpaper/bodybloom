@@ -343,6 +343,7 @@ public class PictController {
 	public String schedule_save(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, MultipartHttpServletRequest request) throws Exception {
 		String sessions = (String) request.getSession().getAttribute("id");
 
+        pictVO.setUserid(sessions);
 		if (pictVO.getSaveType() != null && pictVO.getSaveType().equals("update")) {
 			pictService.schedule_update(pictVO);
 			model.addAttribute("message", "정상적으로 수정되었습니다.");
