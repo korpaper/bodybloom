@@ -10,7 +10,7 @@
             <a href="/"><img src="/front_img/logo.png" alt="Body Bloom 로고"></a>
         </div>
         <div class="fInfo">
-            <p>Body Bloom - World Of Best GYM</p>
+            <p>바디블룸 - 몸의 질서를 되찾다</p>
             <ul class="sns">
                 <li>
                     <a href="https://www.instagram.com/body_bloom_?igsh=MWJnMXQwcGhiZGM3ag==" target="_blank" title="새창이동">
@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank" title="새창이동">
+                    <a href="https://www.youtube.com/@body_bloom" target="_blank" title="새창이동">
                         <img src="/front_img/youtube.png" alt="Youtube">
                     </a>
                 </li>

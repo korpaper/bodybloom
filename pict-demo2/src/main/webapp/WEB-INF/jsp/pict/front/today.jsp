@@ -39,16 +39,6 @@
                 </c:forEach>
 
             </div>
-
-            <div class="video-notice" data-aos="fade-up">
-                <h3>영상 이용 안내</h3>
-                <ul>
-                    <li>• 모든 영상은 무료로 시청 가능합니다.</li>
-                    <li>• 영상을 참고하여 집에서도 안전하게 요가를 즐기세요.</li>
-                    <li>• 처음 시작하시는 분들은 전문가의 지도를 받으시길 권장합니다.</li>
-                    <li>• 새로운 영상은 매주 업데이트됩니다.</li>
-                </ul>
-            </div>
         </div>
     </section>
 </main>
@@ -82,13 +72,48 @@ $(document).ready(function() {
     });
 });
 
+// YouTube URL을 임베드 URL로 변환
+function convertToEmbedUrl(url) {
+    // 이미 embed URL인 경우 그대로 반환
+    if (url.includes('/embed/')) {
+        return url;
+    }
+
+    let videoId = '';
+
+    // https://www.youtube.com/watch?v=VIDEO_ID 형식
+    if (url.includes('youtube.com/watch')) {
+        const urlParams = new URLSearchParams(url.split('?')[1]);
+        videoId = urlParams.get('v');
+    }
+    // https://youtu.be/VIDEO_ID 형식
+    else if (url.includes('youtu.be/')) {
+        videoId = url.split('youtu.be/')[1].split('?')[0];
+    }
+    // https://www.youtube.com/VIDEO_ID 형식
+    else if (url.includes('youtube.com/')) {
+        videoId = url.split('youtube.com/')[1].split('?')[0];
+    }
+
+    // 비디오 ID가 있으면 embed URL 반환
+    if (videoId) {
+        return 'https://www.youtube.com/embed/' + videoId;
+    }
+
+    // 변환 실패 시 원본 반환
+    return url;
+}
+
 // 비디오 모달 열기
 function openVideoModal(videoUrl) {
     const modal = document.getElementById('videoModal');
     const iframe = document.getElementById('videoIframe');
 
+    // YouTube URL을 embed URL로 변환
+    const embedUrl = convertToEmbedUrl(videoUrl);
+
     // iframe src 설정 (autoplay 추가)
-    iframe.src = videoUrl + '?autoplay=1';
+    iframe.src = embedUrl + '?autoplay=1';
 
     // 모달 표시
     modal.style.display = 'flex';

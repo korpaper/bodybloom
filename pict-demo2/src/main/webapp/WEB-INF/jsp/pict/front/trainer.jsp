@@ -258,8 +258,59 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+
+            <div class="trainer-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="trainer-card-header">
+                    <div class="trainer-image">
+                        <img src="/front_img/no.webp" alt="노을 이사">
+                    </div>
+                    <div class="trainer-basic-info">
+                        <h3>노을 운영•관리 이사 </h3>
+                        <div class="trainer-hashtags">
+                            <span class="hashtag">#만능엔터테이너</span>
+                            <span class="hashtag">#바디블룸실세</span>
+                            <span class="hashtag">#온화한미소</span>
+                        </div>
+                        <div class="trainer-details">
+                            <div class="trainer-section">
+                                <h4>강점 및 특징</h4>
+                                <ul>
+                                    <li>✓ 피트니스 카페 운영</li>
+                                    <li>✓ 세무•회계 관리</li>
+                                    <li>✓ 전반적인 센터 관리</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trainer-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="trainer-card-header">
+                    <div class="trainer-image">
+                        <img src="/front_img/ji.webp" alt="을지">
+                    </div>
+                    <div class="trainer-basic-info">
+                        <h3>을지 웰컴매니저 </h3>
+                        <div class="trainer-hashtags">
+                            <span class="hashtag">#우주최강귀여움</span>
+                            <span class="hashtag">#바디블룸간판</span>
+                            <span class="hashtag">#행복전도사</span>
+                        </div>
+                        <div class="trainer-details">
+                            <div class="trainer-section">
+                                <h4>강점 및 특징</h4>
+                                <ul>
+                                    <li>✓ 인사•정서교감•회복 담당</li>
+                                    <li>✓ 말 없는 귀염둥이 치료사 포지션</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 </main>

@@ -61,15 +61,15 @@
                     조화를 이루는 걸 연구하고 있는<br>
                     <span>BODYBLOOM</span>
                 </p>
-                <div class="hero-meta">
-                    <span>WELLNESS CENTER</span>
-                    <span>•</span>
-                    <span>EST. 2024</span>
-                </div>
+<%--                <div class="hero-meta">--%>
+<%--                    <span>WELLNESS CENTER</span>--%>
+<%--                    <span>•</span>--%>
+<%--                    <span>EST. 2024</span>--%>
+<%--                </div>--%>
             </div>
             <div class="hero-image-modern" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1200">
                 <div class="image-float">
-                    <img src="/front_img/thumb1.png" alt="Yoga Practice">
+                    <img src="/front_img/facil/center1.webp" alt="메인이미지1">
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@
     <section class="coach-section modern-section">
         <div class="coach-container modern-grid">
             <div class="coach-image modern-image" data-aos="zoom-in" data-aos-duration="1000">
-                <img src="/front_img/thumb2.png" alt="Wellness Coach">
+                <img src="/front_img/yun4.webp" alt="강사진">
                 <div class="image-overlay-gradient"></div>
             </div>
             <div class="coach-content modern-content" data-aos="fade-up" data-aos-delay="200">
@@ -136,7 +136,7 @@
     <section class="specialize-section modern-section">
         <div class="specialize-container modern-grid">
             <div class="specialize-image modern-image" data-aos="zoom-in" data-aos-duration="1000">
-                <img src="/front_img/thumb1.png" alt="Yoga Specialization">
+                <img src="/front_img/logo-brown.png" alt="Yoga Specialization">
                 <div class="image-overlay-gradient"></div>
             </div>
             <div class="specialize-content modern-content" data-aos="fade-up" data-aos-delay="200">
@@ -153,21 +153,21 @@
                         <span class="list-number">01</span>
                         <div>
                             <h4 class="beige-brown">몸을 보는 다른 기준</h4>
-                            <p class="beige-brown">불필요한 힘을 덜어내는 움직임을 만듭니다</p>
+                            <p class="beige-brown">물속에서 움직이듯<br>불필요한 힘을 덜어내는 움직임을 만듭니다.</p>
                         </div>
                     </li>
                     <li data-aos="fade-right" data-aos-delay="400">
                         <span class="list-number">02</span>
                         <div>
                             <h4 class="beige-brown">나만을 위한 운동</h4>
-                            <p class="beige-brown">생활 습관과 움직임 패턴을 분석해 지금의 몸에<br>가장 필요한 맞춤 트레이닝을 제공합니다.</p>
+                            <p class="beige-brown">생활 습관과 움직임 패턴을 분석해<br>지금의 몸에가장 필요한 맞춤 트레이닝을 제공합니다.</p>
                         </div>
                     </li>
                     <li data-aos="fade-right" data-aos-delay="500">
                         <span class="list-number">03</span>
                         <div>
                             <h4 class="beige-brown">일상에서의 변화</h4>
-                            <p class="beige-brown">운동의 효과가 삶에서 드러난다.</p>
+                            <p class="beige-brown">운동의 효과가 삶에서 드러납니다.</p>
                         </div>
                     </li>
                 </ul>

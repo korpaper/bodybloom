@@ -604,9 +604,12 @@ main{
 .swiper-slide a{
     display: block;
     width: 100%;
+    height: 600px;
 }
 .swiper-slide img{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 12px;
 }
 
@@ -630,6 +633,23 @@ main{
     }
     .swiper-slide img{
         width: 100%;
+        border-radius: 12px;
+    }
+}
+
+@media all and (max-width : 768px){
+    .popup-container {
+        max-width: 300px;
+    }
+    .swiper-slide a{
+        display: block;
+        width: 100%;
+        height: 300px;
+    }
+    .swiper-slide img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         border-radius: 12px;
     }
 }
@@ -1257,6 +1277,10 @@ main{
     border-radius: 24px;
 }
 
+.coach-image {
+    height: 500px;
+}
+
 .hero-image-modern img,
 .modern-image img {
     width: 100%;
@@ -1817,7 +1841,7 @@ main{
 @media (max-width: 768px) {
     .popup-container {
         width: 95%;
-        max-width: 500px;
+        max-width: 300px;
         border-radius: 20px;
     }
 
@@ -1859,7 +1883,6 @@ main{
 @media (max-width: 480px) {
     .popup-container {
         width: 95%;
-        max-width: 400px;
         border-radius: 15px;
     }
 
@@ -1895,5 +1918,362 @@ main{
 
     .popup-next {
         right: 8px;
+    }
+}
+
+/* ==========================================
+   PT 요금안내 섹션
+   ========================================== */
+
+.pricing-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--beige-light) 0%, var(--cream-bg) 50%, var(--mint-light) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.pricing-title {
+    font-size: 64px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--purple-700);
+    margin-bottom: 16px;
+    letter-spacing: -2px;
+}
+
+.pricing-subtitle {
+    font-size: 18px;
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 60px;
+    font-weight: 500;
+}
+
+.pricing-tables {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.pricing-table {
+    background: #fff;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+}
+
+.pricing-table:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    border-color: var(--mint-primary);
+}
+
+.pricing-header {
+    background: linear-gradient(135deg, var(--mint-dark) 0%, var(--mint-primary) 100%);
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.pricing-header h3 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+}
+
+.pricing-header p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.pricing-body {
+    padding: 40px;
+}
+
+.price-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    background: var(--beige-light);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.price-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--mint-primary);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.price-item:hover {
+    background: linear-gradient(135deg, var(--mint-light) 0%, var(--beige-light) 100%);
+    transform: translateX(8px);
+}
+
+.price-item:hover::before {
+    transform: scaleY(1);
+}
+
+.price-item.recommended {
+    background: linear-gradient(135deg, var(--mint-medium) 0%, var(--mint-primary) 100%);
+    border: 2px solid var(--mint-dark);
+    box-shadow: 0 4px 20px rgba(129, 118, 88, 0.2);
+}
+
+.price-item.recommended .sessions,
+.price-item.recommended .price {
+    color: #fff;
+    font-weight: 800;
+}
+
+.price-item.recommended .price-detail {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.price-item .sessions {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--purple-700);
+}
+
+.price-item .price-detail {
+    font-size: 14px;
+    color: var(--text-light);
+    margin: 0 auto 0 20px;
+}
+
+.price-item .price {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--mint-dark);
+    letter-spacing: -0.5px;
+}
+
+.pricing-benefits {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--mint-light);
+}
+
+.benefit-badge {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 32px;
+    background: var(--purple-700);
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(129, 118, 88, 0.3);
+}
+
+.badge-icon {
+    font-size: 32px;
+}
+
+.badge-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.payment-info {
+    text-align: right;
+}
+
+.payment-info h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--purple-700);
+    margin-bottom: 8px;
+}
+
+.payment-info p {
+    font-size: 16px;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* 모바일 반응형 */
+@media all and (max-width: 1024px) {
+    .pricing-section {
+        padding: 60px 0;
+    }
+
+    .pricing-container {
+        padding: 0 20px;
+    }
+
+    .pricing-title {
+        font-size: 40px;
+        margin-bottom: 12px;
+        letter-spacing: -1px;
+    }
+
+    .pricing-subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .pricing-tables {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    .pricing-header {
+        padding: 32px 24px;
+    }
+
+    .pricing-header h3 {
+        font-size: 28px;
+    }
+
+    .pricing-header p {
+        font-size: 14px;
+    }
+
+    .pricing-body {
+        padding: 24px;
+    }
+
+    .price-item {
+        padding: 16px 20px;
+        margin-bottom: 10px;
+        border-radius: 12px;
+    }
+
+    .price-item .sessions {
+        font-size: 18px;
+    }
+
+    .price-item .price-detail {
+        font-size: 12px;
+        margin: 0 auto 0 12px;
+    }
+
+    .price-item .price {
+        font-size: 20px;
+    }
+
+    .pricing-benefits {
+        flex-direction: column;
+        gap: 24px;
+        padding: 32px 24px;
+        border-radius: 20px;
+    }
+
+    .benefit-badge {
+        padding: 16px 24px;
+        border-radius: 40px;
+    }
+
+    .badge-icon {
+        font-size: 28px;
+    }
+
+    .badge-text {
+        font-size: 18px;
+    }
+
+    .payment-info {
+        text-align: center;
+    }
+
+    .payment-info h4 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .payment-info p {
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .pricing-title {
+        font-size: 32px;
+    }
+
+    .pricing-subtitle {
+        font-size: 14px;
+    }
+
+    .pricing-header h3 {
+        font-size: 24px;
+    }
+
+    .pricing-header p {
+        font-size: 13px;
+    }
+
+    .price-item {
+        padding: 14px 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .price-item .sessions {
+        font-size: 16px;
+    }
+
+    .price-item .price-detail {
+        font-size: 11px;
+        margin: 0;
+        flex-basis: 100%;
+        order: 3;
+    }
+
+    .price-item .price {
+        font-size: 18px;
+    }
+
+    .benefit-badge {
+        padding: 14px 20px;
+        gap: 12px;
+    }
+
+    .badge-icon {
+        font-size: 24px;
+    }
+
+    .badge-text {
+        font-size: 16px;
+    }
+
+    .payment-info h4 {
+        font-size: 15px;
+    }
+
+    .payment-info p {
+        font-size: 13px;
     }
 }

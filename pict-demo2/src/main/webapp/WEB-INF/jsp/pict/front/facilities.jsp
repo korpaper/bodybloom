@@ -19,7 +19,7 @@
         <div class="facilities-container">
             <div class="facility-item" data-aos="fade-up">
                 <div class="facility-image" onclick="openFacilityModal('main-center')">
-                    <img src="/front_img/thumb1.png" alt="Main Center">
+                    <img src="/front_img/facil/center1.webp" alt="메인센터">
                     <div class="image-overlay">
                         <span>+ 더 많은 사진 보기</span>
                     </div>
@@ -35,7 +35,7 @@
 
             <div class="facility-item reverse" data-aos="fade-up">
                 <div class="facility-image" onclick="openFacilityModal('gx-room')">
-                    <img src="/front_img/thumb2.png" alt="GX Room">
+                    <img src="/front_img/facil/gx1.webp" alt="GX룸">
                     <div class="image-overlay">
                         <span>+ 더 많은 사진 보기</span>
                     </div>
@@ -56,7 +56,7 @@
 
             <div class="facility-item" data-aos="fade-up">
                 <div class="facility-image" onclick="openFacilityModal('cafe')">
-                    <img src="/front_img/thumb3.png" alt="Cafe">
+                    <img src="/front_img/facil/cafe1.webp" alt="Cafe">
                     <div class="image-overlay">
                         <span>+ 더 많은 사진 보기</span>
                     </div>
@@ -78,37 +78,96 @@
             </div>
         </div>
 
-        <!-- 바디블룸 카페 섹션 -->
-            <div class="cafe-section" data-aos="fade-up">
-            <div class="cafe-content">
-                <div class="cafe-info">
-                    <h2>요금안내</h2>
-                    <ul class="cafe-features">
-                        <li>
-                            <span class="icon">☕</span>
-                            <div>
-                                <h4>유기농 음료</h4>
-                                <p>엄선된 유기농 원두와 허브로 만든 건강한 음료</p>
+        <!-- PT 요금안내 섹션 -->
+        <div class="pricing-section" data-aos="fade-up">
+            <div class="pricing-container">
+                <h2 class="pricing-title">요금안내</h2>
+                <p class="pricing-subtitle">목표에 맞는 최적의 PT 프로그램을 선택하세요</p>
+
+                <div class="pricing-tables">
+                    <!-- 1:1 PT -->
+                    <div class="pricing-table" data-aos="fade-up" data-aos-delay="100">
+                        <div class="pricing-header">
+                            <h3>1:1 PT</h3>
+                            <p>개인 맞춤형 집중 트레이닝</p>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="price-item">
+                                <span class="sessions">1회</span>
+                                <span class="price">6만원</span>
                             </div>
-                        </li>
-                        <li>
-                            <span class="icon">🥗</span>
-                            <div>
-                                <h4>건강 스낵</h4>
-                                <p>저칼로리 고단백 스낵과 신선한 과일</p>
+                            <div class="price-item">
+                                <span class="sessions">10회</span>
+                                <span class="price">50만원</span>
                             </div>
-                        </li>
-                        <li>
-                            <span class="icon">🌿</span>
-                            <div>
-                                <h4>디톡스 주스</h4>
-                                <p>신선한 야채와 과일로 만든 콜드프레스 주스</p>
+                            <div class="price-item">
+                                <span class="sessions">20회</span>
+                                <span class="price">98만원</span>
                             </div>
-                        </li>
-                    </ul>
-                    <div class="cafe-hours">
-                        <h4>카페 운영시간</h4>
-                        <p>평일 07:00 - 21:00 | 주말 08:00 - 19:00</p>
+                            <div class="price-item">
+                                <span class="sessions">30회</span>
+                                <span class="price">144만원</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="sessions">40회</span>
+                                <span class="price">188만원</span>
+                            </div>
+                            <div class="price-item recommended">
+                                <span class="sessions">50회</span>
+                                <span class="price">230만원</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2:1 PT -->
+                    <div class="pricing-table" data-aos="fade-up" data-aos-delay="200">
+                        <div class="pricing-header">
+                            <h3>2:1 PT</h3>
+                            <p>친구와 함께하는 트레이닝</p>
+                        </div>
+                        <div class="pricing-body">
+                            <div class="price-item">
+                                <span class="sessions">1회</span>
+                                <span class="price-detail">3.5만원 × 2</span>
+                                <span class="price">7만원</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="sessions">10회</span>
+                                <span class="price-detail">30만원 × 2</span>
+                                <span class="price">60만원</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="sessions">20회</span>
+                                <span class="price-detail">59만원 × 2</span>
+                                <span class="price">118만원</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="sessions">30회</span>
+                                <span class="price-detail">87만원 × 2</span>
+                                <span class="price">174만원</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="sessions">40회</span>
+                                <span class="price-detail">114만원 × 2</span>
+                                <span class="price">228만원</span>
+                            </div>
+                            <div class="price-item recommended">
+                                <span class="sessions">50회</span>
+                                <span class="price-detail">140만원 × 2</span>
+                                <span class="price">280만원</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-benefits" data-aos="fade-up" data-aos-delay="300">
+                    <div class="benefit-badge">
+                        <span class="badge-icon">🎁</span>
+                        <span class="badge-text">무료 1회 OT 제공</span>
+                    </div>
+                    <div class="payment-info">
+                        <h4>계좌이체</h4>
+                        <p>(신한) 110-361-248340 윤수환</p>
                     </div>
                 </div>
             </div>
@@ -122,7 +181,7 @@
             <button class="modal-close" onclick="closeFacilityModal()">&times;</button>
             <div class="swiper facility-swiper">
                 <div class="swiper-wrapper" id="facilityImages">
-                    <img src="/front_img/thumb1.png" alt="Main Center">
+                    <!-- 이미지가 동적으로 추가됩니다 -->
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -136,64 +195,94 @@
 // 시설별 이미지
 const facilityData = {
     'main-center': [
-        { src: '/front_img/thumb1.png', alt: '메인 센터 1' },
-        { src: '/front_img/thumb2.png', alt: '메인 센터 2' },
-        { src: '/front_img/thumb3.png', alt: '메인 센터 3' },
-        { src: '/front_img/thumb4.png', alt: '메인 센터 4' }
+        { src: '/front_img/facil/center1.webp', alt: '메인 센터 1' },
+        { src: '/front_img/facil/center2.webp', alt: '메인 센터 2' },
+        { src: '/front_img/facil/center3.webp', alt: '메인 센터 3' },
+        { src: '/front_img/facil/center4.webp', alt: '메인 센터 4' },
+        { src: '/front_img/facil/center5.webp', alt: '메인 센터 5' },
+        { src: '/front_img/facil/center6.webp', alt: '메인 센터 6' },
+        { src: '/front_img/facil/center7.webp', alt: '메인 센터 7' },
+        { src: '/front_img/facil/center8.webp', alt: '메인 센터 8' },
+        { src: '/front_img/facil/center9.webp', alt: '메인 센터 9' },
+        { src: '/front_img/facil/center10.webp', alt: '메인 센터 10' },
+        { src: '/front_img/facil/center11.webp', alt: '메인 센터 11' }
     ],
     'gx-room': [
-        { src: '/front_img/thumb2.png', alt: 'GX룸 1' },
-        { src: '/front_img/thumb1.png', alt: 'GX룸 2' },
-        { src: '/front_img/thumb4.png', alt: 'GX룸 3' },
-        { src: '/front_img/thumb3.png', alt: 'GX룸 4' }
+        { src: '/front_img/facil/gx1.webp', alt: 'GX룸 1' },
+        { src: '/front_img/facil/gx2.webp', alt: 'GX룸 2' },
     ],
     'cafe': [
-        { src: '/front_img/thumb3.png', alt: '피트니스 카페 1' },
-        { src: '/front_img/thumb4.png', alt: '피트니스 카페 2' },
-        { src: '/front_img/thumb1.png', alt: '피트니스 카페 3' },
-        { src: '/front_img/thumb2.png', alt: '피트니스 카페 4' }
+        { src: '/front_img/facil/cafe1.webp', alt: '카페 1' },
+        { src: '/front_img/facil/cafe2.webp', alt: '카페 2' },
+        { src: '/front_img/facil/cafe3.webp', alt: '카페 3' },
+        { src: '/front_img/facil/cafe4.webp', alt: '카페 4' },
+        { src: '/front_img/facil/cafe5.webp', alt: '카페 5' },
+        { src: '/front_img/facil/cafe6.webp', alt: '카페 6' },
+        { src: '/front_img/facil/cafe7.webp', alt: '카페 7' },
     ]
 };
 
 let facilitySwiper = null;
 
 function openFacilityModal(facilityType) {
+
     const modal = document.getElementById('facilityModal');
     const imagesContainer = document.getElementById('facilityImages');
     const images = facilityData[facilityType];
 
+    // 기존 Swiper 제거
+    if (facilitySwiper) {
+        facilitySwiper.destroy(true, true);
+        facilitySwiper = null;
+    }
+
+    // 이미지 컨테이너 초기화
     imagesContainer.innerHTML = '';
 
-    images.forEach(image => {
-        const slide = document.createElement('div');
-        slide.className = 'swiper-slide';
-        slide.innerHTML = `<img src="${image.src}" alt="${image.alt}">`;
-        imagesContainer.appendChild(slide);
-    });
+    // 이미지 슬라이드 추가
+    if (images && images.length > 0) {
+        images.forEach((image, index) => {
+            console.log('Adding image ' + index + ':', image.src);
+            const slide = document.createElement('div');
+            slide.className = 'swiper-slide';
+            const img = document.createElement('img');
+            img.src = image.src;
+            img.alt = image.alt;
+            slide.appendChild(img);
+            imagesContainer.appendChild(slide);
+        });
 
+    }
+
+    // 모달 표시
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 
-    if (facilitySwiper) {
-        facilitySwiper.destroy();
-    }
-
-    facilitySwiper = new Swiper('.facility-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        keyboard: {
-            enabled: true,
-        },
-    });
+    // DOM 업데이트 후 Swiper 초기화
+    setTimeout(() => {
+        console.log('Initializing Swiper...');
+        facilitySwiper = new Swiper('.facility-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: images.length > 1,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            keyboard: {
+                enabled: true,
+            },
+            on: {
+                init: function() {
+                    console.log('Swiper initialized');
+                }
+            }
+        });
+    }, 100);
 }
 
 function closeFacilityModal() {
