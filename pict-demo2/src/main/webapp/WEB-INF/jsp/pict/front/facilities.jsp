@@ -156,6 +156,7 @@
                                 <span class="price-detail">140만원 × 2</span>
                                 <span class="price">280만원</span>
                             </div>
+                            <span>• 3인 이상 그룹PT는 대표 번호로 문의부탁드립니다. </span>
                         </div>
                     </div>
                 </div>

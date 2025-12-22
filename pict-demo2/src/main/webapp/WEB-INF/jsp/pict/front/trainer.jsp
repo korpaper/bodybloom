@@ -23,7 +23,7 @@
                         <img src="/front_img/yun3.webp" alt="윤수환 대표">
                     </div>
                     <div class="trainer-basic-info">
-                        <h3>윤수환 대표</h3>
+                        <h3>윤수환 <span>대표</span></h3>
                         <div class="trainer-hashtags">
                             <span class="hashtag">#체형교정전문가</span>
                             <span class="hashtag">#신경계밸런스트레이닝</span>
@@ -35,14 +35,14 @@
                             <div class="trainer-section">
                                 <h4>강점 및 특징</h4>
                                 <ul>
-                                    <li>✓ 체형교정&신경계 조화 전문가 : 단순한 운동이 아닌, 몸의 균형과 기능 개선에 집중</li>
-                                    <li>✓ 강한 열정과 헌신 : 허리 통증 극복 경험을 바탕으로 체형 교정에 대한 확신과 연구 지속</li>
-                                    <li>✓ 명확한 소통 방식 : 논리적이고 명확한 조언으로 신뢰 형성</li>
-                                    <li>✓ 창의적인 트레이닝 방식 : 기존의 정형화된 방식이 아니라, 새로운 운동법과 동작을 적용하여 재미있는 트레이닝 스타일</li>
-                                    <li>✓ PT+교정&재활까지 : 신체 불균형 개선과 기능 회복을 돕는 맞춤형 접근</li>
-                                    <li>✓ 목표 지향적인 마인드 : 회원님들이 원하는 목표까지 도달하기 위해 끊임없는 노력</li>
-                                    <li>✓ 자신만의 철학과 스타일 : 트렌드가 아닌, 경험을 바탕으로 독자적인 교정법 구축</li>
-                                    <li>✓ 지속 가능한 운동 : 단순한 다이어트가 아니라 몸을 더 건강하고 균형있게 만드는 접근법을 제공</li>
+                                    <li>✓ <strong>체형교정&신경계 조화 전문가</strong><br>: 단순한 운동이 아닌, 몸의 균형과 기능 개선에 집중</li>
+                                    <li>✓ <strong>강한 열정과 헌신</strong><br>: 허리 통증 극복 경험을 바탕으로 체형 교정에 대한 확신과 연구 지속</li>
+                                    <li>✓ <strong>명확한 소통 방식</strong><br>: 논리적이고 명확한 조언으로 신뢰 형성</li>
+                                    <li>✓ <strong>창의적인 트레이닝 방식</strong><br>: 기존의 정형화된 방식이 아니라, 새로운 운동법과 동작을 적용하여 재미있는 트레이닝 스타일</li>
+                                    <li>✓ <strong>PT+교정&재활까지</strong><br>: 신체 불균형 개선과 기능 회복을 돕는 맞춤형 접근</li>
+                                    <li>✓ <strong>목표 지향적인 마인드</strong><br>: 회원님들이 원하는 목표까지 도달하기 위해 끊임없는 노력</li>
+                                    <li>✓ <strong>자신만의 철학과 스타일</strong><br>: 트렌드가 아닌, 경험을 바탕으로 독자적인 교정법 구축</li>
+                                    <li>✓ <strong>지속 가능한 운동</strong><br>: 단순한 다이어트가 아니라 몸을 더 건강하고 균형있게 만드는 접근법을 제공</li>
                                 </ul>
                             </div>
 
@@ -104,7 +104,7 @@
                         <img src="/front_img/choi.webp" alt="최재희 실장">
                     </div>
                     <div class="trainer-basic-info">
-                        <h3>최재희 실장</h3>
+                        <h3>최재희 <span>실장</span></h3>
                         <div class="trainer-hashtags">
                             <span class="hashtag">#퍼포먼스트레이너</span>
                             <span class="hashtag">#재활경험기반지도</span>
@@ -116,14 +116,14 @@
                             <div class="trainer-section">
                                 <h4>강점 및 특징</h4>
                                 <ul>
-                                    <li>✓ 퍼포먼스 트레이닝 전문가 : 하키 선수 출신으로 운동 수행 능력 및 퍼포먼스 향상 트레이닝 강점</li>
-                                    <li>✓ 다양한 현장 경험 : 여러 헬스장에서 쌓은 폭넓은 트레이닝 스타일</li>
-                                    <li>✓ 웨이트 트레이닝 깊은 이해 : 직접 마른체형을 극복한 경험으로 실질적인 솔루션 제공 가능</li>
-                                    <li>✓ 체형 교정&재활 공감력 : 허리 디스크, 인대 재건 수술 등 여러 수술 경험을 바탕으로 부상 관리 및 재활 지도에 강점</li>
-                                    <li>✓ 사려 깊고 배려심 있는 코칭 : 회원의 고민을 잘 들어주고 편안한 운동 환경 조성</li>
-                                    <li>✓ 회원 맞춤형 트레이닝 : 개개인의 니즈를 반영한 섬세한 지도 스타일</li>
-                                    <li>✓ 책임감과 성실함 : 꾸준하고 체계적인 지도로 신뢰 높은 트레이닝 제공</li>
-                                    <li>✓ 선수&일반인 트레이닝 균형 : 선수 출신이지만 트레이너 경험도 풍부해 맞춤형 접근 가능</li>
+                                    <li>✓ <strong>퍼포먼스 트레이닝 전문가</strong><br>: 하키 선수 출신으로 운동 수행 능력 및 퍼포먼스 향상 트레이닝 강점</li>
+                                    <li>✓ <strong>다양한 현장 경험</strong><br>: 여러 헬스장에서 쌓은 폭넓은 트레이닝 스타일</li>
+                                    <li>✓ <strong>웨이트 트레이닝 깊은 이해</strong><br>: 직접 마른체형을 극복한 경험으로 실질적인 솔루션 제공 가능</li>
+                                    <li>✓ <strong>체형 교정&재활 공감력</strong><br>: 허리 디스크, 인대 재건 수술 등 여러 수술 경험을 바탕으로 부상 관리 및 재활 지도에 강점</li>
+                                    <li>✓ <strong>사려 깊고 배려심 있는 코칭</strong><br>: 회원의 고민을 잘 들어주고 편안한 운동 환경 조성</li>
+                                    <li>✓ <strong>회원 맞춤형 트레이닝</strong><br>: 개개인의 니즈를 반영한 섬세한 지도 스타일</li>
+                                    <li>✓ <strong>책임감과 성실함</strong><br>: 꾸준하고 체계적인 지도로 신뢰 높은 트레이닝 제공</li>
+                                    <li>✓ <strong>선수&일반인 트레이닝 균형</strong><br>: 선수 출신이지만 트레이너 경험도 풍부해 맞춤형 접근 가능</li>
                                 </ul>
                             </div>
 
@@ -190,7 +190,7 @@
                         <img src="/front_img/dw.webp" alt="윤동욱 강사">
                     </div>
                     <div class="trainer-basic-info">
-                        <h3>윤동욱 강사</h3>
+                        <h3>윤동욱 <span>강사</span></h3>
                         <div class="trainer-hashtags">
                             <span class="hashtag">#운동생리학전문트레이너</span>
                             <span class="hashtag">#고객맞춤형지도</span>
@@ -202,13 +202,13 @@
                             <div class="trainer-section">
                                 <h4>강점 및 특징</h4>
                                 <ul>
-                                    <li>✓ 고객 맞춤형 트레이닝 : 개인별 니즈를 정확히 파악하고 만족도를 높이는 지도 스타일</li>
-                                    <li>✓ 스타일과 신체 조화를 완성하는 트레이닝 : 단순한 운동이 아닌, 외적 이미지 개선까지 고려한 접근</li>
-                                    <li>✓ 아이들과의 소통 능력 : 중학교 스포츠 강사 경험을 바탕으로 유아, 청소년 트레이닝 최적화</li>
-                                    <li>✓ 높은 메타인지 능력 : 객관적 분석과 피드백 수용력이 뛰어나 효과적인 지도 제공</li>
-                                    <li>✓ 운동생리학 석사 : 학문적 지식과 실전 경험을 겸비한 체계적인 트레이닝</li>
-                                    <li>✓ 다이어트 전문 트레이너 : 체중 감량 목표 회원들에게 최적화된 프로그램 제공</li>
-                                    <li>✓ 강한 리더십과 추진력 : 목표 지향적이고 동기부여를 효과적으로 유도하는 스타일</li>
+                                    <li>✓ <strong>고객 맞춤형 트레이닝</strong><br>: 개인별 니즈를 정확히 파악하고 만족도를 높이는 지도 스타일</li>
+                                    <li>✓ <strong>스타일과 신체 조화를 완성하는 트레이닝</strong><br>: 단순한 운동이 아닌, 외적 이미지 개선까지 고려한 접근</li>
+                                    <li>✓ <strong>아이들과의 소통 능력</strong><br>: 중학교 스포츠 강사 경험을 바탕으로 유아, 청소년 트레이닝 최적화</li>
+                                    <li>✓ <strong>높은 메타인지 능력</strong><br>: 객관적 분석과 피드백 수용력이 뛰어나 효과적인 지도 제공</li>
+                                    <li>✓ <strong>운동생리학 석사</strong><br>: 학문적 지식과 실전 경험을 겸비한 체계적인 트레이닝</li>
+                                    <li>✓ <strong>다이어트 전문 트레이너</strong><br>: 체중 감량 목표 회원들에게 최적화된 프로그램 제공</li>
+                                    <li>✓ <strong>강한 리더십과 추진력</strong><br>: 목표 지향적이고 동기부여를 효과적으로 유도하는 스타일</li>
                                 </ul>
                             </div>
 
@@ -266,7 +266,7 @@
                         <img src="/front_img/no.webp" alt="노을 이사">
                     </div>
                     <div class="trainer-basic-info">
-                        <h3>노을 운영•관리 이사 </h3>
+                        <h3>노을 <span>운영•관리 이사</span></h3>
                         <div class="trainer-hashtags">
                             <span class="hashtag">#만능엔터테이너</span>
                             <span class="hashtag">#바디블룸실세</span>
@@ -274,11 +274,11 @@
                         </div>
                         <div class="trainer-details">
                             <div class="trainer-section">
-                                <h4>강점 및 특징</h4>
+                                <h4>담당업무</h4>
                                 <ul>
-                                    <li>✓ 피트니스 카페 운영</li>
-                                    <li>✓ 세무•회계 관리</li>
-                                    <li>✓ 전반적인 센터 관리</li>
+                                    <li>✓ <strong>피트니스 카페 운영</strong></li>
+                                    <li>✓ <strong>세무•회계 관리</strong></li>
+                                    <li>✓ <strong>전반적인 센터 관리</strong></li>
                                 </ul>
                             </div>
                         </div>
@@ -292,7 +292,7 @@
                         <img src="/front_img/ji.webp" alt="을지">
                     </div>
                     <div class="trainer-basic-info">
-                        <h3>을지 웰컴매니저 </h3>
+                        <h3>을지 <span>웰컴매니저</span></h3>
                         <div class="trainer-hashtags">
                             <span class="hashtag">#우주최강귀여움</span>
                             <span class="hashtag">#바디블룸간판</span>
@@ -300,10 +300,10 @@
                         </div>
                         <div class="trainer-details">
                             <div class="trainer-section">
-                                <h4>강점 및 특징</h4>
+                                <h4>담당업무</h4>
                                 <ul>
-                                    <li>✓ 인사•정서교감•회복 담당</li>
-                                    <li>✓ 말 없는 귀염둥이 치료사 포지션</li>
+                                    <li>✓ <strong>인사•정서교감•회복 담당</strong></li>
+                                    <li>✓ <strong>말 없는 귀염둥이 치료사 포지션</strong></li>
                                 </ul>
                             </div>
                         </div>

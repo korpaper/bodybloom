@@ -865,7 +865,12 @@
 
 /* Page Header */
 .page-header {
-    padding: 200px 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 99px;
+    height: 300px;
+    padding-bottom: 30px;
     background: var(--mint-medium);
     text-align: center;
 }
@@ -960,6 +965,10 @@
     font-weight: 700;
     color: #4b2e17;
     margin-bottom: 20px;
+}
+.trainer-basic-info h3 span {
+    font-weight: 500;
+    font-size: 32px;
 }
 
 .trainer-hashtags {
@@ -1711,6 +1720,9 @@
 
 /* Mobile Responsive */
 @media all and (max-width: 1024px) {
+    .page-header {
+        margin-top: 0;
+    }
     .page-title {
         font-size: 36px;
     }
@@ -1757,6 +1769,9 @@
         font-size: 28px;
     }
 
+    .trainer-basic-info h3 span {
+        font-size: 22px;
+    }
     .trainer-hashtags {
         justify-content: center;
     }
@@ -2195,6 +2210,10 @@
         padding-left: 15px;
     }
 
+    .trainer-section ul {
+        text-align: left;
+    }
+
     /* Facility Modal Mobile */
     .facility-modal .modal-content {
         width: 95%;
@@ -2234,4 +2253,8 @@
     .video-iframe-wrapper {
         border-radius: 8px;
     }
+}
+
+strong {
+    font-weight: 700;
 }

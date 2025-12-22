@@ -114,7 +114,6 @@
             <div class="modern-cards-grid">
                 <c:forEach var="resultList" items="${review_list}" varStatus="status">
                     <div class="modern-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card-number">${status.count}</div>
                         <h3>${resultList.title}</h3>
                         <p>${resultList.text}</p>
                         <div class="card-meta">
@@ -136,7 +135,7 @@
     <section class="specialize-section modern-section">
         <div class="specialize-container modern-grid">
             <div class="specialize-image modern-image" data-aos="zoom-in" data-aos-duration="1000">
-                <img src="/front_img/logo-brown.png" alt="Yoga Specialization">
+                <img src="/front_img/logo-red.png" alt="Yoga Specialization">
                 <div class="image-overlay-gradient"></div>
             </div>
             <div class="specialize-content modern-content" data-aos="fade-up" data-aos-delay="200">

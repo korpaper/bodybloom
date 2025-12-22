@@ -25,10 +25,10 @@
             </div>
 
             <!-- 일간/주간 탭 -->
-            <div class="schedule-tabs" data-aos="fade-up">
-                <a href="/schedule_daily1" class="tab-btn">일간</a>
-                <a href="/schedule_weekly1" class="tab-btn active">주간</a>
-            </div>
+<%--            <div class="schedule-tabs" data-aos="fade-up">--%>
+<%--                <a href="/schedule_daily1" class="tab-btn">일간</a>--%>
+<%--                <a href="/schedule_weekly1" class="tab-btn active">주간</a>--%>
+<%--            </div>--%>
 
             <div class="schedule-controls" data-aos="fade-up">
                 <div class="date-selector-wrapper">
@@ -92,9 +92,15 @@
             <div class="schedule-note" data-aos="fade-up" data-aos-delay="200">
                 <h3>수업 안내</h3>
                 <ul>
-                    <li>• 수업은 50분 단위로 진행됩니다.</li>
+                    <li>• 수업은 45분 단위로 진행됩니다.</li>
                     <li>• 예약은 문자 또는 전화로 가능합니다.</li>
-                    <li>• 문의: 010-</li>
+                    <li>
+                        • 문의:<br>
+                        - 윤수환 : 010-4845-2210<br>
+                        - 최재희 : 010-3912-4018<br>
+                        - 윤동욱 : 010-2084-9736
+                    </li>
+                    <li>• 부재중일 경우, 확인 후 연락드리겠습니다.</li>
                 </ul>
             </div>
         </div>
