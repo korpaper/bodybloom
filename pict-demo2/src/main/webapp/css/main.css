@@ -1667,6 +1667,12 @@ main{
     .cursor-follower {
         display: none;
     }
+
+    .coach-image {
+        max-width: 300px;
+        margin: 0 auto;
+        height: 400px;
+    }
 }
 
 /* ==========================================

@@ -135,7 +135,7 @@
     <section class="specialize-section modern-section">
         <div class="specialize-container modern-grid">
             <div class="specialize-image modern-image" data-aos="zoom-in" data-aos-duration="1000">
-                <img src="/front_img/logo-red.png" alt="Yoga Specialization">
+                <img src="/front_img/logo-rt-beige.png" alt="Yoga Specialization">
                 <div class="image-overlay-gradient"></div>
             </div>
             <div class="specialize-content modern-content" data-aos="fade-up" data-aos-delay="200">
@@ -159,7 +159,7 @@
                         <span class="list-number">02</span>
                         <div>
                             <h4 class="beige-brown">나만을 위한 운동</h4>
-                            <p class="beige-brown">생활 습관과 움직임 패턴을 분석해<br>지금의 몸에가장 필요한 맞춤 트레이닝을 제공합니다.</p>
+                            <p class="beige-brown">생활 습관과 움직임 패턴을 분석해<br>지금의 몸에 가장 필요한 맞춤 트레이닝을 제공합니다.</p>
                         </div>
                     </li>
                     <li data-aos="fade-right" data-aos-delay="500">
