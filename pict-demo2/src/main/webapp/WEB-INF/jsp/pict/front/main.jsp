@@ -83,7 +83,7 @@
     <section class="coach-section modern-section">
         <div class="coach-container modern-grid">
             <div class="coach-image modern-image" data-aos="zoom-in" data-aos-duration="1000">
-                <img src="/front_img/yun4.webp" alt="강사진">
+                <img src="/front_img/trainers.jpeg" alt="강사진">
                 <div class="image-overlay-gradient"></div>
             </div>
             <div class="coach-content modern-content" data-aos="fade-up" data-aos-delay="200">

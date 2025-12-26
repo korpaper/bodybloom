@@ -1276,10 +1276,6 @@ main{
     border-radius: 24px;
 }
 
-.coach-image {
-    height: 500px;
-}
-
 .hero-image-modern img,
 .modern-image img {
     width: 100%;
@@ -1666,12 +1662,6 @@ main{
     .custom-cursor,
     .cursor-follower {
         display: none;
-    }
-
-    .coach-image {
-        max-width: 300px;
-        margin: 0 auto;
-        height: 400px;
     }
 }
 
