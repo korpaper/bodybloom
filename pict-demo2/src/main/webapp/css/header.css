@@ -52,7 +52,6 @@ header *{
 .nav li a{
     transition: all .3s;
     position: relative;
-    padding-bottom: 5px;
 }
 .nav > li > a::before {
     content: '';

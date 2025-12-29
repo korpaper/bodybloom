@@ -25,7 +25,7 @@
 					<div class="contents-box">
 						<div class="card">
 						    <div class="card-body">
-                                <p>Name: <%= name %> 강사 스케쥴</p>
+                                <p class="name-content"><span><%= name %></span> 강사 스케쥴</p>
 						    	
 								<!-- 날짜 선택 -->
 								<div class="schedule-controls-admin" style="margin-bottom: 20px;">
@@ -38,6 +38,16 @@
 						    	<!-- 주간 스케줄 테이블 -->
 						    	<div class="schedule-table-wrapper weekly-view">
 							        <table class="schedule-table" style="text-align: center; width: 100%;">
+							            <colgroup>
+							                <col style="width: 80px;">
+							                <col style="width: 80px;">
+							                <col style="width: 80px;">
+							                <col style="width: 80px;">
+							                <col style="width: 80px;">
+							                <col style="width: 80px;">
+							                <col style="width: 80px;">
+							                <col style="width: 80px;">
+							            </colgroup>
 							            <thead>
 							                <tr>
 							                    <th style="width: 80px;">시간</th>

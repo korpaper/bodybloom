@@ -625,6 +625,17 @@ body {
 	position:relative;
 	cursor:pointer;
 }
+.name-content{
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: #fff;
+    background: linear-gradient(135deg, #63C9B6 0%, #A67C52 100%);
+}
+.name-content span {
+    font-weight: 700;
+
+}
 .name-lnk {
 	color:#333;
 }

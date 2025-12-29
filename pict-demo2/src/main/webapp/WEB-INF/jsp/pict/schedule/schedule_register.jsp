@@ -39,7 +39,7 @@
                                     <div class="write-item">
                                         <label for="title" class="title">수업 일자</label>
                                         <div class="input-box">
-                                            <input type="date" id="targetdate" name="targetdate" style="cursor: pointer; padding: 5px; border: 1px solid #ddd; border-radius: 4px; width: 200px;" value="${pictVO.targetdate}" />
+                                            <input type="date" id="targetdate" name="targetdate" style="cursor: pointer; padding: 5px; border: 1px solid #ddd; width: 200px; height: 45px;" value="${pictVO.targetdate}" />
                                         </div>
                                     </div>
                                 </div>
@@ -71,6 +71,18 @@
 										</div>
 									</div>
 								</div>
+
+                                <div class="write-box">
+                                    <div class="write-item">
+                                        <label for="title" class="title">매주 반복 여부</label>
+                                        <div class="input-box">
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" id="always" name="always" value="" />
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
 
 								<div class="write-box">
 									<div class="write-item">

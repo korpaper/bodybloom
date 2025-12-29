@@ -41,6 +41,16 @@
             <!-- 주간 스케줄 테이블 -->
             <div class="schedule-table-wrapper weekly-view" data-aos="fade-up">
                 <table class="schedule-table">
+                    <colgroup>
+                        <col style="width: 80px;">
+                        <col style="width: 80px;">
+                        <col style="width: 80px;">
+                        <col style="width: 80px;">
+                        <col style="width: 80px;">
+                        <col style="width: 80px;">
+                        <col style="width: 80px;">
+                        <col style="width: 80px;">
+                    </colgroup>
                     <thead>
                         <tr>
                             <th>시간</th>
