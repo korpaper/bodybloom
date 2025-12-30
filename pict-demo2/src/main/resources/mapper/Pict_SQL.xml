@@ -81,8 +81,17 @@
 	</update>
 	
 	<delete id="schedule_delete" parameterType="pictVO">
-		delete from board_table where idx = #{idx}
+		delete from schedule_table where idx = #{idx}
 	</delete>
+
+    <select id="selectScheduleCount" resultType="int">
+        SELECT COUNT(*)
+        FROM schedule_table
+        WHERE targetdate = #{targetdate}
+        AND targettime = #{targettime}
+        AND userid = #{userid}
+    </select>
+
 
 
 

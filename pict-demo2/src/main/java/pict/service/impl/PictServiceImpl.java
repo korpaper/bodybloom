@@ -15,7 +15,10 @@
  */
 package pict.service.impl;
 
+import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -55,6 +58,53 @@ public class PictServiceImpl implements PictService {
 	public void schedule_insert(PictVO pictVO) throws Exception {
 		pictMapper.schedule_insert(pictVO);
 	}
+
+    @Override
+    public void schedule_save(PictVO pictVO) throws Exception {
+        LocalDate baseDate = LocalDate.parse(pictVO.getTargetdate());
+        LocalDate endDate = LocalDate.of(baseDate.getYear(), 12, 31);
+
+        String saveType = pictVO.getSaveType();
+        String roop = pictVO.getRoop();
+
+        System.out.println(roop);
+        System.out.println(pictVO.getTargettime());
+        System.out.println(pictVO.getUserid());
+
+        // 1️⃣ 기준 날짜 처리
+        if ("update".equals(saveType)) {
+            pictMapper.schedule_update(pictVO);
+        } else {
+            insertIfNotExists(baseDate, pictVO);
+        }
+
+        // 2️⃣ 반복 아니면 종료
+        if (!"1".equals(roop)) {
+            return;
+        }
+
+        // 3️⃣ 매주 반복 (다음 주부터 12/31까지)
+        LocalDate targetDate = baseDate.plusWeeks(1);
+
+        while (!targetDate.isAfter(endDate)) {
+            insertIfNotExists(targetDate, pictVO);
+            targetDate = targetDate.plusWeeks(1);
+        }
+    }
+
+    private void insertIfNotExists(LocalDate date, PictVO pictVO) throws Exception {
+
+        Map<String, Object> param = new HashMap<>();
+        param.put("targetdate", date.toString());
+        param.put("targettime", pictVO.getTargettime());
+        param.put("userid", pictVO.getUserid());
+        int cnt = pictMapper.selectScheduleCount(param);
+
+        if (cnt == 0) {
+            pictVO.setTargetdate(date.toString());
+            pictMapper.schedule_insert(pictVO);
+        }
+    }
 
 	@Override
 	public void schedule_delete(PictVO pictVO) throws Exception {

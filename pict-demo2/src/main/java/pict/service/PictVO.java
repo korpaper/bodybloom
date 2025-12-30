@@ -160,6 +160,16 @@ public class PictVO extends PictDefaultVO {
     private String day6;
     private String day7;
 
+    private String roop;
+
+    public void setRoop(String roop) {
+        this.roop = roop;
+    }
+
+    public String getRoop() {
+        return roop;
+    }
+
     public void setDay1(String day1) {
         this.day1 = day1;
     }

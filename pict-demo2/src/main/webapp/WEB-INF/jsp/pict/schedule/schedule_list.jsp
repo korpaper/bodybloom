@@ -82,13 +82,13 @@
                                                         <c:if test="${resultList.targettime eq '16'}">21:00 ~ 22:00</c:if>
                                                         <c:if test="${resultList.targettime eq '17'}">22:00 ~ 23:00</c:if>
                                                     </td>
-                                                    <td class="editable-cell">${resultList.day1}</td>
-                                                    <td class="editable-cell">${resultList.day2}</td>
-                                                    <td class="editable-cell">${resultList.day3}</td>
-                                                    <td class="editable-cell">${resultList.day4}</td>
-                                                    <td class="editable-cell">${resultList.day5}</td>
-                                                    <td class="editable-cell">${resultList.day6}</td>
-                                                    <td class="editable-cell">${resultList.day7}</td>
+                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day1}</a></td>
+                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day2}</a></td>
+                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day3}</a></td>
+                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day4}</a></td>
+                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day5}</a></td>
+                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day6}</a></td>
+                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day7}</a></td>
                                                 </tr>
                                             </c:forEach>
 
@@ -102,9 +102,20 @@
 				</main>
 			</div>
 		</div>
+		<form action="" id="register" name="register" method="post">
+		    <input type="hidden" id="idx" name="idx"/>
+		</form>
 		<script>
 			var currentView = 'weekly'; // 현재 보기 모드
 			var currentTrainer = '1'; // 현재 선택된 강사
+
+            function del_sc(idx){
+				if(confirm("해당 스케쥴을 삭제하시겠습니까?")){
+				    $('#idx').val(idx)
+					$("#register").attr("action", "/schedule/schedule_delete");
+				    $("#register").submit();
+				}
+			}
 
             function search_(idx){
                 location.href= "/popup/popup_register?idx="+ idx;
@@ -199,6 +210,8 @@
                     }
                 });
             });
+
+
 		</script>
             
 		

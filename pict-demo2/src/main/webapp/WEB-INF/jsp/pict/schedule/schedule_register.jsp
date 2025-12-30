@@ -77,7 +77,7 @@
                                         <label for="title" class="title">매주 반복 여부</label>
                                         <div class="input-box">
                                             <label class="toggle-switch">
-                                                <input type="checkbox" id="always" name="always" value="" />
+                                                <input type="checkbox" id="roop" name="roop" value="1" />
                                                 <span class="toggle-slider"></span>
                                             </label>
                                         </div>

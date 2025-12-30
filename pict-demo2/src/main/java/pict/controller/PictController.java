@@ -345,18 +345,15 @@ public class PictController {
 
         pictVO.setUserid(sessions);
 		if (pictVO.getSaveType() != null && pictVO.getSaveType().equals("update")) {
-			pictService.schedule_update(pictVO);
+			pictService.schedule_save(pictVO);
 			model.addAttribute("message", "정상적으로 수정되었습니다.");
-			model.addAttribute("retType", ":location");
-			model.addAttribute("retUrl", "/schedule/schedule_list");
-			return "pict/main/message";
 		} else {
-			pictService.schedule_insert(pictVO);
+			pictService.schedule_save(pictVO);
 			model.addAttribute("message", "정상적으로 저장되었습니다.");
-			model.addAttribute("retType", ":location");
-			model.addAttribute("retUrl", "/schedule/schedule_list");
-			return "pict/main/message";
 		}
+        model.addAttribute("retType", ":location");
+        model.addAttribute("retUrl", "/schedule/schedule_list");
+        return "pict/main/message";
 
 	}
 

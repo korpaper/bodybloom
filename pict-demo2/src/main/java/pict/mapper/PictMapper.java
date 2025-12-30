@@ -16,6 +16,7 @@
 package pict.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -37,6 +38,7 @@ public interface PictMapper {
 
 	void schedule_delete(PictVO pictVO) throws Exception;
 
+    int selectScheduleCount(Map<String, Object> param) throws Exception;
 
     List<?> today_list(PictVO pictVO) throws Exception;
 

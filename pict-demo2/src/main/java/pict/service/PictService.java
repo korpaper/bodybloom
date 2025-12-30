@@ -27,6 +27,8 @@ public interface PictService {
 
 	public PictVO schedule_list_one(PictVO pictVO) throws Exception;
 
+    public void schedule_save(PictVO pictVO) throws Exception;
+
 	public void schedule_update(PictVO pictVO) throws Exception;
 
 	public void schedule_insert(PictVO pictVO) throws Exception;
