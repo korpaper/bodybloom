@@ -28,12 +28,12 @@
                                 <p class="name-content"><span><%= name %></span> 강사 스케쥴</p>
 						    	
 								<!-- 날짜 선택 -->
-								<div class="schedule-controls-admin" style="margin-bottom: 20px;">
+								<%--<div class="schedule-controls-admin" style="margin-bottom: 20px;">
                                     <label for="targetdate">수업 일자 선택:</label>
                                     <input type="date" id="targetdate" style="cursor: pointer; padding: 5px; border: 1px solid #ddd; border-radius: 4px;" value="${pictVO.targetdate}"/>
                                     <button type="button" class="btn-basic btn-fill btn-sm" onclick="searchSchedule()">조회</button>
                                     <span id="selectedWeek" style="margin-left: 20px; font-weight: bold;"></span>
-								</div>
+								</div>--%>
 						    	
 						    	<!-- 주간 스케줄 테이블 -->
 						    	<div class="schedule-table-wrapper weekly-view">
@@ -46,52 +46,37 @@
 							                <col style="width: 80px;">
 							                <col style="width: 80px;">
 							                <col style="width: 80px;">
-							                <col style="width: 80px;">
 							            </colgroup>
 							            <thead>
 							                <tr>
-							                    <th style="width: 80px;">시간</th>
-							                    <th id="day-mon">월요일11</th>
-							                    <th id="day-tue">화요일</th>
-							                    <th id="day-wed">수요일</th>
-							                    <th id="day-thu">목요일</th>
-							                    <th id="day-fri">금요일</th>
-							                    <th id="day-sat">토요일</th>
-							                    <th id="day-sun">일요일</th>
+							                    <th>시간/요일</th>
+							                    <th>월요일</th>
+							                    <th>화요일</th>
+							                    <th>수요일</th>
+							                    <th>목요일</th>
+							                    <th>금요일</th>
+							                    <th>토요일</th>
 							                </tr>
 							            </thead>
 							            <tbody>
-                                            <c:forEach var="resultList" items="${resultList}" varStatus="status">
-                                                <tr>
-                                                    <td class="time">
-                                                        <c:if test="${resultList.targettime eq '1'}">06:00 ~ 07:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '2'}">07:00 ~ 08:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '3'}">08:00 ~ 09:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '4'}">09:00 ~ 10:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '5'}">10:00 ~ 11:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '6'}">11:00 ~ 12:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '7'}">12:00 ~ 13:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '8'}">13:00 ~ 14:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '9'}">14:00 ~ 15:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '10'}">15:00 ~ 16:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '11'}">16:00 ~ 17:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '12'}">17:00 ~ 18:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '13'}">18:00 ~ 19:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '14'}">19:00 ~ 20:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '15'}">20:00 ~ 21:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '16'}">21:00 ~ 22:00</c:if>
-                                                        <c:if test="${resultList.targettime eq '17'}">22:00 ~ 23:00</c:if>
-                                                    </td>
-                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day1}</a></td>
-                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day2}</a></td>
-                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day3}</a></td>
-                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day4}</a></td>
-                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day5}</a></td>
-                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day6}</a></td>
-                                                    <td class="editable-cell"><a href="javascript:void(0)" onclick="del_sc('${resultList.idx}')">${resultList.day7}</a></td>
-                                                </tr>
-                                            </c:forEach>
+                                            <c:forEach var="item" items="${resultList}" varStatus="status">
+                                                <c:if test="${status.index % 6 == 0}">
+                                                    <tr>
+                                                        <td>
+                                                            <c:set var="startHour" value="${item.targettime + 5}" />
+                                                            ${startHour}:00 ~ ${startHour + 1}:00
+                                                        </td>
+                                                </c:if>
+                                                <td>
+                                                    <%--한지 여기--%>
+                                                    <c:if test="${item.etcidx eq null}">${item.title}</c:if>
+                                                    <c:if test="${item.etcidx ne null}">${item.etc}</c:if>
+                                                </td>
+                                                <c:if test="${status.index % 6 == 5}">
+                                                    </tr>
+                                                </c:if>
 
+                                            </c:forEach>
 							            </tbody>
 						            </table>
 				            	</div>
@@ -106,102 +91,8 @@
 		    <input type="hidden" id="idx" name="idx"/>
 		</form>
 		<script>
-			var currentView = 'weekly'; // 현재 보기 모드
-			var currentTrainer = '1'; // 현재 선택된 강사
-
-            function del_sc(idx){
-				if(confirm("해당 스케쥴을 삭제하시겠습니까?")){
-				    $('#idx').val(idx)
-					$("#register").attr("action", "/schedule/schedule_delete");
-				    $("#register").submit();
-				}
-			}
-
-            function search_(idx){
-                location.href= "/popup/popup_register?idx="+ idx;
-            }
-			// 트레이너 탭 전환
-			$('.trainer-tab-btn').on('click', function() {
-				$('.trainer-tab-btn').removeClass('active');
-				$(this).addClass('active');
-				currentTrainer = $(this).data('trainer');
-				
-				// 여기서 선택된 강사의 스케줄을 불러오는 API 호출 가능
-				// loadSchedule(currentTrainer);
-			});
-
-			// 오늘 날짜로 설정
-			function setToday() {
-				let targetdate = '${pictVO.targetdate}';
-				let today = new Date();
-				let dateString = today.toISOString().split('T')[0];
-				if(targetdate == '' || targetdate == null){
-				    $('#targetdate').val(dateString);
-                }
-				else{
-					$('#targetdate').val(targetdate);
-					today = new Date(targetdate);
-                }
-                updateWeekDisplay(today);
-			}
-
-            // 주간 화면 업데이트
-            function updateWeekDisplay(date) {
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                const dateStr = date.toLocaleDateString('ko-KR', options);
-
-                // 선택한 날짜를 시작일로, +6일을 종료일로 설정
-                const startDate = new Date(date);
-                const endDate = new Date(date);
-                endDate.setDate(startDate.getDate() + 6);
-
-                const weekStr = startDate.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' }) +
-                    ' - ' +
-                    endDate.toLocaleDateString('ko-KR', { month: 'long', day: 'numeric' });
-
-
-                // 테이블 헤더에 날짜 업데이트
-                const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-                const dayNames = ['월', '화', '수', '목', '금', '토', '일'];
-
-                for (let i = 0; i < 7; i++) {
-                    const currentDate = new Date(startDate);
-                    currentDate.setDate(startDate.getDate() + i);
-
-                    const month = currentDate.getMonth() + 1;
-                    const day = currentDate.getDate();
-                    const weekday = currentDate.getDay();
-                    const dayName = ['일', '월', '화', '수', '목', '금', '토'][weekday];
-                    const dateStr = month + '/' + day;
-
-                    $('#day-' + days[i]).text(dateStr);
-                }
-            }
-
-            // 선택한 날짜로 스케줄 조회
-            function searchSchedule() {
-                const selectedDate = $('#targetdate').val();
-                if (!selectedDate) {
-                    alert('날짜를 선택해주세요.');
-                    return;
-                }
-
-                const date = new Date(selectedDate);
-
-                if (currentView === 'weekly') {
-                    updateWeekDisplay(date);
-                } else {
-                    updateDailyDisplay();
-                }
-
-                location.href= "/schedule/schedule_list?targetdate="+ selectedDate;
-                // API 호출 시
-                // loadSchedule(currentTrainer, selectedDate, currentView);
-            }
 
             $(document).ready(function() {
-                // 페이지 로드 시 오늘 날짜 설정
-                setToday();
 
                 // Enter 키로 검색
                 $('#targetdate').on('keypress', function(e) {
@@ -217,3 +108,4 @@
 		
     </body>
 </html>
+

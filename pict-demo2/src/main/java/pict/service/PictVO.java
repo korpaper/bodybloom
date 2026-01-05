@@ -161,6 +161,51 @@ public class PictVO extends PictDefaultVO {
     private String day7;
 
     private String roop;
+    private String impossible;
+    private String possible;
+    private String etc;
+    private String moddate;
+    private String etcidx;
+
+    public void setEtcidx(String etcidx) {
+        this.etcidx = etcidx;
+    }
+
+    public String getEtcidx() {
+        return etcidx;
+    }
+
+    public void setImpossible(String impossible) {
+        this.impossible = impossible;
+    }
+
+    public void setPossible(String possible) {
+        this.possible = possible;
+    }
+
+    public void setEtc(String etc) {
+        this.etc = etc;
+    }
+
+    public void setModdate(String moddate) {
+        this.moddate = moddate;
+    }
+
+    public String getImpossible() {
+        return impossible;
+    }
+
+    public String getPossible() {
+        return possible;
+    }
+
+    public String getEtc() {
+        return etc;
+    }
+
+    public String getModdate() {
+        return moddate;
+    }
 
     public void setRoop(String roop) {
         this.roop = roop;

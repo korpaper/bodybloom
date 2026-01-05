@@ -297,21 +297,6 @@ public class PictController {
 		String session = (String) request.getSession().getAttribute("id");
 		pictVO.setUserid(session);
 
-        LocalDate today = LocalDate.now();
-        System.out.println("오늘 날짜: " + today); // 기본 형식: 2025-11-28
-
-        // 원하는 형식으로 포맷팅
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String formattedDate = today.format(formatter);
-
-
-        if(pictVO != null && pictVO.getTargetdate() == null){
-            pictVO.setTargetdate(formattedDate);
-        }
-        // 일별
-        List<?> day_list = pictService.schedule_list_day(pictVO);
-        model.addAttribute("day_list", day_list);
-        // 주별
 		List<?> reference_list = pictService.schedule_list(pictVO);
 		model.addAttribute("resultList", reference_list);
 		model.addAttribute("size", reference_list.size());
