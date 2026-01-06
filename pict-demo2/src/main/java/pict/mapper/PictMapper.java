@@ -72,4 +72,9 @@ public interface PictMapper {
 
     void user_insert(PictVO pictVO) throws Exception;
 
+
+    void schedule_etc_insert(PictVO pictVO) throws Exception;
+
+    void schedule_etc_update(PictVO pictVO) throws Exception;
+
 }

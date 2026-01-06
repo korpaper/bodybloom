@@ -166,6 +166,15 @@ public class PictVO extends PictDefaultVO {
     private String etc;
     private String moddate;
     private String etcidx;
+    private String targetday;
+
+    public void setTargetday(String targetday) {
+        this.targetday = targetday;
+    }
+
+    public String getTargetday() {
+        return targetday;
+    }
 
     public void setEtcidx(String etcidx) {
         this.etcidx = etcidx;

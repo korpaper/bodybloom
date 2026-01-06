@@ -61,35 +61,20 @@ public class PictServiceImpl implements PictService {
 
     @Override
     public void schedule_save(PictVO pictVO) throws Exception {
-        LocalDate baseDate = LocalDate.parse(pictVO.getTargetdate());
-        LocalDate endDate = LocalDate.of(baseDate.getYear(), 12, 31);
+        boolean hasEtc  = "Y".equals(pictVO.getImpossible()) || "Y".equals(pictVO.getPossible());
 
-        String saveType = pictVO.getSaveType();
-        String roop = pictVO.getRoop();
-
-        System.out.println(roop);
-        System.out.println(pictVO.getTargettime());
-        System.out.println(pictVO.getUserid());
-
-        // 1️⃣ 기준 날짜 처리
-        if ("update".equals(saveType)) {
-            pictMapper.schedule_update(pictVO);
-        } else {
-            insertIfNotExists(baseDate, pictVO);
+        // 1️⃣ 기존 etc가 있는 경우 → 무조건 update
+        if (pictVO.getEtcidx() != null && !"".equals(pictVO.getEtcidx())) {
+            System.out.println("여기 이티시 업데이트");
+            pictMapper.schedule_etc_update(pictVO);
+        }
+        // 2️⃣ 기존 etc 없고, 새로 예외 생긴 경우 → insert
+        else if (hasEtc) {
+            System.out.println("여기 이티시 인서트");
+            pictMapper.schedule_etc_insert(pictVO);
         }
 
-        // 2️⃣ 반복 아니면 종료
-        if (!"1".equals(roop)) {
-            return;
-        }
-
-        // 3️⃣ 매주 반복 (다음 주부터 12/31까지)
-        LocalDate targetDate = baseDate.plusWeeks(1);
-
-        while (!targetDate.isAfter(endDate)) {
-            insertIfNotExists(targetDate, pictVO);
-            targetDate = targetDate.plusWeeks(1);
-        }
+        pictMapper.schedule_update(pictVO);
     }
 
     private void insertIfNotExists(LocalDate date, PictVO pictVO) throws Exception {

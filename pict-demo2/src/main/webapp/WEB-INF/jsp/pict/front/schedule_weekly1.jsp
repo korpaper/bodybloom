@@ -24,19 +24,13 @@
                 <a href="/schedule_weekly3" class="trainer-tab-link">윤동욱 강사</a>
             </div>
 
-            <!-- 일간/주간 탭 -->
-<%--            <div class="schedule-tabs" data-aos="fade-up">--%>
-<%--                <a href="/schedule_daily1" class="tab-btn">일간</a>--%>
-<%--                <a href="/schedule_weekly1" class="tab-btn active">주간</a>--%>
-<%--            </div>--%>
-
-            <div class="schedule-controls" data-aos="fade-up">
+            <%--<div class="schedule-controls" data-aos="fade-up">
                 <div class="date-selector-wrapper">
                     <label for="scheduleDate">수업 일자 선택:</label>
                     <input type="date" id="scheduleDate" class="date-selector" />
                     <button type="button" class="btn-search" onclick="searchSchedule()">조회</button>
                 </div>
-            </div>
+            </div>--%>
 
             <!-- 주간 스케줄 테이블 -->
             <div class="schedule-table-wrapper weekly-view" data-aos="fade-up">
@@ -49,50 +43,37 @@
                         <col style="width: 80px;">
                         <col style="width: 80px;">
                         <col style="width: 80px;">
-                        <col style="width: 80px;">
                     </colgroup>
                     <thead>
                         <tr>
-                            <th>시간</th>
-                            <th id="day-mon">월요일</th>
-                            <th id="day-tue">화요일</th>
-                            <th id="day-wed">수요일</th>
-                            <th id="day-thu">목요일</th>
-                            <th id="day-fri">금요일</th>
-                            <th id="day-sat">토요일</th>
-                            <th id="day-sun">일요일</th>
+                            <th>시간/요일</th>
+                            <th>월요일</th>
+                            <th>화요일</th>
+                            <th>수요일</th>
+                            <th>목요일</th>
+                            <th>금요일</th>
+                            <th>토요일</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="resultList" items="${resultList}" varStatus="status">
-                            <tr>
-                                <td class="time">
-                                    <c:if test="${resultList.targettime eq '1'}">06:00</c:if>
-                                    <c:if test="${resultList.targettime eq '2'}">07:00</c:if>
-                                    <c:if test="${resultList.targettime eq '3'}">08:00</c:if>
-                                    <c:if test="${resultList.targettime eq '4'}">09:00</c:if>
-                                    <c:if test="${resultList.targettime eq '5'}">10:00</c:if>
-                                    <c:if test="${resultList.targettime eq '6'}">11:00</c:if>
-                                    <c:if test="${resultList.targettime eq '7'}">12:00</c:if>
-                                    <c:if test="${resultList.targettime eq '8'}">13:00</c:if>
-                                    <c:if test="${resultList.targettime eq '9'}">14:00</c:if>
-                                    <c:if test="${resultList.targettime eq '10'}">15:00</c:if>
-                                    <c:if test="${resultList.targettime eq '11'}">16:00</c:if>
-                                    <c:if test="${resultList.targettime eq '12'}">17:00</c:if>
-                                    <c:if test="${resultList.targettime eq '13'}">18:00</c:if>
-                                    <c:if test="${resultList.targettime eq '14'}">19:00</c:if>
-                                    <c:if test="${resultList.targettime eq '15'}">20:00</c:if>
-                                    <c:if test="${resultList.targettime eq '16'}">21:00</c:if>
-                                    <c:if test="${resultList.targettime eq '17'}">22:00</c:if>
-                                </td>
-                                <td class="editable-cell">${resultList.day1}</td>
-                                <td class="editable-cell">${resultList.day2}</td>
-                                <td class="editable-cell">${resultList.day3}</td>
-                                <td class="editable-cell">${resultList.day4}</td>
-                                <td class="editable-cell">${resultList.day5}</td>
-                                <td class="editable-cell">${resultList.day6}</td>
-                                <td class="editable-cell">${resultList.day7}</td>
-                            </tr>
+                        <c:forEach var="item" items="${resultList}" varStatus="status">
+                            <c:if test="${status.index % 6 == 0}">
+                                <tr>
+                                    <td class="time">
+                                        ${fn:substringBefore(((status.index div 6) + 6), '.')}:00 ~ ${fn:substringBefore(((status.index div 6) + 7), '.')}:00
+                                    </td>
+                            </c:if>
+                            <td>
+                                <c:choose>
+                                    <c:when test="${empty item.title}"></c:when>
+                                    <c:when test="${item.impossible eq 'Y' and item.possible ne 'Y'}"></c:when>
+                                    <c:otherwise>O</c:otherwise>
+                                </c:choose>
+                            </td>
+                            <c:if test="${status.index % 6 == 5}">
+                                </tr>
+                            </c:if>
+
                         </c:forEach>
                     </tbody>
                 </table>

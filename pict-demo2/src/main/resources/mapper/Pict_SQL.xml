@@ -34,7 +34,7 @@
 	
 	<update id="schedule_update" parameterType="pictVO">
 		update schedule_table
-		set userid =#{userid}, targetdate = #{targetdate}, targettime = #{targettime}, title = #{title}
+		set userid =#{userid}, title = #{title}, moddate = now(), etcidx = #{etcidx}
 		where idx = #{idx}
 	</update>
 	
@@ -186,5 +186,21 @@
        )
     </insert>
 
+
+    <insert id="schedule_etc_insert" parameterType="pictVO" useGeneratedKeys="true" keyProperty="etcidx" keyColumn="idx">
+        INSERT INTO etc_table
+        (
+            impossible, possible, etc, regdate
+        )
+        VALUES (
+           #{impossible}, #{possible}, #{etc}, now()
+       )
+    </insert>
+
+    <update id="schedule_etc_update" parameterType="pictVO">
+        update etc_table
+        set impossible =#{impossible}, possible = #{possible}, etc =#{etc}
+        where idx = #{etcidx}
+    </update>
 
 </mapper>

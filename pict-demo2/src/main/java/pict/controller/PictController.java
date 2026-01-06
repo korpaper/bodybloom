@@ -140,23 +140,7 @@ public class PictController {
 	}
 
     // 강사소개 - 스케쥴표
-    // 윤수환 일간
-    @RequestMapping(value = "/schedule_daily1")
-    public String schedule_daily1(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
-        pictVO.setUserid("nawhus"); // 윤수환 강사
-        LocalDate today = LocalDate.now();
-        // 원하는 형식으로 포맷팅
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String formattedDate = today.format(formatter);
 
-        if(pictVO != null && pictVO.getTargetdate() == null){
-            pictVO.setTargetdate(formattedDate);
-        }
-        // 일별
-        List<?> day_list = pictService.schedule_list_day(pictVO);
-        model.addAttribute("day_list", day_list);
-        return "pict/front/schedule_daily1";
-    }
     // 윤수환 주간
     @RequestMapping(value = "/schedule_weekly1")
     public String schedule_weekly1(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
@@ -178,23 +162,6 @@ public class PictController {
         return "pict/front/schedule_weekly1";
     }
 
-    // 최재희 일간
-    @RequestMapping(value = "/schedule_daily2")
-    public String schedule_daily2(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
-        pictVO.setUserid("zeze4018"); // 최재희 강사
-        LocalDate today = LocalDate.now();
-        // 원하는 형식으로 포맷팅
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String formattedDate = today.format(formatter);
-
-        if(pictVO != null && pictVO.getTargetdate() == null){
-            pictVO.setTargetdate(formattedDate);
-        }
-        // 일별
-        List<?> day_list = pictService.schedule_list_day(pictVO);
-        model.addAttribute("day_list", day_list);
-        return "pict/front/schedule_daily2";
-    }
     // 최재희 주간
     @RequestMapping(value = "/schedule_weekly2")
     public String schedule_weekly2(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
@@ -216,23 +183,6 @@ public class PictController {
         return "pict/front/schedule_weekly2";
     }
 
-    // 윤동욱 일간
-    @RequestMapping(value = "/schedule_daily3")
-    public String schedule_daily3(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
-        pictVO.setUserid("ydw2617"); // 윤동욱 강사
-        LocalDate today = LocalDate.now();
-        // 원하는 형식으로 포맷팅
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String formattedDate = today.format(formatter);
-
-        if(pictVO != null && pictVO.getTargetdate() == null){
-            pictVO.setTargetdate(formattedDate);
-        }
-        // 일별
-        List<?> day_list = pictService.schedule_list_day(pictVO);
-        model.addAttribute("day_list", day_list);
-        return "pict/front/schedule_daily3";
-    }
     // 윤동욱 주간
     @RequestMapping(value = "/schedule_weekly3")
     public String schedule_weekly3(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest request) throws Exception {
@@ -325,17 +275,13 @@ public class PictController {
 	}
 
 	@RequestMapping(value = "/schedule/schedule_save", method = RequestMethod.POST)
-	public String schedule_save(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, MultipartHttpServletRequest request) throws Exception {
+	public String schedule_save(@ModelAttribute("pictVO") PictVO pictVO, ModelMap model, HttpServletRequest  request) throws Exception {
 		String sessions = (String) request.getSession().getAttribute("id");
 
         pictVO.setUserid(sessions);
-		if (pictVO.getSaveType() != null && pictVO.getSaveType().equals("update")) {
-			pictService.schedule_save(pictVO);
-			model.addAttribute("message", "정상적으로 수정되었습니다.");
-		} else {
-			pictService.schedule_save(pictVO);
-			model.addAttribute("message", "정상적으로 저장되었습니다.");
-		}
+        pictService.schedule_save(pictVO);
+
+        model.addAttribute("message", "정상적으로 수정되었습니다.");
         model.addAttribute("retType", ":location");
         model.addAttribute("retUrl", "/schedule/schedule_list");
         return "pict/main/message";
