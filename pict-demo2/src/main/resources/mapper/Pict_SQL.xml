@@ -34,7 +34,7 @@
 	
 	<update id="schedule_update" parameterType="pictVO">
 		update schedule_table
-		set userid =#{userid}, title = #{title}, moddate = now(), etcidx = #{etcidx}
+		set title = #{title}, moddate = now(), etcidx = #{etcidx}
 		where idx = #{idx}
 	</update>
 	
