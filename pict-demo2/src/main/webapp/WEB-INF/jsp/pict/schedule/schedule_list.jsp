@@ -58,8 +58,20 @@
                                                         </td>
                                                 </c:if>
                                                 <td onclick="openScheduleModal('${item.idx}', '${item.etc}', '${item.impossible}', '${item.possible}', '${item.title}', '${item.etcidx}')">
-                                                    <c:if test="${item.impossible eq 'Y'}">${item.etc}</c:if>
-                                                    <c:if test="${item.impossible eq null}">${item.title}</c:if>
+                                                    <c:choose>
+                                                        <c:when test="${item.impossible eq 'Y' and item.possible eq 'Y'}">
+                                                            ${item.etc}
+                                                        </c:when>
+
+                                                        <c:when test="${item.impossible eq 'Y'}">
+                                                            ${item.title}(X)
+                                                        </c:when>
+
+                                                        <c:otherwise>
+                                                            ${item.title}
+                                                        </c:otherwise>
+
+                                                    </c:choose>
                                                 </td>
                                                 <c:if test="${status.index % 6 == 5}">
                                                     </tr>
