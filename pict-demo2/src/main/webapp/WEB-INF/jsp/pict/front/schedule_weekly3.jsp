@@ -53,12 +53,12 @@
                     <thead>
                         <tr>
                             <th>시간/요일</th>
-                            <th>월요일</th>
-                            <th>화요일</th>
-                            <th>수요일</th>
-                            <th>목요일</th>
-                            <th>금요일</th>
-                            <th>토요일</th>
+                            <th>월</th>
+                            <th>화</th>
+                            <th>수</th>
+                            <th>목</th>
+                            <th>금</th>
+                            <th>토</th>
                         </tr>
                     </thead>
                     <tbody>
