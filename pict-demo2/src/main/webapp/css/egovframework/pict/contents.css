@@ -1145,6 +1145,29 @@ body {
 	width: 140px;
 }
 
+/* 첫 번째 열 sticky 고정 */
+.schedule-table thead th:first-child {
+	position: sticky;
+	left: 0;
+	background: #f0f7f6 !important;
+	z-index: 12;
+	box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.schedule-table tbody td:first-child {
+	position: sticky;
+	left: 0;
+	background: #f8f9fa !important;
+	font-weight: 600;
+	color: #4a5568;
+	z-index: 11;
+	box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.schedule-table tbody td:first-child:hover {
+	background: #f8f9fa !important;
+}
+
 .schedule-table tbody td.editable-cell {
 	background: #fff;
 	position: relative;

@@ -1217,14 +1217,58 @@
 .schedule-table-wrapper {
     overflow-x: auto;
     margin-bottom: 40px;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+}
+
+/* 스크롤바 스타일 */
+.schedule-table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.schedule-table-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.schedule-table-wrapper::-webkit-scrollbar-thumb {
+    background: var(--mint-medium);
+    border-radius: 4px;
+}
+
+.schedule-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: var(--mint-dark);
 }
 
 .schedule-table {
     width: 100%;
     border-collapse: collapse;
     background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
+    min-width: 600px;
+}
+
+/* 첫 번째 열 sticky 고정 */
+.schedule-table thead th:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #4b2e17 !important;
+    z-index: 12;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-table tbody td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #fff !important;
+    font-weight: 600;
+    color: #4b2e17;
+    z-index: 11;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+    border-right: 1px solid #e0e0e0;
+}
+
+.schedule-table tbody td:first-child:hover {
+    background-color: #fff !important;
 }
 
 /* 일간 테이블 스타일 */
@@ -1248,6 +1292,7 @@
 .schedule-table th,
 .schedule-table td {
     padding: 20px 0;
+    vertical-align: middle;
     text-align: center;
     border: 1px solid #e0e0e0;
 }
@@ -1258,8 +1303,13 @@
 }
 
 .schedule-table .time {
+    position: sticky;
+    left: 0;
     font-weight: 600;
     color: #4b2e17;
+    background: #fff !important;
+    z-index: 11;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
 }
 
 .class-cell {
@@ -1825,11 +1875,28 @@
 
     .schedule-table {
         font-size: 12px;
+        min-width: 500px;
     }
 
     .schedule-table th,
     .schedule-table td {
-        padding: 10px;
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+    
+    .schedule-table-wrapper {
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    
+    .schedule-table-wrapper::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .schedule-table thead th:first-child,
+    .schedule-table tbody td:first-child,
+    .schedule-table .time {
+        min-width: 80px;
     }
 }
 
