@@ -57,20 +57,17 @@
                                                             ${fn:substringBefore(((status.index div 6) + 6), '.')}:00 ~ ${fn:substringBefore(((status.index div 6) + 7), '.')}:00
                                                         </td>
                                                 </c:if>
-                                                <td onclick="openScheduleModal('${item.idx}', '${item.etc}', '${item.impossible}', '${item.possible}', '${item.title}', '${item.etcidx}')">
+                                                <td onclick="openScheduleModal('${item.idx}', '${item.etc}', '${item.impossible}', '${item.possible}', '${item.title}', '${item.etcidx}', '${item.targetday}', '${item.targettime}')">
                                                     <c:choose>
-                                                        <c:when test="${item.impossible eq 'Y' and item.possible eq 'Y'}">
+                                                        <c:when test="${item.possible eq 'Y'}">
                                                             ${item.etc}
                                                         </c:when>
-
                                                         <c:when test="${item.impossible eq 'Y'}">
                                                             ${item.title}(X)
                                                         </c:when>
-
                                                         <c:otherwise>
                                                             ${item.title}
                                                         </c:otherwise>
-
                                                     </c:choose>
                                                 </td>
                                                 <c:if test="${status.index % 6 == 5}">
@@ -103,6 +100,10 @@
 		            <form id="scheduleForm" name="scheduleForm" method="post">
 		                <input type="hidden" id="idx" name="idx" />
                         <input type="hidden" id="etcidx" name="etcidx" />
+
+                        <div class="form-group">
+                            <span id="choose_info"></span>
+                        </div>
 
                         <div class="form-group">
                             <label for="title">제목</label>
@@ -150,7 +151,7 @@
             });
 
             // 스케줄 모달 열기
-            function openScheduleModal(idx, etc, impossible, possible, title, etcidx) {
+            function openScheduleModal(idx, etc, impossible, possible, title, etcidx, targetday, targettime) {
                 const modal = document.getElementById('scheduleModal');
                 const deleteBtn = document.getElementById('deleteBtn');
 
@@ -166,6 +167,32 @@
                 $('#title').val(title)
                 $('#etcidx').val(etcidx)
 
+                let day = "월요일"
+                if(targetday === '2') day = "화요일"
+                if(targetday === '3') day = "수요일"
+                if(targetday === '4') day = "목요일"
+                if(targetday === '5') day = "금요일"
+                if(targetday === '6') day = "토요일"
+
+                let time = "06:00 ~ 07:00"
+	            if(targettime === "2") time = "07:00 ~ 08:00"
+	            if(targettime === "3") time = "08:00 ~ 09:00"
+	            if(targettime === "4") time = "09:00 ~ 10:00"
+	            if(targettime === "5") time = "10:00 ~ 11:00"
+	            if(targettime === "6") time = "11:00 ~ 12:00"
+	            if(targettime === "7") time = "12:00 ~ 13:00"
+	            if(targettime === "8") time = "13:00 ~ 14:00"
+	            if(targettime === "9") time = "14:00 ~ 15:00"
+	            if(targettime === "10") time = "15:00 ~ 16:00"
+	            if(targettime === "11") time = "16:00 ~ 17:00"
+	            if(targettime === "12") time = "17:00 ~ 18:00"
+	            if(targettime === "13") time = "18:00 ~ 19:00"
+	            if(targettime === "14") time = "19:00 ~ 20:00"
+	            if(targettime === "15") time = "20:00 ~ 21:00"
+	            if(targettime === "16") time = "21:00 ~ 22:00"
+
+                let choose_info = day + " / " + time
+                $('#choose_info').text(choose_info);
 
                 // 모달 표시
                 modal.style.display = 'flex';

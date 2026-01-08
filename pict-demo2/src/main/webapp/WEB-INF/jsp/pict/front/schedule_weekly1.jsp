@@ -65,25 +65,41 @@
                             </c:if>
                             <td>
                                 <c:choose>
-                                    <c:when test="${empty item.title}"></c:when>
-                                    <c:when test="${item.impossible eq 'Y' and item.possible ne 'Y'}"></c:when>
-                                    <c:otherwise>
-                                        <c:forEach var="name" items="${fn:split(item.title, ' ')}" varStatus="st">
-                                            <c:choose>
-                                                <c:when test="${fn:length(name) eq 2}">
-                                                    ${fn:substring(name, 0, 1)}*
-                                                </c:when>
+                                <c:when test="${item.possible eq 'Y'}">
+                                    <c:forEach var="name" items="${fn:split(item.etc, ' ')}" varStatus="st">
+                                        <c:choose>
+                                            <c:when test="${fn:length(name) eq 2}">
+                                                ${fn:substring(name, 0, 1)}*
+                                            </c:when>
+                                            <c:otherwise>
+                                                ${fn:substring(name, 0, 1)}*
+                                                ${fn:substring(name, fn:length(name)-1, fn:length(name))}
+                                            </c:otherwise>
+                                        </c:choose>
+                                        <c:if test="${!st.last}"> </c:if>
+                                    </c:forEach>
+                                </c:when>
 
-                                                <c:otherwise>
-                                                    ${fn:substring(name, 0, 1)}*
-                                                    ${fn:substring(name, fn:length(name)-1, fn:length(name))}
-                                                </c:otherwise>
-                                            </c:choose>
+                                <c:when test="${item.impossible eq 'Y'}"></c:when>
 
-                                            <c:if test="${!st.last}"> </c:if>
-                                        </c:forEach>
-                                    </c:otherwise>
-                                </c:choose>
+                                <c:when test="${not empty item.title}">
+                                    <c:forEach var="name" items="${fn:split(item.title, ' ')}" varStatus="st">
+                                        <c:choose>
+                                            <c:when test="${fn:length(name) eq 2}">
+                                                ${fn:substring(name, 0, 1)}*
+                                            </c:when>
+                                            <c:otherwise>
+                                                ${fn:substring(name, 0, 1)}*
+                                                ${fn:substring(name, fn:length(name)-1, fn:length(name))}
+                                            </c:otherwise>
+                                        </c:choose>
+                                        <c:if test="${!st.last}"> </c:if>
+                                    </c:forEach>
+                                </c:when>
+
+                                <c:otherwise></c:otherwise>
+
+                            </c:choose>
                             </td>
                             <c:if test="${status.index % 6 == 5}">
                                 </tr>
