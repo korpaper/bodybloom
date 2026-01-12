@@ -32,11 +32,11 @@
             <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="true" aria-controls="collapseLayouts1">
 				스케쥴 관리
             </a>
-            <div class="collapse <c:if test="${schedule_register ne -1}">show</c:if>" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+            <%--<div class="collapse <c:if test="${schedule_register ne -1}">show</c:if>" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
                     <a class="nav-link <c:if test="${schedule_register ne -1}">active</c:if>" href="/schedule/schedule_register">스케쥴 등록</a>
                 </nav>
-            </div>
+            </div>--%>
             <div class="collapse <c:if test="${schedule_list ne -1}">show</c:if>" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                 <nav class="sb-sidenav-menu-nested nav">
                     <a class="nav-link <c:if test="${schedule_list ne -1}">active</c:if>" href="/schedule/schedule_list">스케쥴 리스트</a>
