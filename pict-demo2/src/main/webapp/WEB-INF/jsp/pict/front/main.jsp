@@ -112,7 +112,7 @@
                 <span class="title-line">REVIEWS</span>
             </h2>
             <div class="modern-cards-grid">
-                <c:forEach var="resultList" items="${review_list}" varStatus="status">
+                <c:forEach var="resultList" items="${review_list}" varStatus="status" begin="0" end="2">
                     <div class="modern-card" data-aos="fade-up" data-aos-delay="100">
                         <h3>${resultList.title}</h3>
                         <p>${resultList.text}</p>
