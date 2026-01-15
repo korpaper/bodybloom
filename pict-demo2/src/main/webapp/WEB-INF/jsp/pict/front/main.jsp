@@ -117,7 +117,41 @@
                         <h3>${resultList.title}</h3>
                         <p>${resultList.text}</p>
                         <div class="card-meta">
-                            <span class="author">${resultList.name}</span>
+                            <span class="author">
+                                <c:choose>
+                                    <c:when test="${fn:contains(resultList.name, '/')}">
+                                        <c:set var="nameArr" value="${fn:split(resultList.name, '/')}" />
+                                        <c:forEach var="n" items="${nameArr}" varStatus="st">
+                                            <c:choose>
+                                                <c:when test="${fn:length(n) == 2}">
+                                                    ${fn:substring(n, 0, 1)}*
+                                                </c:when>
+                                                <c:when test="${fn:length(n) >= 3}">
+                                                    ${fn:substring(n, 0, 1)}*${fn:substring(n, fn:length(n)-1, fn:length(n))}
+                                                </c:when>
+                                                <c:otherwise>
+                                                    *
+                                                </c:otherwise>
+                                            </c:choose>
+                                            <c:if test="${!st.last}">/</c:if>
+                                        </c:forEach>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <c:choose>
+                                            <c:when test="${fn:length(resultList.name) == 2}">
+                                                ${fn:substring(resultList.name, 0, 1)}*
+                                            </c:when>
+                                            <c:when test="${fn:length(resultList.name) >= 3}">
+                                                ${fn:substring(resultList.name, 0, 1)}*
+                                                ${fn:substring(resultList.name, fn:length(resultList.name)-1, fn:length(resultList.name))}
+                                            </c:when>
+                                            <c:otherwise>
+                                                *
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:otherwise>
+                                </c:choose>
+                            </span>
                             <a href="/review" class="card-link">
                                 <span>더보기</span>
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">

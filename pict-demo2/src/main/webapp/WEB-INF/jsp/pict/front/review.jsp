@@ -22,7 +22,41 @@
                     <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                         <h3>${resultList.title}</h3>
                         <p>${resultList.text}</p>
-                        <span>${resultList.name}</span>
+                        <span>
+                            <c:choose>
+                                <c:when test="${fn:contains(resultList.name, '/')}">
+                                    <c:set var="nameArr" value="${fn:split(resultList.name, '/')}" />
+                                    <c:forEach var="n" items="${nameArr}" varStatus="st">
+                                        <c:choose>
+                                            <c:when test="${fn:length(n) == 2}">
+                                                ${fn:substring(n, 0, 1)}*
+                                            </c:when>
+                                            <c:when test="${fn:length(n) >= 3}">
+                                                ${fn:substring(n, 0, 1)}*${fn:substring(n, fn:length(n)-1, fn:length(n))}
+                                            </c:when>
+                                            <c:otherwise>
+                                                *
+                                            </c:otherwise>
+                                        </c:choose>
+                                        <c:if test="${!st.last}">/</c:if>
+                                    </c:forEach>
+                                </c:when>
+                                <c:otherwise>
+                                    <c:choose>
+                                        <c:when test="${fn:length(resultList.name) == 2}">
+                                            ${fn:substring(resultList.name, 0, 1)}*
+                                        </c:when>
+                                        <c:when test="${fn:length(resultList.name) >= 3}">
+                                            ${fn:substring(resultList.name, 0, 1)}*
+                                            ${fn:substring(resultList.name, fn:length(resultList.name)-1, fn:length(resultList.name))}
+                                        </c:when>
+                                        <c:otherwise>
+                                            *
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:otherwise>
+                            </c:choose>
+                        </span>
                     </div>
                 </c:forEach>
             </div>
