@@ -105,6 +105,7 @@
             text LIKE CONCAT('%', #{search_text}, '%')
             )
         </if>
+        order by idx desc
     </select>
 
     <select id="review_list_one" resultType="pictVO">
