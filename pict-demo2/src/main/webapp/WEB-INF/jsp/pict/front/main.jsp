@@ -22,9 +22,16 @@
                     <!-- 팝업 슬라이드 1 -->
                     <c:forEach var="resultList" items="${popup_list}" varStatus="status">
                         <div class="swiper-slide">
-                            <a href="${resultList.linkurl}" class="popup-link" target="_blank">
-                                <img src="${resultList.imgurl}" alt="${resultList.title}">
-                            </a>
+                            <c:choose>
+                                <c:when test="${not empty resultList.linkurl}">
+                                    <a href="${resultList.linkurl}" class="popup-link" target="_blank">
+                                        <img src="${resultList.imgurl}" alt="${resultList.title}">
+                                    </a>
+                                </c:when>
+                                <c:otherwise>
+                                    <img src="${resultList.imgurl}" alt="${resultList.title}">
+                                </c:otherwise>
+                            </c:choose>
                         </div>
                     </c:forEach>
                 </div>
