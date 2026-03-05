@@ -94,27 +94,31 @@
                         <div class="pricing-body">
                             <div class="price-item">
                                 <span class="sessions">1회</span>
-                                <span class="price">6만원</span>
+                                <span class="price">66,000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="sessions">5회</span>
+                                <span class="price">300,000</span>
                             </div>
                             <div class="price-item">
                                 <span class="sessions">10회</span>
-                                <span class="price">50만원</span>
+                                <span class="price">550,000</span>
                             </div>
                             <div class="price-item">
                                 <span class="sessions">20회</span>
-                                <span class="price">98만원</span>
+                                <span class="price">1,080,000</span>
                             </div>
                             <div class="price-item">
                                 <span class="sessions">30회</span>
-                                <span class="price">144만원</span>
+                                <span class="price">1,590,000</span>
                             </div>
                             <div class="price-item">
                                 <span class="sessions">40회</span>
-                                <span class="price">188만원</span>
+                                <span class="price">2,080,000</span>
                             </div>
                             <div class="price-item recommended">
                                 <span class="sessions">50회</span>
-                                <span class="price">230만원</span>
+                                <span class="price">2,550,000</span>
                             </div>
                         </div>
                     </div>
@@ -128,33 +132,38 @@
                         <div class="pricing-body">
                             <div class="price-item">
                                 <span class="sessions">1회</span>
-                                <span class="price-detail">3.5만원 × 2</span>
-                                <span class="price">7만원</span>
+                                <span class="price-detail">38,000 × 2</span>
+                                <span class="price">77,000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="sessions">5회</span>
+                                <span class="price-detail">175,000 × 2</span>
+                                <span class="price">350,000</span>
                             </div>
                             <div class="price-item">
                                 <span class="sessions">10회</span>
-                                <span class="price-detail">30만원 × 2</span>
-                                <span class="price">60만원</span>
+                                <span class="price-detail">330,000 × 2</span>
+                                <span class="price">660,000</span>
                             </div>
                             <div class="price-item">
                                 <span class="sessions">20회</span>
-                                <span class="price-detail">59만원 × 2</span>
-                                <span class="price">118만원</span>
+                                <span class="price-detail">650,000 × 2</span>
+                                <span class="price">1,300,000</span>
                             </div>
                             <div class="price-item">
                                 <span class="sessions">30회</span>
-                                <span class="price-detail">87만원 × 2</span>
-                                <span class="price">174만원</span>
+                                <span class="price-detail">960,000 × 2</span>
+                                <span class="price">1,920,000</span>
                             </div>
                             <div class="price-item">
                                 <span class="sessions">40회</span>
-                                <span class="price-detail">114만원 × 2</span>
-                                <span class="price">228만원</span>
+                                <span class="price-detail">1,260,000 × 2</span>
+                                <span class="price">2,520,000</span>
                             </div>
                             <div class="price-item recommended">
                                 <span class="sessions">50회</span>
-                                <span class="price-detail">140만원 × 2</span>
-                                <span class="price">280만원</span>
+                                <span class="price-detail">1,550,000 × 2</span>
+                                <span class="price">3,100,000</span>
                             </div>
                             <span>• 3인 이상 그룹PT는 대표 번호로 문의부탁드립니다. </span>
                         </div>
